@@ -1,3 +1,11 @@
+/*
+ * @Author: Wong septwong@foxmail.com
+ * @Date: 2024-12-05 11:32:19
+ * @LastEditors: Wong septwong@foxmail.com
+ * @LastEditTime: 2024-12-27 14:29:59
+ * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
+ * @Description: 
+ */
 import { type CompletionObject } from "./types";
 
 export const CompletionData: CompletionObject = {

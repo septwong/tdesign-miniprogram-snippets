@@ -1,8 +1,10 @@
-import * as vscode from 'vscode';
-import { Config } from '../config';
-import { CompletionData } from './itemData';
-import { WxmlDataList } from './wxmlData';
-import { type CompletionObject, type Attributes } from './types';
+import * as vscode from "vscode";
+import { Config } from "../config";
+import { CompletionData } from "./itemData";
+import { CompletionEventData } from "./itemEventData";
+import { CompletionClassData } from "./itemClassData";
+import { WxmlDataList } from "./wxmlData";
+import { type CompletionObject, type Attributes, type ItemEvent, type ItemClass } from "./types";
 
 /**
  * 判断光标是否在指定标签内。
@@ -50,10 +52,7 @@ import { type CompletionObject, type Attributes } from './types';
 /**
  * 判断光标是否在自定义组件标签内。
  */
-function getTagNameAtPosition(
-  document: vscode.TextDocument,
-  position: vscode.Position
-): string | null {
+function getTagNameAtPosition(document: vscode.TextDocument, position: vscode.Position): string | null {
   const text = document.getText();
   const tagRegex = /<([\w-]+)[^>]*>/g; // 匹配组件标签名
   let match;
@@ -73,45 +72,72 @@ function getTagNameAtPosition(
 /**
  * 创建 CompletionItem 实例。
  */
-function createCompletionItem(
-  { name, type, default: defaultValue, desc, required }: Attributes
-): vscode.CompletionItem {
+function createCompletionItem({
+  name,
+  type,
+  default: defaultValue,
+  desc,
+  required,
+}: Attributes): vscode.CompletionItem {
   const item = new vscode.CompletionItem(name, vscode.CompletionItemKind.Property);
   // 设置详细信息
-  item.detail = `${type} ` + (defaultValue ? `(默认: ${defaultValue})` : '');
-  item.documentation = new vscode.MarkdownString(
-    desc + (required ? "\n\n**是否必填**: " + required : '')
-  );
-  // 设置插入的文本 
-  const snippet = `${name}=${defaultValue === '-' ? "'${1}'" : `'${defaultValue}'`}`;
+  item.detail = `${type} ` + (defaultValue ? `(默认: ${defaultValue})` : "");
+  item.documentation = new vscode.MarkdownString(desc + (required ? "\n\n**是否必填**: " + required : ""));
+  // 设置插入的文本
+  const snippet = `${name}=${defaultValue === "-" ? "'${1}'" : `'${defaultValue}'`}`;
+  item.insertText = new vscode.SnippetString(snippet);
+  return item;
+}
+
+function createCompletionItemEvent({ name, params, description }: ItemEvent): vscode.CompletionItem {
+  const item = new vscode.CompletionItem(name, vscode.CompletionItemKind.Property);
+  // 设置详细信息
+  // item.detail = `${params}`;
+  item.documentation = new vscode.MarkdownString(params + "\n\n" + description);
+  // 设置插入的文本
+  const snippet = `${name}=${"'${1}'"}`;
+  item.insertText = new vscode.SnippetString(snippet);
+  return item;
+}
+
+function createCompletionItemClass({ className, description }: ItemClass): vscode.CompletionItem {
+  const item = new vscode.CompletionItem(className, vscode.CompletionItemKind.Property);
+  // 设置详细信息
+  // item.detail = `${className}`;
+  item.documentation = new vscode.MarkdownString(description);
+  // 设置插入的文本
+  const snippet = `${className}=${"'${1}'"}`;
   item.insertText = new vscode.SnippetString(snippet);
   return item;
 }
 
 /**
- * 
+ *
  * 创建 WXML CompletionItem 实例。
  */
-function createWxmlCompletionItem(
-  { name, type, default: defaultValue, desc, required, body }: Attributes
-): vscode.CompletionItem {
+function createWxmlCompletionItem({
+  name,
+  type,
+  default: defaultValue,
+  desc,
+  required,
+  body,
+}: Attributes): vscode.CompletionItem {
   const item = new vscode.CompletionItem(name, vscode.CompletionItemKind.Property);
   // 设置详细信息
-  item.detail = `${type} ` + (defaultValue ? `(默认: ${defaultValue})` : '');
+  item.detail = `${type} ` + (defaultValue ? `(默认: ${defaultValue})` : "");
 
   // 设置插入的文本
-  let snippet = '';
+  let snippet = "";
   if (body) {
     let body_md = "```wxml\n" + body + "\n```";
     item.documentation = new vscode.MarkdownString(
-      desc + `\n\n${body_md}` + (required ? "\n\n**是否必填**: " + required : '')
+      desc + `\n\n${body_md}` + (required ? "\n\n**是否必填**: " + required : "")
     );
     snippet = `${body}`;
   } else {
-    item.documentation = new vscode.MarkdownString(
-      desc + (required ? "\n\n**是否必填**: " + required : '')
-    );
-    snippet = `${name}=${defaultValue === '-' ? "'${1}'" : `'${defaultValue}'`}`;
+    item.documentation = new vscode.MarkdownString(desc + (required ? "\n\n**是否必填**: " + required : ""));
+    snippet = `${name}=${defaultValue === "-" ? "'${1}'" : `'${defaultValue}'`}`;
   }
   item.insertText = new vscode.SnippetString(snippet);
   return item;
@@ -123,9 +149,9 @@ function createWxmlCompletionItem(
 // export const RegisterCompletionItemProvider: vscode.CompletionItemProvider = {
 export class WxmlCompletionProvider implements vscode.CompletionItemProvider {
   constructor(public config: Config) {}
-  
+
   provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
-    const tagName: string = getTagNameAtPosition(document, position) ?? '';
+    const tagName: string = getTagNameAtPosition(document, position) ?? "";
     const completionItems: vscode.CompletionItem[] = [];
 
     // 光标是否在标签内
@@ -133,11 +159,30 @@ export class WxmlCompletionProvider implements vscode.CompletionItemProvider {
       // console.log(`Providing completion for: ${tagName}`); // 打印日志
 
       // 提供组件属性补全
-      if(tagName in CompletionData) {
+      // Props
+      if (tagName in CompletionData) {
         const tagData = CompletionData[tagName as keyof typeof CompletionData];
         for (const attrObj of tagData.attrs) {
           if (attrObj.name) {
             completionItems.push(createCompletionItem(attrObj));
+          }
+        }
+      }
+      // Events
+      if (tagName in CompletionEventData) {
+        const tagData = CompletionEventData[tagName as keyof typeof CompletionEventData];
+        for (const attrObj of tagData.events) {
+          if (attrObj.name) {
+            completionItems.push(createCompletionItemEvent(attrObj));
+          }
+        }
+      }
+      // External Classes
+      if (tagName in CompletionClassData) {
+        const tagData = CompletionClassData[tagName as keyof typeof CompletionClassData];
+        for (const attrObj of tagData.classes) {
+          if (attrObj.className) {
+            completionItems.push(createCompletionItemClass(attrObj));
           }
         }
       }
@@ -151,4 +196,4 @@ export class WxmlCompletionProvider implements vscode.CompletionItemProvider {
     // console.log(`Providing ${completionItems.length} completion items`); // 打印日志
     return completionItems;
   }
-};
+}

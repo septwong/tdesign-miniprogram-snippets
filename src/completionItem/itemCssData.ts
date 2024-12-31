@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-31 10:19:00
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-12-31 11:08:05
+ * @LastEditTime: 2024-12-31 11:48:36
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemCssData.ts
  * @Description:
  */
@@ -548,5 +548,90 @@ export const CompletionCssData: CompletionCssObject = {
   },
   "t-icon": {
     attrs: [],
-  }
+  },
+  "t-row": {
+    attrs: [],
+  },
+  "t-col": {
+    attrs: [],
+  },
+  "t-link": {
+    attrs: [
+      {
+        name: "--td-link-danger-active-color",
+        defaultValue: "@error-color-active",
+        description: "-",
+      },
+      {
+        name: "--td-link-danger-color",
+        defaultValue: "@error-color",
+        description: "-",
+      },
+      {
+        name: "--td-link-danger-disabled-color",
+        defaultValue: "@error-color-disabled",
+        description: "-",
+      },
+      {
+        name: "--td-link-default-active-color",
+        defaultValue: "@brand-color-active",
+        description: "-",
+      },
+      {
+        name: "--td-link-default-color",
+        defaultValue: "@font-gray-1",
+        description: "-",
+      },
+      {
+        name: "--td-link-default-disabled-color",
+        defaultValue: "@text-color-disabled",
+        description: "-",
+      },
+      {
+        name: "--td-link-primary-active-color",
+        defaultValue: "@brand-color-active",
+        description: "-",
+      },
+      {
+        name: "--td-link-primary-color",
+        defaultValue: "@brand-color",
+        description: "-",
+      },
+      {
+        name: "--td-link-primary-disabled-color",
+        defaultValue: "@brand-color-disabled",
+        description: "-",
+      },
+      {
+        name: "--td-link-success-active-color",
+        defaultValue: "@success-color-active",
+        description: "-",
+      },
+      {
+        name: "--td-link-success-color",
+        defaultValue: "@success-color",
+        description: "-",
+      },
+      {
+        name: "--td-link-success-disabled-color",
+        defaultValue: "@success-color-disabled",
+        description: "-",
+      },
+      {
+        name: "--td-link-warning-active-color",
+        defaultValue: "@warning-color-active",
+        description: "-",
+      },
+      {
+        name: "--td-link-warning-color",
+        defaultValue: "@warning-color",
+        description: "-",
+      },
+      {
+        name: "--td-link-warning-disabled-color",
+        defaultValue: "@warning-color-disabled",
+        description: "-",
+      },
+    ],
+  },
 };

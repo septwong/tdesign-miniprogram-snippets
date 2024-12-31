@@ -3,8 +3,9 @@ import { Config } from "../config";
 import { CompletionData } from "./itemData";
 import { CompletionEventData } from "./itemEventData";
 import { CompletionClassData } from "./itemClassData";
+import { CompletionCssData } from "./itemCssData";
 import { WxmlDataList } from "./wxmlData";
-import { type CompletionObject, type Attributes, type ItemEvent, type ItemClass } from "./types";
+import { type Attributes, type ItemEvent, type ItemClass, type ItemCss } from "./types";
 
 /**
  * 判断光标是否在指定标签内。
@@ -111,6 +112,17 @@ function createCompletionItemClass({ className, description }: ItemClass): vscod
   return item;
 }
 
+function createCompletionItemCss({ name, defaultValue, description }: ItemCss): vscode.CompletionItem {
+  const item = new vscode.CompletionItem(name, vscode.CompletionItemKind.Property);
+  // 设置详细信息
+  item.detail = defaultValue ? `默认: ${defaultValue}` : "";
+  item.documentation = new vscode.MarkdownString(description);
+  // 设置插入的文本
+  const snippet = `${name}: ${defaultValue === "-" ? "${1};" : `${defaultValue};`}`;
+  item.insertText = new vscode.SnippetString(snippet);
+  return item;
+}
+
 /**
  *
  * 创建 WXML CompletionItem 实例。
@@ -171,7 +183,7 @@ export class WxmlCompletionProvider implements vscode.CompletionItemProvider {
       // Events
       if (tagName in CompletionEventData) {
         const tagData = CompletionEventData[tagName as keyof typeof CompletionEventData];
-        for (const attrObj of tagData.events) {
+        for (const attrObj of tagData.attrs) {
           if (attrObj.name) {
             completionItems.push(createCompletionItemEvent(attrObj));
           }
@@ -180,12 +192,21 @@ export class WxmlCompletionProvider implements vscode.CompletionItemProvider {
       // External Classes
       if (tagName in CompletionClassData) {
         const tagData = CompletionClassData[tagName as keyof typeof CompletionClassData];
-        for (const attrObj of tagData.classes) {
+        for (const attrObj of tagData.attrs) {
           if (attrObj.className) {
             completionItems.push(createCompletionItemClass(attrObj));
           }
         }
       }
+      // CSS Variables
+      // if (tagName in CompletionCssData) {
+      //   const tagData = CompletionCssData[tagName as keyof typeof CompletionCssData];
+      //   for (const attrObj of tagData.attrs) {
+      //     if (attrObj.name) {
+      //       completionItems.push(createCompletionItemCss(attrObj));
+      //     }
+      //   }
+      // }
 
       // common: 微信小程序 WXML 语法参考
       for (const item of WxmlDataList) {

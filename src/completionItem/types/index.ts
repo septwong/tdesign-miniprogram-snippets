@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-12-27 14:42:44
+ * @LastEditTime: 2024-12-31 10:23:00
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/types/index.ts
  * @Description:
  */
@@ -33,7 +33,7 @@ export interface ItemEvent {
 
 export interface CompletionEventObject {
   [key: string]: {
-    events: ItemEvent[];
+    attrs: ItemEvent[];
   };
 }
 
@@ -45,6 +45,19 @@ export interface ItemClass {
 
 export interface CompletionClassObject {
   [key: string]: {
-    classes: ItemClass[];
+    attrs: ItemClass[];
+  };
+}
+
+// CSS Variables
+export interface ItemCss {
+  name: string; // 名称
+  defaultValue: string; // 默认值
+  description: string; // 描述
+}
+
+export interface CompletionCssObject {
+  [key: string]: {
+    attrs: ItemCss[];
   };
 }

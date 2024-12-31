@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-12-27 14:33:12
+ * @LastEditTime: 2024-12-31 10:17:55
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemEventData.ts
  * @Description: 
  */
@@ -10,7 +10,7 @@ import { type CompletionEventObject } from "./types";
 
 export const CompletionEventData: CompletionEventObject = {
   "t-button": {
-    events: [
+    attrs: [
       {
         "name": "agreeprivacyauthorization",
         "params": "\\-",
@@ -67,5 +67,8 @@ export const CompletionEventData: CompletionEventObject = {
         "description": "点击按钮，当按钮不为加载或禁用状态时触发"
       }
     ],
+  },
+  "t-divider": {
+    attrs: [],
   }
 };

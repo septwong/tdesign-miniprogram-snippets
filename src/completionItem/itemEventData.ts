@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-12-31 10:17:55
+ * @LastEditTime: 2024-12-31 11:08:02
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemEventData.ts
  * @Description: 
  */
@@ -70,5 +70,33 @@ export const CompletionEventData: CompletionEventObject = {
   },
   "t-divider": {
     attrs: [],
+  },
+  "t-fab": {
+    attrs: [
+      {
+        "name": "click",
+        "params": "`({e: Event})`",
+        "description": "悬浮按钮点击事件"
+      },
+      {
+        "name": "drag-end",
+        "params": "`(e: TouchEvent)`",
+        "description": "结束拖拽时触发"
+      },
+      {
+        "name": "drag-start",
+        "params": "`(e: TouchEvent)`",
+        "description": "开始拖拽时触发"
+      }
+    ],
+  },
+  "t-icon": {
+    attrs: [
+      {
+        "name": "click",
+        "params": "\\-",
+        "description": "点击图标时触发。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)"
+      }
+    ],
   }
 };

@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-31 10:19:00
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-12-31 10:26:56
+ * @LastEditTime: 2024-12-31 11:08:05
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemCssData.ts
  * @Description:
  */
@@ -537,4 +537,16 @@ export const CompletionCssData: CompletionCssObject = {
       },
     ],
   },
+  "t-fab": {
+    attrs: [
+      {
+        name: "--td-fab-shadow",
+        defaultValue: "@shadow-2",
+        description: "-",
+      },
+    ],
+  },
+  "t-icon": {
+    attrs: [],
+  }
 };

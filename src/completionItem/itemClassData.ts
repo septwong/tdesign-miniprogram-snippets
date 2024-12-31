@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:19:58
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-12-31 10:20:16
+ * @LastEditTime: 2024-12-31 11:08:04
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemClassData.ts
  * @Description:
  */
@@ -34,6 +34,17 @@ export const CompletionClassData: CompletionClassObject = {
       {
         className: "t-class-content",
         description: "内容样式类",
+      },
+    ],
+  },
+  "t-fab": {
+    attrs: [],
+  },
+  "t-icon": {
+    attrs: [
+      {
+        className: "t-class",
+        description: "根节点样式类",
       },
     ],
   },

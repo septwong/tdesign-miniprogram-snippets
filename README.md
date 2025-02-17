@@ -60,7 +60,7 @@
 
   - 组件属性自动补全
 
-  ![WXML 组件属性](https://free4.yunpng.top/2024/10/30/6721aaa230f20.gif)
+  ![WXML 组件属性](https://pic1.imgdb.cn/item/67b2afd6d0e0a243d40018a1.gif)
 
 - JSON 片段
 

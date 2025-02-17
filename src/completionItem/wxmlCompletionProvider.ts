@@ -181,23 +181,23 @@ export class WxmlCompletionProvider implements vscode.CompletionItemProvider {
         }
       }
       // Events
-      if (tagName in CompletionEventData) {
-        const tagData = CompletionEventData[tagName as keyof typeof CompletionEventData];
-        for (const attrObj of tagData.attrs) {
-          if (attrObj.name) {
-            completionItems.push(createCompletionItemEvent(attrObj));
-          }
-        }
-      }
+      // if (tagName in CompletionEventData) {
+      //   const tagData = CompletionEventData[tagName as keyof typeof CompletionEventData];
+      //   for (const attrObj of tagData.attrs) {
+      //     if (attrObj.name) {
+      //       completionItems.push(createCompletionItemEvent(attrObj));
+      //     }
+      //   }
+      // }
       // External Classes
-      if (tagName in CompletionClassData) {
-        const tagData = CompletionClassData[tagName as keyof typeof CompletionClassData];
-        for (const attrObj of tagData.attrs) {
-          if (attrObj.className) {
-            completionItems.push(createCompletionItemClass(attrObj));
-          }
-        }
-      }
+      // if (tagName in CompletionClassData) {
+      //   const tagData = CompletionClassData[tagName as keyof typeof CompletionClassData];
+      //   for (const attrObj of tagData.attrs) {
+      //     if (attrObj.className) {
+      //       completionItems.push(createCompletionItemClass(attrObj));
+      //     }
+      //   }
+      // }
       // CSS Variables
       // if (tagName in CompletionCssData) {
       //   const tagData = CompletionCssData[tagName as keyof typeof CompletionCssData];

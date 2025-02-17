@@ -59,4 +59,9 @@ $ vsce package
 
 $ vsce publish
 # <publisher id>.myExtension published to VS Code Marketplace
+
+# 登录
+
+vsce login <publisher id>
+# Personal Access Token for publisher '<publisher id>':
 ```

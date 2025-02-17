@@ -1748,6 +1748,13 @@ export const CompletionData: CompletionObject = {
         required: "N",
       },
       {
+        name: "fixed",
+        type: "Boolean",
+        default: "false",
+        desc: "`1.8.5`。如果 color-picker 是在一个 `position:fixed` 的区域，需要显式指定属性 fixed 为 true",
+        required: "N",
+      },
+      {
         name: "footer",
         type: "Slot",
         default: "-",
@@ -5700,6 +5707,13 @@ export const CompletionData: CompletionObject = {
         type: "Number",
         default: "800",
         desc: "加载动画执行完成一次的时间，单位：毫秒",
+        required: "N",
+      },
+      {
+        name: "fullscreen",
+        type: "Boolean",
+        default: "false",
+        desc: "`1.8.5`。是否显示为全屏加载",
         required: "N",
       },
       {

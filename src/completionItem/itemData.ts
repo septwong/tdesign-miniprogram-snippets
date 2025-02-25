@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-12-27 14:29:59
+ * @LastEditTime: 2025-02-25 17:19:02
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description: 
  */
@@ -2011,6 +2011,13 @@ export const CompletionData: CompletionObject = {
         required: "N",
       },
       {
+        name: "allow-input-over-max",
+        type: "Boolean",
+        default: "false",
+        desc: "超出 `maxlength` 或 `maxcharacter` 之后是否还允许输入",
+        required: "N",
+      },
+      {
         name: "always-embed",
         type: "Boolean",
         default: "false",
@@ -2521,8 +2528,8 @@ export const CompletionData: CompletionObject = {
         name: "icon",
         type: "String / Array / Slot",
         default: "'circle'",
-        desc: "自定义选中图标和非选中图标。使用 Array 时表示：`[选中态图标，非选中态图标]`。使用 String 时，值为 circle 表示填充型图标、值为 line 表示描边型图标、值为 dot 表示圆点图标，值为 slot 时使用插槽。TS 类型：`'circle' \\",
-        required: "'line' \\",
+        desc: "自定义选中图标和非选中图标。使用 Array 时表示：[选中态图标，非选中态图标]。使用 String 时，值为 circle 表示填充型图标、值为 line 表示描边型图标、值为 dot 表示圆点图标，值为 slot 时使用插槽。TS 类型：'circle' | 'line' | 'dot' | Array<string>",
+        required: "N",
       },
       {
         name: "label",
@@ -2555,14 +2562,14 @@ export const CompletionData: CompletionObject = {
       {
         name: "placement",
         type: "String",
-        default: "left",
-        desc: "复选框和内容相对位置。可选项：left/right",
+        default: "-",
+        desc: "复选框和内容相对位置。优先级高于 RadioGroup.placement。Radio 单独存在时，默认值为 left。如果父组件存在 RadioGroup，默认值便由 RadioGroup.placement 决定。可选项：left/right",
         required: "N",
       },
       {
         name: "readonly",
         type: "Boolean",
-        default: "false",
+        default: "undefined",
         desc: "只读状态",
         required: "N",
       },
@@ -2570,8 +2577,8 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "String / Number / Boolean",
         default: "false",
-        desc: "单选按钮的值。TS 类型：`T` `type RadioValue = string \\",
-        required: "number \\",
+        desc: "单选按钮的值。TS 类型：T type RadioValue = string | number | boolean。",
+        required: "N",
       },
     ],
   },
@@ -2617,7 +2624,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Array",
         default: "'circle'",
         desc: "自定义选中图标和非选中图标。示例：[选中态图标，非选中态图标]。使用 String 时，值为 circle 表示填充型图标、值为 line 表示描边型图标、值为 dot 表示圆点图标；仅在使用 options 时生效。TS 类型：`'circle' \\",
-        required: "'line' \\",
+        required: "N",
       },
       {
         name: "keys",
@@ -2637,29 +2644,36 @@ export const CompletionData: CompletionObject = {
         name: "options",
         type: "Array",
         default: "-",
-        desc: "单选组件按钮形式。RadioOption 数据类型为 string 或 number 时，表示 label 和 value 值相同。TS 类型：`Array<RadioOption>` `type RadioOption = string \\",
-        required: "number \\",
+        desc: "单选组件按钮形式。RadioOption 数据类型为 string 或 number 时，表示 label 和 value 值相同。TS 类型：Array<RadioOption> type RadioOption = string | number | RadioOptionObj interface RadioOptionObj { label?: string; value?: string | number; readonly?: boolean; disabled?: boolean; allowUncheck?: boolean; }。",
+        required: "N",
       },
       {
         name: "placement",
         type: "String",
         default: "left",
-        desc: "复选框和内容相对位置。可选项：left/right",
+        desc: "复选框和内容相对位置。优先级低于 Radio.placement。可选项：left/right",
+        required: "N",
+      },
+      {
+        name: "readonly",
+        type: "Boolean",
+        default: "undefined",
+        desc: "只读状态",
         required: "N",
       },
       {
         name: "value",
         type: "String / Number / Boolean",
         default: "-",
-        desc: "选中的值。TS 类型：`T` `type RadioValue = string \\",
-        required: "number \\",
+        desc: "选中的值。TS 类型：T type RadioValue = string | number | boolean。",
+        required: "N",
       },
       {
         name: "default-value",
         type: "String / Number / Boolean",
         default: "undefined",
-        desc: "选中的值。非受控属性。TS 类型：`T` `type RadioValue = string \\",
-        required: "number \\",
+        desc: "选中的值。非受控属性。TS 类型：T type RadioValue = string | number | boolean。",
+        required: "N",
       },
     ],
   },
@@ -3290,6 +3304,13 @@ export const CompletionData: CompletionObject = {
         required: "N",
       },
       {
+        name: "allow-input-over-max",
+        type: "Boolean",
+        default: "false",
+        desc: "超出 `maxlength` 或 `maxcharacter` 之后是否还允许输入",
+        required: "N",
+      },
+      {
         name: "autofocus",
         type: "Boolean",
         default: "false",
@@ -3409,10 +3430,24 @@ export const CompletionData: CompletionObject = {
         required: "N",
       },
       {
+        name: "placeholder-class",
+        type: "String",
+        default: "textarea-placeholder",
+        desc: "指定 placeholder 的样式类，目前仅支持color,font-size和font-weight",
+        required: "N",
+      },
+      {
         name: "placeholder-style",
         type: "String",
         default: "-",
         desc: "指定 placeholder 的样式，目前仅支持 color ,font-size和font-weight",
+        required: "N",
+      },
+      {
+        name: "readonly",
+        type: "Boolean",
+        default: "undefined",
+        desc: "只读状态",
         required: "N",
       },
       {

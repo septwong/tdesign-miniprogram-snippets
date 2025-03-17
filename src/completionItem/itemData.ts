@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-02-25 17:19:02
+ * @LastEditTime: 2025-03-17 17:15:30
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description: 
  */
@@ -1155,6 +1155,13 @@ export const CompletionData: CompletionObject = {
         required: "N",
       },
       {
+        name: "bottom-line-mode",
+        type: "String",
+        default: "fixed",
+        desc: "激活下划线的模式。可选项：fixed/auto/full",
+        required: "N",
+      },
+      {
         name: "middle",
         type: "Slot",
         default: "-",
@@ -1270,6 +1277,13 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "-",
         desc: "选项卡名称",
+        required: "N",
+      },
+      {
+        name: "lazy",
+        type: "Boolean",
+        default: "false",
+        desc: "是否启用选项卡懒加载",
         required: "N",
       },
       {
@@ -1897,6 +1911,13 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "'YYYY-MM-DD HH:mm:ss'",
         desc: "用于格式化 pick、change、confirm 事件返回的值，[详细文档](https://day.js.org/docs/en/display/format)",
+        required: "N",
+      },
+      {
+        name: "formatter",
+        type: "Function",
+        default: "-",
+        desc: "格式化标签。TS 类型：`(option: DateTimePickerColumnItem, columnIndex: number) => DateTimePickerColumnItem`",
         required: "N",
       },
       {

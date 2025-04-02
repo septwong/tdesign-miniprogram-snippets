@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-03-17 17:15:30
+ * @LastEditTime: 2025-04-02 15:03:04
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description: 
  */
@@ -2354,17 +2354,17 @@ export const CompletionData: CompletionObject = {
       },
       {
         name: "cancel-btn",
-        type: "String / Boolean / Object",
+        type: "String / Boolean",
         default: "true",
-        desc: "取消按钮文字。TS 类型：`boolean \\",
-        required: "string \\",
+        desc: "取消按钮文字。TS 类型：boolean | string",
+        required: "N",
       },
       {
         name: "confirm-btn",
-        type: "String / Boolean / Object",
+        type: "String / Boolean",
         default: "true",
-        desc: "确定按钮文字。TS 类型：`boolean \\",
-        required: "string \\",
+        desc: "确定按钮文字。TS 类型：boolean | string",
+        required: "N",
       },
       {
         name: "footer",

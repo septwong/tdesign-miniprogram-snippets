@@ -52,27 +52,29 @@
 
 ## 示例
 
+> 示例图片在 [GitHub](https://github.com/septwong/tdesign-miniprogram-snippets) 中，无法看到示例图片，可以使用魔法。
+
 - WXML 片段
 
   - `t-` 关键字代码片段
 
-  ![WXML 片段](https://free2.yunpng.top/2024/10/25/671b3e889ec36.gif)
+  ![WXML 片段](https://raw.githubusercontent.com/septwong/tdesign-miniprogram-snippets/main/assets/md_images/t-wxml.gif)
 
   - 组件属性自动补全
 
-  ![WXML 组件属性](https://pic1.imgdb.cn/item/67b2afd6d0e0a243d40018a1.gif)
+  ![WXML 组件属性](https://raw.githubusercontent.com/septwong/tdesign-miniprogram-snippets/main/assets/md_images/t-wxml-attrs.gif)
 
 - JSON 片段
 
-  ![JSON 片段](https://free2.yunpng.top/2024/10/25/671b3e88a8dc4.gif)
+  ![JSON 片段](https://raw.githubusercontent.com/septwong/tdesign-miniprogram-snippets/main/assets/md_images/t-json.gif)
 
 - JS 片段
 
-  ![JS 片段](https://free2.yunpng.top/2024/10/25/671b3e9d84363.gif)
+  ![JS 片段](https://raw.githubusercontent.com/septwong/tdesign-miniprogram-snippets/main/assets/md_images/t-js.gif)
 
 - 组件标签悬停提示
 
-  ![组件标签悬停提示](https://free2.yunpng.top/2024/10/25/671b3e9c3a4e5.gif)
+  ![组件标签悬停提示](https://raw.githubusercontent.com/septwong/tdesign-miniprogram-snippets/main/assets/md_images/t-hover.gif)
 
 ## 联系作者
 

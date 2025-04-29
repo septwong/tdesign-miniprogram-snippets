@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-04-02 15:03:04
+ * @LastEditTime: 2025-04-29 13:09:48
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description: 
  */
@@ -1456,6 +1456,13 @@ export const CompletionData: CompletionObject = {
         required: "N",
       },
       {
+        name: "header",
+        type: "Slot",
+        default: "-",
+        desc: "1.9.1。头部。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+        required: "N",
+      },
+      {
         name: "keys",
         type: "Object",
         default: "-",
@@ -1945,7 +1952,7 @@ export const CompletionData: CompletionObject = {
         name: "show-week",
         type: "Boolean",
         default: "false",
-        desc: "【开发中】是否在日期旁边显示周几（如周一，周二，周日等）",
+        desc: "`1.9.0`。是否在日期旁边显示周几（如周一，周二，周日等）",
         required: "N",
       },
       {
@@ -2120,6 +2127,13 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "-",
         desc: "已废弃。错误提示文本，值为空不显示（废弃属性，如果需要，请更为使用 status 和 tips）",
+        required: "N",
+      },
+      {
+        name: "extra",
+        type: "Slot",
+        default: "-",
+        desc: "`1.9.1`。右侧额外内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
         required: "N",
       },
       {
@@ -3587,6 +3601,13 @@ export const CompletionData: CompletionObject = {
         required: "N",
       },
       {
+        name: "add-btn",
+        type: "Boolean",
+        default: "true",
+        desc: "添加按钮",
+        required: "N",
+      },
+      {
         name: "add-content",
         type: "String / Slot",
         default: "-",
@@ -3671,6 +3692,13 @@ export const CompletionData: CompletionObject = {
         desc: "支持上传的文件类型，图片或视频。TS 类型：`Array<MediaType>` `type MediaType = 'image' \\",
         required:
           "'video'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/upload/type.ts)",
+      },
+      {
+        name: "remove-btn",
+        type: "Boolean",
+        default: "true",
+        desc: "移除按钮",
+        required: "N",
       },
       {
         name: "request-method",
@@ -4721,6 +4749,13 @@ export const CompletionData: CompletionObject = {
         type: "Number",
         default: "0",
         desc: "进度条百分比",
+        required: "N",
+      },
+      {
+        name: "size",
+        type: "String / Number",
+        default: "default",
+        desc: "进度条尺寸，仅对环形进度条有效。可选值：default/micro。default 值为 112； micro 值为 24",
         required: "N",
       },
       {

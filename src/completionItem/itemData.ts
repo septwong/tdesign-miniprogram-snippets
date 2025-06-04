@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-04-29 13:09:48
+ * @LastEditTime: 2025-06-04 10:09:39
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description: 
  */
@@ -2097,7 +2097,7 @@ export const CompletionData: CompletionObject = {
       {
         name: "cursor",
         type: "Number",
-        default: "-",
+        default: "-1",
         desc: "必需。指定 focus 时的光标位置",
         required: "Y",
       },
@@ -2896,7 +2896,7 @@ export const CompletionData: CompletionObject = {
       {
         name: "cursor",
         type: "Number",
-        default: "-",
+        default: "-1",
         desc: "必需。指定 focus 时的光标位置",
         required: "Y",
       },
@@ -3551,7 +3551,7 @@ export const CompletionData: CompletionObject = {
         name: "keys",
         type: "Object",
         default: "-",
-        desc: "用来定义 value / label 在 `options` 中对应的字段别名。TS 类型：`KeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+        desc: "用来定义 `value / label / disabled / children` 在 `options` 数据中对应的字段别名，示例：`{ value: 'key', label: 'name', children: 'list' }`。TS 类型：`TreeKeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
         required: "N",
       },
       {

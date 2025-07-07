@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-06-04 10:09:39
+ * @LastEditTime: 2025-07-07 18:55:50
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description: 
  */
@@ -2381,6 +2381,13 @@ export const CompletionData: CompletionObject = {
         required: "N",
       },
       {
+        name: "content",
+        type: "Slot",
+        default: "-",
+        desc: "用于处理空数据场景。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+        required: "N",
+      },
+      {
         name: "footer",
         type: "Slot",
         default: "-",
@@ -3692,6 +3699,13 @@ export const CompletionData: CompletionObject = {
         desc: "支持上传的文件类型，图片或视频。TS 类型：`Array<MediaType>` `type MediaType = 'image' \\",
         required:
           "'video'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/upload/type.ts)",
+      },
+      {
+        name: "preview",
+        type: "Boolean",
+        default: "true",
+        desc: "`1.9.5`。是否支持图片预览，文件没有预览",
+        required: "N",
       },
       {
         name: "remove-btn",

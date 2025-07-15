@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-07-07 18:55:50
+ * @LastEditTime: 2025-07-15 14:11:45
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description: 
  */
@@ -682,6 +682,20 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         desc: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "current",
+        type: "String / Number",
+        default: "-",
+        desc: "`1.9.7`。索引列表的激活项，默认首项",
+        required: "N",
+      },
+      {
+        name: "default-current",
+        type: "String / Number",
+        default: "undefined",
+        desc: "`1.9.7`。索引列表的激活项，默认首项。非受控属性",
         required: "N",
       },
       {
@@ -1365,6 +1379,13 @@ export const CompletionData: CompletionObject = {
         type: "Number",
         default: "-",
         desc: "最小可选的日期，不传则默认今天",
+        required: "N",
+      },
+      {
+        name: "readonly",
+        type: "Boolean",
+        default: "-",
+        desc: "`1.9.7`。是否只读，只读状态下不能选择日期",
         required: "N",
       },
       {

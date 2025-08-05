@@ -341,6 +341,13 @@
     ],
     "description": "TDesign Progress 组件"
   },
+  "TDesign QRCode 二维码": {
+    "prefix": "t-qrcode",
+    "body": [
+      "\"t-qrcode\": \"tdesign-miniprogram/qrcode/qrcode\""
+    ],
+    "description": "TDesign QRCode 组件"
+  },
   "TDesign Result 结果": {
     "prefix": "t-result",
     "body": [

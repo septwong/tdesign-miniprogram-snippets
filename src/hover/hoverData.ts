@@ -1,3 +1,11 @@
+/*
+ * @Author: Wong septwong@foxmail.com
+ * @Date: 2024-12-05 11:32:18
+ * @LastEditors: Wong septwong@foxmail.com
+ * @LastEditTime: 2025-08-05 19:05:44
+ * @FilePath: /tdesign-miniprogram-snippets/src/hover/hoverData.ts
+ * @Description: 
+ */
 export const hoverData = {
 //   't-button': '**TDesign Button**\n\n一个常见的按钮组件，支持 \`primary\`、\`danger\` 等样式类型。',
 //   't-icon': `**TDesign Icon**\n\n
@@ -68,6 +76,7 @@ export const hoverData = {
   't-image': '打开 [TDesign Image](https://tdesign.tencent.com/miniprogram/components/image)',
   't-image-viewer': '打开 [TDesign ImageViewer](https://tdesign.tencent.com/miniprogram/components/image-viewer)',
   't-progress': '打开 [TDesign Progress](https://tdesign.tencent.com/miniprogram/components/progress)',
+  't-qrcode': '打开 [TDesign Progress](https://tdesign.tencent.com/miniprogram/components/qrcode)',
   't-result': '打开 [TDesign Result](https://tdesign.tencent.com/miniprogram/components/result)',
   't-skeleton': '打开 [TDesign Skeleton](https://tdesign.tencent.com/miniprogram/components/skeleton)',
   't-sticky': '打开 [TDesign Sticky](https://tdesign.tencent.com/miniprogram/components/sticky)',

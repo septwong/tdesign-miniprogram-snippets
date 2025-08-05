@@ -640,6 +640,13 @@
     ],
     "description": "TDesign Progress 组件"
   },
+  "TDesign QRCode 二维码": {
+    "prefix": "t-qrcode",
+    "body": [
+      "<t-qrcode value=\"https://tdesign.tencent.com/\" level=\"M\" status=\"active\" />"
+    ],
+    "description": "TDesign QRCode 组件"
+  },
   "TDesign Result 结果": {
     "prefix": "t-result",
     "body": [

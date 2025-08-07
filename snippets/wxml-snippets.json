@@ -657,14 +657,14 @@
   "TDesign QRCode:level 二维码": {
     "prefix": "t-qrcode:level",
     "body": [
-      "<t-qrcode value=\"https://tdesign.tencent.com/\" level=\"${1|L,M,Q,H}\" status=\"active\" />"
+      "<t-qrcode value=\"https://tdesign.tencent.com/\" level=\"${1|L,M,Q,H|}\" status=\"active\" />"
     ],
     "description": "TDesign QRCode 组件"
   },
   "TDesign QRCode:status 二维码": {
     "prefix": "t-qrcode:status",
     "body": [
-      "<t-qrcode value=\"https://tdesign.tencent.com/\" status=\"${1|active,expired,loading,scanned}\" bind:refresh=\"handleRefresh\" />"
+      "<t-qrcode value=\"https://tdesign.tencent.com/\" status=\"${1|active,expired,loading,scanned|}\" bind:refresh=\"handleRefresh\" />"
     ],
     "description": "TDesign QRCode 组件"
   },
@@ -720,7 +720,7 @@
       "  autoplay=\"{{autoplay}}\"",
       "  duration=\"{{duration}}\"",
       "  interval=\"{{interval}}\"",
-      "  navigation=\"{{ { type: ${1|'dots','dots-bar'} } }}\"",
+      "  navigation=\"{{ { type: ${1|'dots','dots-bar'|} } }}\"",
       "  list=\"{{swiperList}}\"",
       "  bind:click=\"onTap\"",
       "  bind:change=\"onChange\"",

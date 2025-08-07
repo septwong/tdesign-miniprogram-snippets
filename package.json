@@ -35,7 +35,10 @@
     "插件",
     "代码片段"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:wxml-pug",
+    "onLanguage:wxml"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "languages": [

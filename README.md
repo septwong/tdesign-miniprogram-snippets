@@ -12,6 +12,7 @@
 </a> -->
 
 > A TDesign WeChat MiniProgram code snippets plugin for VS Code.
+
 <!-- providing autocompletion for TDesign components in WeChat MiniProgram projects. -->
 
 一个用于 VS Code 的 TDesign WeChat MiniProgram 代码片段插件。
@@ -22,10 +23,12 @@
 
 ## 概述
 
-由 TDesign 官方文档照搬下来的代码片段。  
+由 TDesign 官方文档照搬下来的代码片段。
+
 <!-- 方便自己使用，同时也给需要者提供帮助。 -->
 
 <!-- > 当前适配组件库版本: [`1.6.2` 2024-10-12](https://tdesign.tencent.com/miniprogram/changelog#%F0%9F%8C%88-1-6-1-2024-09-14)   -->
+
 > 官方文档: https://tdesign.tencent.com/miniprogram/overview
 
 ## 使用方法
@@ -38,17 +41,17 @@
     - 输入 `t-button`，`t-icon` 等 `t-` 开头的关键字即可提示代码片段模板，适用于 `usingComponents` 中的组件引用
   - JS 片段：
     - 输入 `t-dialog`，`t-message` 等 `t-` 开头的关键字即可提示代码片段模板
-  - WXSS 片段：*待开发*
+  - WXSS 片段：_待开发_
 - **其他功能：**
   - `wxml`：
     - TDesign 组件标签`悬停提示`：快捷打开该组件官网
     - 所有标签中输入 `wx:` 开头的关键字即可提示代码片段模板
-    - `alt + 点击自定义组件的标签名` 跳转到对应的组件页面 (默认关闭，可在插件 `设置` 中开启) 
+    - `alt + 点击自定义组件的标签名` 跳转到对应的组件页面 (默认关闭，可在插件 `设置` 中开启)
   - `js`：
     - 输入 `wx-onLoad`, `wx-onShow` 等 `wx-` 开头的关键字即可提示代码片段模板
   - 支持`语法高亮`
-  - 支持`组件高亮` (默认关闭，可在插件 `设置` 中开启) 
-  - 资源管理器中右键目录，新增两个菜单: `创建小程序页面` , `创建小程序组件` (默认关闭，可在插件 `设置` 中开启) 
+  - 支持`组件高亮` (默认关闭，可在插件 `设置` 中开启)
+  - 资源管理器中右键目录，新增两个菜单: `创建小程序页面` , `创建小程序组件` (默认关闭，可在插件 `设置` 中开启)
 
 ## 示例
 

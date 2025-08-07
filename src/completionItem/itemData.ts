@@ -2,9 +2,9 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-07-15 14:11:45
+ * @LastEditTime: 2025-08-07 12:11:53
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
- * @Description: 
+ * @Description:
  */
 import { type CompletionObject } from "./types";
 
@@ -3759,8 +3759,7 @@ export const CompletionData: CompletionObject = {
       {
         name: "transition",
         type: "Object",
-        default:
-          "{ backTransition: true, duration: 300, timingFunction: 'ease' }",
+        default: "{ backTransition: true, duration: 300, timingFunction: 'ease' }",
         desc: "拖拽位置移动时的过渡参数,`duration`单位为ms。TS 类型：`Transition` `interface Transition { backTransition?: boolean, duration?: number, timingFunction?: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/upload/type.ts)",
         required: "N",
       },
@@ -4819,6 +4818,94 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "''",
         desc: "进度条未完成部分颜色",
+        required: "N",
+      },
+    ],
+  },
+  "t-qrcode": {
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        desc: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        desc: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "bg-color",
+        type: "String",
+        default: "-",
+        desc: "二维码背景颜色",
+        required: "N",
+      },
+      {
+        name: "borderless",
+        type: "Boolean",
+        default: "false",
+        desc: "是否有边框",
+        required: "N",
+      },
+      {
+        name: "color",
+        type: "String",
+        default: "-",
+        desc: "二维码颜色",
+        required: "N",
+      },
+      {
+        name: "icon",
+        type: "String",
+        default: "-",
+        desc: "二维码中图片的地址",
+        required: "N",
+      },
+      {
+        name: "icon-size",
+        type: "Number / Object",
+        default: "40",
+        desc: "二维码中图片的大小。TS 类型：`number \\",
+        required: "{ width: number; height: number }`",
+      },
+      {
+        name: "level",
+        type: "String",
+        default: "M",
+        desc: "二维码纠错等级。可选项：L/M/Q/H",
+        required: "N",
+      },
+      {
+        name: "size",
+        type: "Number",
+        default: "160",
+        desc: "二维码大小",
+        required: "N",
+      },
+      {
+        name: "status",
+        type: "String",
+        default: "active",
+        desc: '二维码状态。可选项：active/expired/loading/scanned。TS 类型：`QRStatus` `type QRStatus = "active" \\',
+        required: '"expired" \\',
+      },
+      {
+        name: "status-render",
+        type: "Slot",
+        default: "-",
+        desc: "自定义状态渲染器。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/qrcode/type.ts)",
+        required: "N",
+      },
+      {
+        name: "value",
+        type: "String",
+        default: "-",
+        desc: "扫描后的文本",
         required: "N",
       },
     ],

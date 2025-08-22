@@ -11,7 +11,7 @@
     <img alt="tdesign-miniprogram-snippets Repo stars" src="https://img.shields.io/github/stars/septwong/tdesign-miniprogram-snippets">
 </a> -->
 
-> A TDesign WeChat MiniProgram code snippets plugin for VS Code.
+<!-- > A TDesign WeChat MiniProgram code snippets plugin for VS Code. -->
 
 <!-- providing autocompletion for TDesign components in WeChat MiniProgram projects. -->
 

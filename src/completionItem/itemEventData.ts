@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-12-31 11:48:03
+ * @LastEditTime: 2025-08-27 14:17:28
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemEventData.ts
  * @Description:
  */
@@ -34,6 +34,11 @@ export const CompletionEventData: CompletionEventObject = {
         description: "新的一次性订阅消息下发机制回调，`open-type=liveActivity` 时有效",
       },
       {
+        name: "createliveactivity",
+        params: "\\-",
+        description: "新的一次性订阅消息下发机制回调，`open-type=liveActivity` 时有效",
+      },
+      {
         name: "error",
         params: "\\-",
         description: "原生按钮属性，当使用开放能力时，发生错误的回调，`open-type=launchApp` 时有效",
@@ -43,6 +48,12 @@ export const CompletionEventData: CompletionEventObject = {
         params: "\\-",
         description:
           "原生按钮属性，手机号快速验证回调，open-type=getPhoneNumber时有效。Tips：在触发 bindgetphonenumber 回调后应立即隐藏手机号按钮组件，或置为 disabled 状态，避免用户重复授权手机号产生额外费用",
+      },
+      {
+        name: "getrealtimephonenumber",
+        params: "\\-",
+        description:
+          "原生按钮属性，手机号实时验证回调，open-type=getRealtimePhoneNumber 时有效。Tips：在触发 bindgetrealtimephonenumber 回调后应立即隐藏手机号按钮组件，或置为 disabled 状态，避免用户重复授权手机号产生额外费用",
       },
       {
         name: "getrealtimephonenumber",
@@ -127,6 +138,15 @@ export const CompletionEventData: CompletionEventObject = {
         name: "success",
         params: "\\-",
         description: "页面链接跳转成功后触发",
+      },
+    ],
+  },
+  "t-qrcode": {
+    attrs: [
+      {
+        name: "refresh",
+        params: "\\-",
+        description: "点击`点击刷新`的回调",
       },
     ],
   },

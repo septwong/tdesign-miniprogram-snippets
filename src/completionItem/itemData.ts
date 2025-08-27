@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-08-07 12:11:53
+ * @LastEditTime: 2025-08-27 14:13:20
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description:
  */
@@ -3413,6 +3413,13 @@ export const CompletionData: CompletionObject = {
         type: "Number",
         default: "-1",
         desc: "指定 focus 时的光标位置",
+        required: "N",
+      },
+      {
+        name: "cursor-color",
+        type: "String",
+        default: "#0052d9",
+        desc: "【试验性】光标颜色，仅在 Skyline 下有效",
         required: "N",
       },
       {

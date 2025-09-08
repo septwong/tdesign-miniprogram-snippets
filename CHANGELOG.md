@@ -3,19 +3,19 @@
 <!-- All notable changes to the "tdesign-miniprogram-snippets" extension will be documented in this file. -->
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
-<!-- 
-## [Unreleased]
 
-- Initial release -->
+<!-- ## [Unreleased]
 
-<!-- ## Prerelease -->
+- Initial release
 
-<!-- - Nothing yet! -->
+## Prerelease
 
-<!-- #### Unreleased -->
+- Nothing yet!
 
-<!-- - `wxml` 组件标签悬停提示 -->
-<!-- - `js` 通用代码片段
+#### Unreleased
+
+- `wxml` 组件标签悬停提示
+- `js` 通用代码片段
 - `wxss` 通用代码片段 -->
 
 #### `1.0.19` 2025-08-27
@@ -25,7 +25,6 @@
 #### `1.0.18` 2025-08-07
 
 - 支持 TDesign `🌈 1.10.0` `2025-08-01` 版本
-
 
 #### `1.0.17` 2025-07-15
 

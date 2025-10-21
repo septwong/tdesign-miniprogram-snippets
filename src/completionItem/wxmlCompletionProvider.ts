@@ -1,3 +1,12 @@
+/*
+ * @Author: Wong septwong@foxmail.com
+ * @Date: 2024-12-27 15:59:15
+ * @LastEditors: Wong septwong@foxmail.com
+ * @LastEditTime: 2025-10-21 18:49:32
+ * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/wxmlCompletionProvider.ts
+ * @Description:
+ */
+
 import * as vscode from "vscode";
 import { Config } from "../config";
 import { CompletionData } from "./itemData";
@@ -180,7 +189,7 @@ export class WxmlCompletionProvider implements vscode.CompletionItemProvider {
           }
         }
       }
-      // Events
+      // // Events
       // if (tagName in CompletionEventData) {
       //   const tagData = CompletionEventData[tagName as keyof typeof CompletionEventData];
       //   for (const attrObj of tagData.attrs) {
@@ -189,7 +198,7 @@ export class WxmlCompletionProvider implements vscode.CompletionItemProvider {
       //     }
       //   }
       // }
-      // External Classes
+      // // External Classes
       // if (tagName in CompletionClassData) {
       //   const tagData = CompletionClassData[tagName as keyof typeof CompletionClassData];
       //   for (const attrObj of tagData.attrs) {
@@ -198,7 +207,7 @@ export class WxmlCompletionProvider implements vscode.CompletionItemProvider {
       //     }
       //   }
       // }
-      // CSS Variables
+      // // CSS Variables
       // if (tagName in CompletionCssData) {
       //   const tagData = CompletionCssData[tagName as keyof typeof CompletionCssData];
       //   for (const attrObj of tagData.attrs) {

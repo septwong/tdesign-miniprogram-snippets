@@ -2,8 +2,8 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-10-21 18:30:27
- * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
+ * @LastEditTime: 2025-10-21 19:11:18
+ * @FilePath: /tdesign-miniprogram-snippets/packages/components/completionItem/itemData.ts
  * @Description:
  */
 import { type CompletionObject } from "./types";
@@ -45,7 +45,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "按钮内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "按钮内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -124,7 +124,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "透传 Loading 组件全部属性。TS 类型：`LoadingProps`，[Loading API Documents](./loading?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/button/type.ts)",
+          "透传 Loading 组件全部属性。TS 类型：`LoadingProps`，[Loading API Documents](./loading?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/button/type.ts)",
         required: "N",
       },
       {
@@ -198,7 +198,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "右侧内容，可用于定义右侧图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "右侧内容，可用于定义右侧图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -259,7 +259,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "子元素。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "子元素。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -299,7 +299,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "透传至 Button 组件。TS 类型：`ButtonProps`，[Button API Documents](./button?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/fab/type.ts)",
+          "透传至 Button 组件。TS 类型：`ButtonProps`，[Button API Documents](./button?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/fab/type.ts)",
         required: "N",
       },
       {
@@ -464,7 +464,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "链接内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "链接内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -494,7 +494,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "-",
         description:
-          "前置图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "前置图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -502,7 +502,7 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "medium",
         description:
-          "尺寸。可选项：small/medium/large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "尺寸。可选项：small/medium/large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -517,7 +517,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "-",
         description:
-          "后置图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "后置图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -566,7 +566,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Boolean / Object / Slot",
         default: "true",
         description:
-          "图标。值为 `false` 表示不显示图标。不传表示使用默认图标 `'backtop'`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "图标。值为 `false` 表示不显示图标。不传表示使用默认图标 `'backtop'`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -634,7 +634,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "`0.29.0`。抽屉的底部。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "`0.29.0`。抽屉的底部。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -642,7 +642,7 @@ export const CompletionData: CompletionObject = {
         type: "Array",
         default: "-",
         description:
-          "抽屉里的列表项。TS 类型：`DrawerItem[] ` `interface DrawerItem { title: string; icon: string; }。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/drawer/type.ts)`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/drawer/type.ts)",
+          "抽屉里的列表项。TS 类型：`DrawerItem[] ` `interface DrawerItem { title: string; icon: string; }。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/drawer/type.ts)`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/drawer/type.ts)",
         required: "N",
       },
       {
@@ -672,7 +672,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "`0.29.0`。抽屉的标题。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "`0.29.0`。抽屉的标题。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -732,15 +732,15 @@ export const CompletionData: CompletionObject = {
         name: "index-list",
         type: "Array",
         default: "-",
-        description: "`0.32.0`。索引字符列表。不传默认 `A-Z`。TS 类型：`string [] \\",
-        required: "number[]`",
+        description: "`0.32.0`。索引字符列表。不传默认 `A-Z`。TS 类型：`Array<string | number>`",
+        required: "N",
       },
       {
         name: "list",
         type: "Array",
         default: "[]",
         description:
-          "已废弃。索引列表的列表数据。每个元素包含三个子元素，index(string)：索引值，例如1，2，3，...或A，B，C等；title(string): 索引标题，可不填将默认设为索引值；children(Array<{title: string}>): 子元素列表，title为子元素的展示文案。TS 类型：`ListItem[] ` `interface ListItem { title: string;  index: string;  children: { title: string; [key: string]: any} [] }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/indexes/type.ts)",
+          "已废弃。索引列表的列表数据。每个元素包含三个子元素，index(string)：索引值，例如1，2，3，...或A，B，C等；title(string): 索引标题，可不填将默认设为索引值；children(Array<{title: string}>): 子元素列表，title为子元素的展示文案。TS 类型：`ListItem[] ` `interface ListItem { title: string;  index: string;  children: { title: string; [key: string]: any} [] }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/indexes/type.ts)",
         required: "N",
       },
       {
@@ -798,7 +798,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "左侧胶囊区域。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "左侧胶囊区域。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -821,7 +821,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "`0.26.0`。左侧内容区域。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "`0.26.0`。左侧内容区域。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -836,7 +836,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "页面标题。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "页面标题。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -908,7 +908,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "透传至 Badge 组件。TS 类型：`BadgeProps`，[Badge API Documents](./badge?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/side-bar-item/type.ts)",
+          "透传至 Badge 组件。TS 类型：`BadgeProps`，[Badge API Documents](./badge?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/side-bar-item/type.ts)",
         required: "N",
       },
       {
@@ -1031,7 +1031,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "''",
         description:
-          "步骤描述。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "步骤描述。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -1039,7 +1039,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "图标。传入 slot 代表使用插槽，其他字符串代表使用内置图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "图标。传入 slot 代表使用插槽，其他字符串代表使用内置图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -1047,15 +1047,15 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "default",
         description:
-          "当前步骤的状态：默认状态（未开始）、进行中状态、完成状态、错误状态。可选项：default/process/finish/error。TS 类型：`StepStatus` `type StepStatus = 'default' \\",
-        required: "'process' \\",
+          "当前步骤的状态：默认状态（未开始）、进行中状态、完成状态、错误状态。可选项：default/process/finish/error。TS 类型：`StepStatus` `type StepStatus = 'default' | 'process' | 'finish' | 'error'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/step-item/type.ts)",
+        required: "N",
       },
       {
         name: "sub-step-items",
         type: "Array",
         default: "[]",
         description:
-          "已废弃。子步骤条，仅支持 layout  = 'vertical' 时。TS 类型：`SubStepItem[]` `interface SubStepItem { status: StepStatus, title: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/step-item/type.ts)",
+          "已废弃。子步骤条，仅支持 layout  = 'vertical' 时。TS 类型：`SubStepItem[]` `interface SubStepItem { status: StepStatus, title: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/step-item/type.ts)",
         required: "N",
       },
       {
@@ -1063,7 +1063,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "''",
         description:
-          "标题。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "标题。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
     ],
@@ -1130,15 +1130,15 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "String / Number / Array",
         default: "-",
-        description: "当前选中标签的索引。TS 类型：`string \\",
-        required: "number \\",
+        description: "当前选中标签的索引。TS 类型：`string | number | Array<string | number>`",
+        required: "N",
       },
       {
         name: "default-value",
         type: "String / Number / Array",
         default: "undefined",
-        description: "当前选中标签的索引。非受控属性。TS 类型：`string \\",
-        required: "number \\",
+        description: "当前选中标签的索引。非受控属性。TS 类型：`string | number | Array<string | number>`",
+        required: "N",
       },
     ],
   },
@@ -1163,7 +1163,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "图标右上角提示信息。TS 类型：`BadgeProps`，[Badge API Documents](./badge?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/tab-bar-item/type.ts)",
+          "图标右上角提示信息。TS 类型：`BadgeProps`，[Badge API Documents](./badge?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/tab-bar-item/type.ts)",
         required: "N",
       },
       {
@@ -1171,7 +1171,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "-",
         description:
-          "图标名称。传入对象时透传至 Icon 组件。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "图标名称。传入对象时透传至 Icon 组件。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -1179,7 +1179,7 @@ export const CompletionData: CompletionObject = {
         type: "Array",
         default: "-",
         description:
-          "二级菜单。TS 类型：`SubTabBarItem[] ` `interface SubTabBarItem { value: string; label: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/tab-bar-item/type.ts)",
+          "二级菜单。TS 类型：`SubTabBarItem[] ` `interface SubTabBarItem { value: string; label: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/tab-bar-item/type.ts)",
         required: "N",
       },
       {
@@ -1212,7 +1212,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "动画效果设置。其中 duration 表示动画时长。（单位：秒）。TS 类型：`TabAnimation` `type TabAnimation = { duration: number } & Record<string, any>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/tabs/type.ts)",
+          "动画效果设置。其中 duration 表示动画时长。（单位：秒）。TS 类型：`TabAnimation` `type TabAnimation = { duration: number } & Record<string, any>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/tabs/type.ts)",
         required: "N",
       },
       {
@@ -1227,7 +1227,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "中间内容，介于头部和内容之间。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "中间内容，介于头部和内容之间。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -1263,7 +1263,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "透传至 Sticky 组件。TS 类型：`StickyProps`，[Sticky API Documents](./sticky?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/tabs/type.ts)",
+          "透传至 Sticky 组件。TS 类型：`StickyProps`，[Sticky API Documents](./sticky?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/tabs/type.ts)",
         required: "N",
       },
       {
@@ -1284,17 +1284,17 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "String / Number",
         default: "-",
-        description: "激活的选项卡值。TS 类型：`TabValue` `type TabValue = string \\",
+        description: "激活的选项卡值。TS 类型：`TabValue` `type TabValue = string | number`。",
         required:
-          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/tabs/type.ts)",
+          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/tabs/type.ts)",
       },
       {
         name: "default-value",
         type: "String / Number",
         default: "undefined",
-        description: "激活的选项卡值。非受控属性。TS 类型：`TabValue` `type TabValue = string \\",
+        description: "激活的选项卡值。非受控属性。TS 类型：`TabValue` `type TabValue = string | number`。",
         required:
-          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/tabs/type.ts)",
+          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/tabs/type.ts)",
       },
     ],
   },
@@ -1354,7 +1354,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "用于自定义选项卡面板内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "用于自定义选项卡面板内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -1362,7 +1362,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Number",
         default: "-",
         description:
-          "选项卡的值，唯一标识。TS 类型：`TabValue`，[Tabs API Documents](./tabs?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/tab-panel/type.ts)",
+          "选项卡的值，唯一标识。TS 类型：`TabValue`，[Tabs API Documents](./tabs?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/tab-panel/type.ts)",
         required: "N",
       },
     ],
@@ -1396,7 +1396,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "''",
         description:
-          "确认按钮。值为 null 则不显示确认按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/calendar/type.ts)",
+          "确认按钮。值为 null 则不显示确认按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/calendar/type.ts)",
         required: "N",
       },
       {
@@ -1411,15 +1411,15 @@ export const CompletionData: CompletionObject = {
         type: "Function",
         default: "-",
         description:
-          "用于格式化日期的函数。TS 类型：`CalendarFormatType ` `type CalendarFormatType = (day: TDate) => TDate` `type TDateType = 'selected' \\",
-        required: "'disabled' \\",
+          "用于格式化日期的函数。TS 类型：`CalendarFormatType ` `type CalendarFormatType = (day: TDate) => TDate type TDateType = 'selected' | 'disabled' | 'start' | 'centre' | 'end' | '' interface TDate { date: Date; day: number; type: TDateType; className?: string; prefix?: string; suffix?: string;}`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/calendar/type.ts)",
+        required: "N",
       },
       {
         name: "locale-text",
         type: "Object",
         default: "-",
         description:
-          "国际化文案。TS 类型：`CalendarLocaleText` `interface CalendarLocaleText {title?: string; weekdays?: string[]; monthTitle?: string; months?: string[]; confirm?: string;}`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/calendar/type.ts)",
+          "国际化文案。TS 类型：`CalendarLocaleText` `interface CalendarLocaleText {title?: string; weekdays?: string[]; monthTitle?: string; months?: string[]; confirm?: string;}`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/calendar/type.ts)",
         required: "N",
       },
       {
@@ -1456,7 +1456,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "标题，不传默认为“请选择日期”。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "标题，不传默认为“请选择日期”。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -1484,16 +1484,17 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "Number / Array",
         default: "-",
-        description: "当前选择的日期，不传则默认今天，当 type = multiple 或 range 时传入数组。TS 类型：`number \\",
-        required: "number[]`",
+        description:
+          "当前选择的日期，不传则默认今天，当 type = multiple 或 range 时传入数组。TS 类型：`number | number[]`",
+        required: "N",
       },
       {
         name: "default-value",
         type: "Number / Array",
         default: "undefined",
         description:
-          "当前选择的日期，不传则默认今天，当 type = multiple 或 range 时传入数组。非受控属性。TS 类型：`number \\",
-        required: "number[]`",
+          "当前选择的日期，不传则默认今天，当 type = multiple 或 range 时传入数组。非受控属性。TS 类型：`number | number[]`",
+        required: "N",
       },
       {
         name: "visible",
@@ -1532,7 +1533,7 @@ export const CompletionData: CompletionObject = {
         type: "Boolean / Slot",
         default: "true",
         description:
-          "关闭按钮。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "关闭按钮。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -1540,7 +1541,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "1.9.1。头部。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "1.9.1。头部。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -1548,7 +1549,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "用来定义 value / label 在 `options` 中对应的字段别名。TS 类型：`KeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "用来定义 value / label 在 `options` 中对应的字段别名。TS 类型：`KeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -1584,7 +1585,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "标题。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "标题。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -1666,7 +1667,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "多选框内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "多选框内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -1689,8 +1690,8 @@ export const CompletionData: CompletionObject = {
         type: "String / Array",
         default: "'circle'",
         description:
-          "自定义选中图标和非选中图标。使用 Array 时表示：`[选中态图标，非选中态图标，半选中态图标]`。使用 String 时，值为 circle 表示填充圆形图标、值为 line 表示描边型图标、值为 rectangle 表示填充矩形图标。TS 类型：`'circle' \\",
-        required: "'line' \\",
+          "自定义选中图标和非选中图标。使用 Array 时表示：`[选中态图标，非选中态图标，半选中态图标]`。使用 String 时，值为 circle 表示填充圆形图标、值为 line 表示描边型图标、值为 rectangle 表示填充矩形图标。TS 类型：`'circle' | 'line' | 'rectangle' | string[]`",
+        required: "N",
       },
       {
         name: "indeterminate",
@@ -1704,7 +1705,8 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "主文案。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "主文案。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
+
         required: "N",
       },
       {
@@ -1786,7 +1788,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "用来定义 value / label 在 `options` 中对应的字段别名。TS 类型：`KeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "用来定义 value / label 在 `options` 中对应的字段别名。TS 类型：`KeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -1869,7 +1871,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "底部插槽，仅在 `usePopup` 为 `true` 时有效。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "底部插槽，仅在 `usePopup` 为 `true` 时有效。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -1885,7 +1887,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "顶部插槽，仅在 `usePopup` 为 `true` 时有效。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "顶部插槽，仅在 `usePopup` 为 `true` 时有效。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -1893,7 +1895,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "{}",
         description:
-          "popupProps透传。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/color-picker/type.ts)",
+          "popupProps透传。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/color-picker/type.ts)",
         required: "N",
       },
       {
@@ -1909,9 +1911,9 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "base",
         description:
-          "颜色选择器类型。（base 表示仅展示系统预设内容; multiple 表示展示色板和系统预设内容。可选项：base/multiple。TS 类型：`TypeEnum ` `type TypeEnum = 'base' \\",
+          "颜色选择器类型。（base 表示仅展示系统预设内容; multiple 表示展示色板和系统预设内容。可选项：base/multiple。TS 类型：`TypeEnum ` `type TypeEnum = 'base' | 'multiple'`。",
         required:
-          "'multiple'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/color-picker/type.ts)",
+          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/color-picker/type.ts)",
       },
       {
         name: "use-popup",
@@ -2006,7 +2008,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "底部内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "底部内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2030,7 +2032,7 @@ export const CompletionData: CompletionObject = {
         type: "Boolean / Slot",
         default: "true",
         description:
-          "头部内容。值为 true 显示空白头部，值为 false 不显示任何内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "头部内容。值为 true 显示空白头部，值为 false 不显示任何内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2046,7 +2048,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "{}",
         description:
-          "透传 `Popup` 组件全部属性。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/date-time-picker/type.ts)",
+          "透传 `Popup` 组件全部属性。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/date-time-picker/type.ts)",
         required: "N",
       },
       {
@@ -2090,7 +2092,7 @@ export const CompletionData: CompletionObject = {
         default: "-",
         description: "选中值。TS 类型：`DateValue` `type DateValue = string \\",
         required:
-          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/date-time-picker/type.ts)",
+          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/date-time-picker/type.ts)",
       },
       {
         name: "default-value",
@@ -2098,7 +2100,7 @@ export const CompletionData: CompletionObject = {
         default: "undefined",
         description: "选中值。非受控属性。TS 类型：`DateValue` `type DateValue = string \\",
         required:
-          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/date-time-picker/type.ts)",
+          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/date-time-picker/type.ts)",
       },
       {
         name: "visible",
@@ -2238,7 +2240,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "`1.9.1`。右侧额外内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "`1.9.1`。右侧额外内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2253,7 +2255,7 @@ export const CompletionData: CompletionObject = {
         type: "Function",
         default: "-",
         description:
-          "指定输入框展示值的格式。TS 类型：`InputFormatType` `type InputFormatType = (value: InputValue) => string`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/input/type.ts)",
+          "指定输入框展示值的格式。TS 类型：`InputFormatType` `type InputFormatType = (value: InputValue) => string`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/input/type.ts)",
         required: "N",
       },
       {
@@ -2268,7 +2270,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "左侧文本。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "左侧文本。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2327,7 +2329,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "-",
         description:
-          "组件前置图标。值为字符串表示图标名称，值为 `Object` 类型，表示透传至 `icon`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "组件前置图标。值为字符串表示图标名称，值为 `Object` 类型，表示透传至 `icon`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2412,7 +2414,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "后置图标前的后置内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "后置图标前的后置内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2420,7 +2422,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "-",
         description:
-          "后置文本内容。值为字符串则表示图标名称，值为 `Object` 类型，表示透传至 `icon`。。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "后置文本内容。值为字符串则表示图标名称，值为 `Object` 类型，表示透传至 `icon`。。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2428,7 +2430,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "输入框下方提示文本，会根据不同的 `status` 呈现不同的样式。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "输入框下方提示文本，会根据不同的 `status` 呈现不同的样式。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2442,17 +2444,17 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "String / Number",
         default: "-",
-        description: "输入框的值。TS 类型：`InputValue` `type InputValue = string \\",
+        description: "输入框的值。TS 类型：`InputValue` `type InputValue = string | number`。",
         required:
-          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/input/type.ts)",
+          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/input/type.ts)",
       },
       {
         name: "default-value",
         type: "String / Number",
         default: "undefined",
-        description: "输入框的值。非受控属性。TS 类型：`InputValue` `type InputValue = string \\",
+        description: "输入框的值。非受控属性。TS 类型：`InputValue` `type InputValue = string | number`。",
         required:
-          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/input/type.ts)",
+          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/input/type.ts)",
       },
     ],
   },
@@ -2498,7 +2500,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "用于处理空数据场景。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "用于处理空数据场景。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2506,7 +2508,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "底部内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "底部内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2514,7 +2516,7 @@ export const CompletionData: CompletionObject = {
         type: "Boolean / Slot",
         default: "true",
         description:
-          "头部内容。值为 true 显示空白头部，值为 false 不显示任何内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "头部内容。值为 true 显示空白头部，值为 false 不显示任何内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2529,7 +2531,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "用来定义 value / label / icon 在 `options` 中对应的字段别名。TS 类型：`KeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "用来定义 value / label / icon 在 `options` 中对应的字段别名。TS 类型：`KeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2537,7 +2539,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "{}",
         description:
-          "透传 `Popup` 组件全部属性。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/picker/type.ts)",
+          "透传 `Popup` 组件全部属性。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/picker/type.ts)",
         required: "N",
       },
       {
@@ -2566,14 +2568,16 @@ export const CompletionData: CompletionObject = {
         type: "Array",
         default: "-",
         description: "选中值。TS 类型：`Array<PickerValue>` `type PickerValue = string | number`。",
-        required: "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/picker/type.ts)",
+        required:
+          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/picker/type.ts)",
       },
       {
         name: "default-value",
         type: "Array",
         default: "undefined",
         description: "选中值。非受控属性。TS 类型：`Array<PickerValue>` `type PickerValue = string | number`。",
-        required: "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/picker/type.ts)",
+        required:
+          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/picker/type.ts)",
       },
       {
         name: "visible",
@@ -2613,7 +2617,8 @@ export const CompletionData: CompletionObject = {
         default: "[]",
         description:
           "数据源。TS 类型：`PickerItemOption[]` `interface PickerItemOption { label: string; value: string | number; icon?: string }`。",
-        required: "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/picker-item/type.ts)",
+        required:
+          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/picker-item/type.ts)",
       },
     ],
   },
@@ -2666,7 +2671,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "单选内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "单选内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2696,7 +2701,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "主文案。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "主文案。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2794,7 +2799,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "用来定义 value / label 在 `options` 中对应的字段别名。TS 类型：`KeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "用来定义 value / label 在 `options` 中对应的字段别名。TS 类型：`KeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2981,7 +2986,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "''",
         description:
-          "自定义右侧操作按钮文字。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "自定义右侧操作按钮文字。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -3074,7 +3079,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "'search'",
         description:
-          "左侧图标。如果需要使用 `Slot` 进行自定义，必须将该值设置为假值。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "左侧图标。如果需要使用 `Slot` 进行自定义，必须将该值设置为假值。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -3126,7 +3131,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "'close-circle-filled'",
         description:
-          "已废弃。右侧图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "已废弃。右侧图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -3266,14 +3271,16 @@ export const CompletionData: CompletionObject = {
         type: "Number / Array",
         default: "0",
         description: "滑块值。TS 类型：`SliderValue` `type SliderValue = number | Array<number>`。",
-        required: "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/slider/type.ts)",
+        required:
+          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/slider/type.ts)",
       },
       {
         name: "default-value",
         type: "Number / Array",
         default: "undefined",
         description: "滑块值。非受控属性。TS 类型：`SliderValue` `type SliderValue = number | Array<number>`。",
-        required: "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/slider/type.ts)",
+        required:
+          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/slider/type.ts)",
       },
       {
         name: "vertical",
@@ -3348,7 +3355,7 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "medium",
         description:
-          "组件尺寸。可选项：small/medium/large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "组件尺寸。可选项：small/medium/large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -3592,7 +3599,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "左侧文本。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "左侧文本。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -3664,7 +3671,7 @@ export const CompletionData: CompletionObject = {
         default: "-",
         description: "文本框值。TS 类型：`TextareaValue` `type TextareaValue = string \\",
         required:
-          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/textarea/type.ts)",
+          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/textarea/type.ts)",
       },
       {
         name: "default-value",
@@ -3672,7 +3679,7 @@ export const CompletionData: CompletionObject = {
         default: "undefined",
         description: "文本框值。非受控属性。TS 类型：`TextareaValue` `type TextareaValue = string \\",
         required:
-          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/textarea/type.ts)",
+          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/textarea/type.ts)",
       },
     ],
   },
@@ -3704,7 +3711,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "用来定义 `value / label / disabled / children` 在 `options` 数据中对应的字段别名，示例：`{ value: 'key', label: 'name', children: 'list' }`。TS 类型：`TreeKeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "用来定义 `value / label / disabled / children` 在 `options` 数据中对应的字段别名，示例：`{ value: 'key', label: 'name', children: 'list' }`。TS 类型：`TreeKeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -3765,7 +3772,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "添加按钮内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "添加按钮内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -3835,7 +3842,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "透传 Image 组件全部属性。TS 类型：`ImageProps`，[Image API Documents](./image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/upload/type.ts)",
+          "透传 Image 组件全部属性。TS 类型：`ImageProps`，[Image API Documents](./image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/upload/type.ts)",
         required: "N",
       },
       {
@@ -3851,7 +3858,7 @@ export const CompletionData: CompletionObject = {
         default: "['image', 'video']",
         description: "支持上传的文件类型，图片或视频。TS 类型：`Array<MediaType>` `type MediaType = 'image' \\",
         required:
-          "'video'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/upload/type.ts)",
+          "'video'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/upload/type.ts)",
       },
       {
         name: "preview",
@@ -3893,7 +3900,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "{ backTransition: true, duration: 300, timingFunction: 'ease' }",
         description:
-          "拖拽位置移动时的过渡参数,`duration`单位为ms。TS 类型：`Transition` `interface Transition { backTransition?: boolean, duration?: number, timingFunction?: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/upload/type.ts)",
+          "拖拽位置移动时的过渡参数,`duration`单位为ms。TS 类型：`Transition` `interface Transition { backTransition?: boolean, duration?: number, timingFunction?: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/upload/type.ts)",
         required: "N",
       },
     ],
@@ -3927,7 +3934,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "头像右上角提示信息，继承 Badge 组件的全部特性。如：小红点，或者数字。TS 类型：`BadgeProps`，[Badge API Documents](./badge?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/avatar/type.ts)",
+          "头像右上角提示信息，继承 Badge 组件的全部特性。如：小红点，或者数字。TS 类型：`BadgeProps`，[Badge API Documents](./badge?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/avatar/type.ts)",
         required: "N",
       },
       {
@@ -3963,7 +3970,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "透传至 Image 组件。TS 类型：`ImageProps`，[Image API Documents](./image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/avatar/type.ts)",
+          "透传至 Image 组件。TS 类型：`ImageProps`，[Image API Documents](./image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/avatar/type.ts)",
         required: "N",
       },
       {
@@ -3971,7 +3978,7 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "-",
         description:
-          "形状。优先级高于 AvatarGroup.shape 。Avatar 单独存在时，默认值为 circle。如果父组件 AvatarGroup 存在，默认值便由 AvatarGroup.shape 决定。可选项：circle/round。TS 类型：`ShapeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "形状。优先级高于 AvatarGroup.shape 。Avatar 单独存在时，默认值为 circle。如果父组件 AvatarGroup 存在，默认值便由 AvatarGroup.shape 决定。可选项：circle/round。TS 类型：`ShapeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4007,14 +4014,14 @@ export const CompletionData: CompletionObject = {
         description:
           "图片之间的层叠关系，可选值：左侧图片在上和右侧图片在上。可选项：left-up/right-up。TS 类型：`CascadingValue` `type CascadingValue = 'left-up' \\",
         required:
-          "'right-up'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/avatar-group/type.ts)",
+          "'right-up'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/avatar-group/type.ts)",
       },
       {
         name: "collapse-avatar",
         type: "String / Slot",
         default: "-",
         description:
-          "头像数量超出时，会出现一个头像折叠元素。该元素内容可自定义。默认为 `+N`。示例：`+5`，`...`, `更多`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "头像数量超出时，会出现一个头像折叠元素。该元素内容可自定义。默认为 `+N`。示例：`+5`，`...`, `更多`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4029,7 +4036,7 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "-",
         description:
-          "形状。优先级低于 Avatar.shape。可选项：circle/round。TS 类型：`ShapeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "形状。优先级低于 Avatar.shape。可选项：circle/round。TS 类型：`ShapeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4076,7 +4083,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Number / Slot",
         default: "0",
         description:
-          "徽标右上角内容。可以是数字，也可以是文字。如：'new'/3/99+。特殊：值为空表示使用插槽渲染。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "徽标右上角内容。可以是数字，也可以是文字。如：'new'/3/99+。特殊：值为空表示使用插槽渲染。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4165,7 +4172,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "下方内容描述。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "下方内容描述。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4180,7 +4187,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "主图。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "主图。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4195,7 +4202,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "-",
         description:
-          "左侧图标，出现在单元格标题的左侧。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "左侧图标，出现在单元格标题的左侧。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4203,7 +4210,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "和标题同行的说明文字。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "和标题同行的说明文字。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4218,7 +4225,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "-",
         description:
-          "最右侧图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "最右侧图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4226,7 +4233,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "标题。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "标题。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4306,7 +4313,7 @@ export const CompletionData: CompletionObject = {
         default: "[]",
         description: "展开的面板集合。TS 类型：`CollapseValue` `type CollapseValue = Array<string \\",
         required:
-          "number>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/collapse/type.ts)",
+          "number>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/collapse/type.ts)",
       },
       {
         name: "default-value",
@@ -4314,7 +4321,7 @@ export const CompletionData: CompletionObject = {
         default: "undefined",
         description: "展开的面板集合。非受控属性。TS 类型：`CollapseValue` `type CollapseValue = Array<string \\",
         required:
-          "number>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/collapse/type.ts)",
+          "number>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/collapse/type.ts)",
       },
     ],
   },
@@ -4339,7 +4346,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "折叠面板内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "折叠面板内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4354,7 +4361,7 @@ export const CompletionData: CompletionObject = {
         type: "Boolean / Slot",
         default: "undefined",
         description:
-          "当前折叠面板展开图标，优先级大于 Collapse 的同名属性。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "当前折叠面板展开图标，优先级大于 Collapse 的同名属性。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4362,7 +4369,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "面板头内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "面板头内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4370,7 +4377,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "面板头左侧图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "面板头左侧图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4378,7 +4385,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "面板头的右侧区域，一般用于呈现面板操作。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "面板头的右侧区域，一般用于呈现面板操作。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4425,7 +4432,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "'default'",
         description:
-          "最终倒计时的展示内容，值为'default'时使用默认的格式，否则使用自定义样式插槽。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "最终倒计时的展示内容，值为'default'时使用默认的格式，否则使用自定义样式插槽。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4493,7 +4500,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "操作按钮。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "操作按钮。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4501,7 +4508,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "描述文字。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "描述文字。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4516,7 +4523,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "图片地址。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "图片地址。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N选项：default/round/square",
       },
       {
@@ -4564,7 +4571,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "图标配置。`logo.icon` 表示图标链接地址，`logo.title` 表示标题文本，`logo.url` 表示链接。TS 类型：`FooterLogo` `interface FooterLogo { icon: string; title?: string; url?: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/footer/type.ts)",
+          "图标配置。`logo.icon` 表示图标链接地址，`logo.title` 表示标题文本，`logo.url` 表示链接。TS 类型：`FooterLogo` `interface FooterLogo { icon: string; title?: string; url?: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/footer/type.ts)",
         required: "N",
       },
       {
@@ -4673,7 +4680,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "null",
         description:
-          "透传至 Badge 属性。TS 类型：`BadgeProps`，[Badge API Documents](./badge?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/grid-item/type.ts)",
+          "透传至 Badge 属性。TS 类型：`BadgeProps`，[Badge API Documents](./badge?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/grid-item/type.ts)",
         required: "N",
       },
       {
@@ -4681,7 +4688,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "文本以外的更多描述，辅助信息。可以通过 Props 传入文本，也可以自定义标题节点。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "文本以外的更多描述，辅助信息。可以通过 Props 传入文本，也可以自定义标题节点。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4696,7 +4703,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "图片，可以是图片地址，也可以自定义图片节点，值为 slot 的时候才能使用插槽。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "图片，可以是图片地址，也可以自定义图片节点，值为 slot 的时候才能使用插槽。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4704,7 +4711,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "透传至 Image 组件。TS 类型：`ImageProps`，[Image API Documents](./image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/grid-item/type.ts)",
+          "透传至 Image 组件。TS 类型：`ImageProps`，[Image API Documents](./image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/grid-item/type.ts)",
         required: "N",
       },
       {
@@ -4726,7 +4733,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "文本，可以通过 Props 传入文本，也可以自定义标题节点。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "文本，可以通过 Props 传入文本，也可以自定义标题节点。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4759,7 +4766,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "'default'",
         description:
-          "加载失败时显示的内容。值为 `default` 则表示使用默认加载失败风格；值为空或者 `slot` 表示使用插槽渲染，插槽名称为 `error`；值为其他则表示普通文本内容，如“加载失败”。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "加载失败时显示的内容。值为 `default` 则表示使用默认加载失败风格；值为空或者 `slot` 表示使用插槽渲染，插槽名称为 `error`；值为其他则表示普通文本内容，如“加载失败”。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4781,7 +4788,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "'default'",
         description:
-          "加载态内容。值为 `default` 则表示使用默认加载中风格；值为其他则表示普通文本内容，如“加载中”。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "加载态内容。值为 `default` 则表示使用默认加载中风格；值为其他则表示普通文本内容，如“加载中”。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4865,7 +4872,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Boolean / Object / Slot",
         default: "false",
         description:
-          "是否显示关闭操作，前提需要开启页码。值为字符串表示图标名称，值为 `true` 表示使用默认图标 `close`，值为 `Object` 类型，表示透传至 `icon` ，不传表示不显示图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "是否显示关闭操作，前提需要开启页码。值为字符串表示图标名称，值为 `true` 表示使用默认图标 `close`，值为 `Object` 类型，表示透传至 `icon` ，不传表示不显示图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4873,7 +4880,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Boolean / Object / Slot",
         default: "false",
         description:
-          "是否显示删除操作，前提需要开启页码。值为字符串表示图标名称，值为 `true` 表示使用默认图标 `delete`，值为 `Object` 类型，表示透传至 `icon`，不传表示不显示图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "是否显示删除操作，前提需要开启页码。值为字符串表示图标名称，值为 `true` 表示使用默认图标 `delete`，值为 `Object` 类型，表示透传至 `icon`，不传表示不显示图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -4949,7 +4956,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Boolean / Slot",
         default: "true",
         description:
-          "进度百分比，可自定义。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "进度百分比，可自定义。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -5076,7 +5083,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "自定义状态渲染器。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/qrcode/type.ts)",
+          "自定义状态渲染器。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/qrcode/type.ts)",
         required: "N",
       },
       {
@@ -5109,7 +5116,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "描述文字。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "描述文字。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -5125,7 +5132,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "图片地址。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "图片地址。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -5140,7 +5147,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "''",
         description:
-          "标题。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "标题。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
     ],
@@ -5333,7 +5340,7 @@ export const CompletionData: CompletionObject = {
         default: "-",
         description: "`0.32.0`。图片列表。TS 类型：`string[] \\",
         required:
-          "SwiperList[]` `interface SwiperList { value: string, ariaLabel: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/swiper/type.ts)",
+          "SwiperList[]` `interface SwiperList { value: string, ariaLabel: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/swiper/type.ts)",
       },
       {
         name: "loop",
@@ -5348,7 +5355,7 @@ export const CompletionData: CompletionObject = {
         default: "true",
         description: "导航器全部配置，true 的话使用默认配置。TS 类型：`SwiperNavProps \\",
         required:
-          "boolean`，[SwiperNav API Documents](./swiper-nav?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/swiper/type.ts)",
+          "boolean`，[SwiperNav API Documents](./swiper-nav?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/swiper/type.ts)",
       },
       {
         name: "next-margin",
@@ -5470,7 +5477,7 @@ export const CompletionData: CompletionObject = {
         type: "Boolean / Object / Slot",
         default: "false",
         description:
-          "标签是否可关闭。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "标签是否可关闭。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -5485,7 +5492,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "-",
         description:
-          "标签中的图标，可自定义图标呈现。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "标签中的图标，可自定义图标呈现。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -5581,7 +5588,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "-",
         description:
-          "标签图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "标签图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -5596,7 +5603,7 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "medium",
         description:
-          "标签尺寸。可选项：small/medium/large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "标签尺寸。可选项：small/medium/large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -5792,14 +5799,14 @@ export const CompletionData: CompletionObject = {
         default: "-",
         description: "必需。菜单项。TS 类型：`Array<string \\",
         required:
-          "ActionSheetItem>` `interface ActionSheetItem {label: string; color?: string; disabled?: boolean;icon?: string;suffixIcon?: string; }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/action-sheet/type.ts)",
+          "ActionSheetItem>` `interface ActionSheetItem {label: string; color?: string; disabled?: boolean;icon?: string;suffixIcon?: string; }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/action-sheet/type.ts)",
       },
       {
         name: "popup-props",
         type: "Object",
         default: "{}",
         description:
-          "popupProps透传。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/action-sheet/type.ts)",
+          "popupProps透传。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/action-sheet/type.ts)",
         required: "N",
       },
       {
@@ -5867,7 +5874,7 @@ export const CompletionData: CompletionObject = {
         type: "Array / Slot",
         default: "-",
         description:
-          "操作栏。TS 类型：`Array<ButtonProps>`，[Button API Documents](./button?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/dialog/type.ts)",
+          "操作栏。TS 类型：`Array<ButtonProps>`，[Button API Documents](./button?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/dialog/type.ts)",
         required: "N",
       },
       {
@@ -5882,7 +5889,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "-",
         description:
-          "取消按钮，可自定义。值为 null 则不显示取消按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。使用 Slot 自定义按钮时，需自行控制取消事件。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/dialog/type.ts)",
+          "取消按钮，可自定义。值为 null 则不显示取消按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。使用 Slot 自定义按钮时，需自行控制取消事件。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/dialog/type.ts)",
         required: "N",
       },
       {
@@ -5890,7 +5897,7 @@ export const CompletionData: CompletionObject = {
         type: "Boolean / Object",
         default: "false",
         description:
-          "`0.31.0`。是否展示关闭按钮，值为 `true` 显示默认关闭按钮；值为 `false` 则不显示关闭按钮；使用 Object 时透传至图标组件。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/dialog/type.ts)",
+          "`0.31.0`。是否展示关闭按钮，值为 `true` 显示默认关闭按钮；值为 `false` 则不显示关闭按钮；使用 Object 时透传至图标组件。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/dialog/type.ts)",
         required: "N",
       },
       {
@@ -5905,7 +5912,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "-",
         description:
-          "确认按钮。值为 null 则不显示确认按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。使用 Slot 自定义按钮时，需自行控制确认事件。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "确认按钮。值为 null 则不显示确认按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。使用 Slot 自定义按钮时，需自行控制确认事件。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -5913,7 +5920,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -5921,7 +5928,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "{}",
         description:
-          "透传至 Overlay 组件。TS 类型：`OverlayProps`，[Overlay API Documents](./overlay?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/dialog/type.ts)",
+          "透传至 Overlay 组件。TS 类型：`OverlayProps`，[Overlay API Documents](./overlay?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/dialog/type.ts)",
         required: "N",
       },
       {
@@ -5943,7 +5950,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "标题。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "标题。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6050,7 +6057,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "底部。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "底部。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6058,7 +6065,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "用来定义 value / label 在 `options` 中对应的字段别名。TS 类型：`KeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "用来定义 value / label 在 `options` 中对应的字段别名。TS 类型：`KeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6080,7 +6087,7 @@ export const CompletionData: CompletionObject = {
         type: "Array",
         default: "[]",
         description:
-          "选项数据。TS 类型：`Array<DropdownOption>` `interface DropdownOption { label: string; disabled: boolean; value: DropdownValue; }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/dropdown-item/type.ts)",
+          "选项数据。TS 类型：`Array<DropdownOption>` `interface DropdownOption { label: string; disabled: boolean; value: DropdownValue; }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/dropdown-item/type.ts)",
         required: "N",
       },
       {
@@ -6190,7 +6197,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "透传 下一步按钮 的全部属性，示例：{ content: '下一步', theme: 'primary' }。TS 类型：`ButtonProps`，[Button API Documents](./button?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/guide/type.ts)",
+          "透传 下一步按钮 的全部属性，示例：{ content: '下一步', theme: 'primary' }。TS 类型：`ButtonProps`，[Button API Documents](./button?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/guide/type.ts)",
         required: "N",
       },
       {
@@ -6273,7 +6280,7 @@ export const CompletionData: CompletionObject = {
         type: "Boolean / Slot",
         default: "true",
         description:
-          "加载指示符，值为 true 显示默认指示符，值为 false 则不显示，也可以自定义指示符。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "加载指示符，值为 true 显示默认指示符，值为 false 则不显示，也可以自定义指示符。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6330,7 +6337,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "加载提示文案。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "加载提示文案。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6363,7 +6370,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "已废弃。操作。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "已废弃。操作。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6373,14 +6380,14 @@ export const CompletionData: CompletionObject = {
         description:
           "文本对齐方式。可选项：left/center。TS 类型：`MessageAlignType` `type MessageAlignType = 'left' \\",
         required:
-          "'center'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/message/type.ts)",
+          "'center'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/message/type.ts)",
       },
       {
         name: "close-btn",
         type: "String / Boolean / Object / Slot",
         default: "false",
         description:
-          "关闭按钮，可以自定义。值为 true 显示默认关闭按钮，值为 false 不显示关闭按钮。值类型为 string ，如：'user'，则显示组件内置图标。值类型为 object ，则会透传至 icon 组件。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "关闭按钮，可以自定义。值为 true 显示默认关闭按钮，值为 false 不显示关闭按钮。值类型为 string ，如：'user'，则显示组件内置图标。值类型为 object ，则会透传至 icon 组件。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6388,7 +6395,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "用于自定义消息弹出内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "用于自定义消息弹出内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6410,7 +6417,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Boolean / Object / Slot",
         default: "true",
         description:
-          "消息提醒前面的图标，可以自定义。值为 true 则根据 theme 显示对应的图标，值为 false 则不显示图标。值为 true 显示默认关闭按钮，值为 false 不显示关闭按钮。值类型为 string ，如：'info'，则显示组件内置图标。值类型为 object ，则会透传至 icon 组件。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "消息提醒前面的图标，可以自定义。值为 true 则根据 theme 显示对应的图标，值为 false 则不显示图标。值为 true 显示默认关闭按钮，值为 false 不显示关闭按钮。值类型为 string ，如：'info'，则显示组件内置图标。值类型为 object ，则会透传至 icon 组件。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6418,7 +6425,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "-",
         description:
-          "链接名称。值为字符串表示链接名称，值为 `Object` 类型，表示透传至 `Link`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "链接名称。值为字符串表示链接名称，值为 `Object` 类型，表示透传至 `Link`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6428,7 +6435,7 @@ export const CompletionData: CompletionObject = {
         description:
           "跑马灯效果。speed 指速度控制；loop 指循环播放次数，值为 -1 表示循环播放，值为 0 表示不循环播放；delay 表示延迟多久开始播放。TS 类型：`boolean \\",
         required:
-          "MessageMarquee` `interface MessageMarquee { speed?: number; loop?: number; delay?: number }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/message/type.ts)",
+          "MessageMarquee` `interface MessageMarquee { speed?: number; loop?: number; delay?: number }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/message/type.ts)",
       },
       {
         name: "offset",
@@ -6497,7 +6504,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Array / Slot",
         default: "-",
         description:
-          "文本内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "文本内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6521,14 +6528,14 @@ export const CompletionData: CompletionObject = {
         description:
           "跑马灯效果。speed 指速度控制；loop 指循环播放次数，值为 -1 表示循环播放，值为 0 表示不循环播放；delay 表示延迟多久开始播放【仅在 direction='horizontal' 有效】。TS 类型：`boolean \\",
         required:
-          "NoticeBarMarquee` `interface NoticeBarMarquee { speed?: number; loop?: number; delay?: number }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/notice-bar/type.ts)",
+          "NoticeBarMarquee` `interface NoticeBarMarquee { speed?: number; loop?: number; delay?: number }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/notice-bar/type.ts)",
       },
       {
         name: "operation",
         type: "String / Slot",
         default: "-",
         description:
-          "右侧额外信息。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "右侧额外信息。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6536,7 +6543,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Boolean / Object / Slot",
         default: "true",
         description:
-          "前缀图标。值为字符串表示图标名称，值为 `false` 表示不显示前缀图标，值为 `Object` 类型，表示透传至 `icon`，不传表示使用主题图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "前缀图标。值为字符串表示图标名称，值为 `false` 表示不显示前缀图标，值为 `Object` 类型，表示透传至 `icon`，不传表示使用主题图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6544,7 +6551,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "-",
         description:
-          "后缀图标。值为字符串表示图标名称。值为 `Object` 类型，表示透传至 `icon`，不传表示不显示后缀图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "后缀图标。值为字符串表示图标名称。值为 `Object` 类型，表示透传至 `icon`，不传表示不显示后缀图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6651,7 +6658,7 @@ export const CompletionData: CompletionObject = {
         type: "Boolean / Slot",
         default: "-",
         description:
-          "关闭按钮，值类型为 Boolean 时表示是否显示关闭按钮。也可以自定义关闭按钮。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "关闭按钮，值类型为 Boolean 时表示是否显示关闭按钮。也可以自定义关闭按钮。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6666,7 +6673,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "浮层里面的内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "浮层里面的内容。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6681,7 +6688,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "{}",
         description:
-          "遮罩层的属性，透传至 overlay。TS 类型：`OverlayProps`，[Overlay API Documents](./overlay?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/popup/type.ts)",
+          "遮罩层的属性，透传至 overlay。TS 类型：`OverlayProps`，[Overlay API Documents](./overlay?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/popup/type.ts)",
         required: "N",
       },
       {
@@ -6785,7 +6792,7 @@ export const CompletionData: CompletionObject = {
         type: "Slot",
         default: "-",
         description:
-          "`1.2.10`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "`1.2.10`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6800,7 +6807,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "加载loading样式。TS 类型：`LoadingProps`，[Loading API Documents](./loading?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/pull-down-refresh/type.ts)",
+          "加载loading样式。TS 类型：`LoadingProps`，[Loading API Documents](./loading?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/pull-down-refresh/type.ts)",
         required: "N",
       },
       {
@@ -6912,7 +6919,7 @@ export const CompletionData: CompletionObject = {
         description:
           "右侧滑动操作项。有两种定义方式，一种是使用数组，二种是使用插槽。`right.text` 表示操作文本，`right.className` 表示操作项类名，`right.style` 表示操作项样式，`right.onClick` 表示点击操作项后执行的回调函数。示例：`[{ text: '删除', icon: 'delete', style: 'background-color: red', onClick: () => {} }]`。TS 类型：`Array<SwipeActionItem>` `interface SwipeActionItem {text?: string; icon?: string \\",
         required:
-          "object, className?: string; style?: string; onClick?: () => void; [key: string]: any }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/swipe-cell/type.ts)",
+          "object, className?: string; style?: string; onClick?: () => void; [key: string]: any }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/swipe-cell/type.ts)",
       },
     ],
   },
@@ -6951,7 +6958,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Slot",
         default: "-",
         description:
-          "自定义图标。传入对象则透传至 Icon 组件。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "自定义图标。传入对象则透传至 Icon 组件。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6959,7 +6966,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Slot",
         default: "-",
         description:
-          "弹窗显示文字。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/common/common.ts)",
+          "弹窗显示文字。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -6967,7 +6974,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "遮罩层属性，透传至 Overlay。TS 类型：`OverlayProps `，[Overlay API Documents](./overlay?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/tree/develop/src/toast/type.ts)",
+          "遮罩层属性，透传至 Overlay。TS 类型：`OverlayProps `，[Overlay API Documents](./overlay?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/toast/type.ts)",
         required: "N",
       },
       {

@@ -1,7 +1,7 @@
 https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/button/README.md
 
 <!-- Props -->
-name | type | default | desc | required
+name | type | default | description | required
 -- | -- | -- | -- | --
 style | Object | - | 样式 | N
 

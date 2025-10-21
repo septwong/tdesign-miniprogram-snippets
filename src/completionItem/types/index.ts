@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-12-31 10:23:00
+ * @LastEditTime: 2025-10-21 16:29:31
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/types/index.ts
  * @Description:
  */
@@ -12,7 +12,7 @@ export interface Attributes {
   name: string;
   type: string;
   default: string;
-  desc: string;
+  description:string;
   required: string;
   body?: string; // 可选 属性片段
 }

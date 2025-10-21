@@ -77,13 +77,13 @@ function createCompletionItem({
   name,
   type,
   default: defaultValue,
-  desc,
+  description,
   required,
 }: Attributes): vscode.CompletionItem {
   const item = new vscode.CompletionItem(name, vscode.CompletionItemKind.Property);
   // 设置详细信息
   item.detail = `${type} ` + (defaultValue ? `(默认: ${defaultValue})` : "");
-  item.documentation = new vscode.MarkdownString(desc + (required ? "\n\n**是否必填**: " + required : ""));
+  item.documentation = new vscode.MarkdownString(description + (required ? "\n\n**是否必填**: " + required : ""));
   // 设置插入的文本
   const snippet = `${name}=${defaultValue === "-" ? "'${1}'" : `'${defaultValue}'`}`;
   item.insertText = new vscode.SnippetString(snippet);
@@ -131,7 +131,7 @@ function createWxmlCompletionItem({
   name,
   type,
   default: defaultValue,
-  desc,
+  description,
   required,
   body,
 }: Attributes): vscode.CompletionItem {
@@ -144,11 +144,11 @@ function createWxmlCompletionItem({
   if (body) {
     let body_md = "```wxml\n" + body + "\n```";
     item.documentation = new vscode.MarkdownString(
-      desc + `\n\n${body_md}` + (required ? "\n\n**是否必填**: " + required : "")
+      description + `\n\n${body_md}` + (required ? "\n\n**是否必填**: " + required : "")
     );
     snippet = `${body}`;
   } else {
-    item.documentation = new vscode.MarkdownString(desc + (required ? "\n\n**是否必填**: " + required : ""));
+    item.documentation = new vscode.MarkdownString(description + (required ? "\n\n**是否必填**: " + required : ""));
     snippet = `${name}=${defaultValue === "-" ? "'${1}'" : `'${defaultValue}'`}`;
   }
   item.insertText = new vscode.SnippetString(snippet);

@@ -2,13 +2,14 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-31 10:19:00
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-12-31 11:48:36
+ * @LastEditTime: 2025-10-21 18:33:11
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemCssData.ts
  * @Description:
  */
 import { type CompletionCssObject } from "./types";
 
 export const CompletionCssData: CompletionCssObject = {
+  // 基础
   "t-button": {
     attrs: [
       {
@@ -633,5 +634,208 @@ export const CompletionCssData: CompletionCssObject = {
         description: "-",
       },
     ],
+  },
+  // 导航
+  "t-side-bar": {
+    attrs: [
+      {
+        name: "--td-side-bar-bg-color",
+        defaultValue: "@bg-color-secondarycontainer",
+        description: "-",
+      },
+      {
+        name: "--td-side-bar-height",
+        defaultValue: "100%",
+        description: "-",
+      },
+      {
+        name: "--td-side-bar-width",
+        defaultValue: "206rpx",
+        description: "-",
+      },
+      {
+        name: "--td-side-bar-active-color",
+        defaultValue: "@brand-color",
+        description: "-",
+      },
+      {
+        name: "--td-side-bar-border-radius",
+        defaultValue: "18rpx",
+        description: "-",
+      },
+      {
+        name: "--td-side-bar-color",
+        defaultValue: "@text-color-primary",
+        description: "-",
+      },
+      {
+        name: "--td-side-bar-disabled-color",
+        defaultValue: "@text-color-disabled",
+        description: "-",
+      },
+      {
+        name: "--td-side-bar-font-size",
+        defaultValue: "32rpx",
+        description: "-",
+      },
+      {
+        name: "--td-side-bar-icon-size",
+        defaultValue: "40rpx",
+        description: "-",
+      },
+      {
+        name: "--td-side-bar-item-height",
+        defaultValue: "auto",
+        description: "-",
+      },
+      {
+        name: "--td-side-bar-item-line-height",
+        defaultValue: "48rpx",
+        description: "-",
+      },
+    ],
+  },
+  // 输入
+  "t-textarea": {
+    attrs: [
+      {
+        name: "--td-textarea-background-color",
+        defaultValue: "@bg-color-container",
+        description: "-",
+      },
+      {
+        name: "--td-textarea-border-color",
+        defaultValue: "@component-border",
+        description: "-",
+      },
+      {
+        name: "--td-textarea-border-radius",
+        defaultValue: "@radius-default",
+        description: "-",
+      },
+      {
+        name: "--td-textarea-disabled-text-color",
+        defaultValue: "@text-color-disabled",
+        description: "-",
+      },
+      {
+        name: "--td-textarea-indicator-text-color",
+        defaultValue: "@text-color-placeholder",
+        description: "-",
+      },
+      {
+        name: "--td-textarea-label-color",
+        defaultValue: "@text-color-primary",
+        description: "-",
+      },
+      {
+        name: "--td-textarea-padding",
+        defaultValue: "32rpx",
+        description: "-",
+      },
+      {
+        name: "--td-textarea-placeholder-color",
+        defaultValue: "@text-color-placeholder",
+        description: "-",
+      },
+      {
+        name: "--td-textarea-text-color",
+        defaultValue: "@text-color-primary",
+        description: "-",
+      },
+    ],
+  },
+  // 数据展示
+  "t-qrcode": {
+    attrs: [
+      {
+        name: "--td-font-size-title-small",
+        defaultValue: "--td-font-size-title-small",
+        description: "-",
+      },
+      {
+        name: "--td-brand-color-hover",
+        defaultValue: "--td-brand-color-hover",
+        description: "-",
+      },
+      {
+        name: "--td-success-color",
+        defaultValue: "--td-success-color",
+        description: "-",
+      },
+    ],
+  },
+  "t-swiper": {
+    attrs: [
+      {
+        name: "--td-swiper-item-padding",
+        defaultValue: "0",
+        description: "-",
+      },
+      {
+        name: "--td-swiper-radius",
+        defaultValue: "@radius-large",
+        description: "-",
+      },
+      {
+        name: "--td-swiper-nav-btn-bg-color",
+        defaultValue: "@font-gray-3",
+        description: "-",
+      },
+      {
+        name: "--td-swiper-nav-btn-color",
+        defaultValue: "@text-color-anti",
+        description: "-",
+      },
+      {
+        name: "--td-swiper-nav-btn-size",
+        defaultValue: "48rpx",
+        description: "-",
+      },
+      {
+        name: "--td-swiper-nav-dot-active-color",
+        defaultValue: "@text-color-anti",
+        description: "-",
+      },
+      {
+        name: "--td-swiper-nav-dot-color",
+        defaultValue: "@font-white-2",
+        description: "-",
+      },
+      {
+        name: "--td-swiper-nav-dot-size",
+        defaultValue: "12rpx",
+        description: "-",
+      },
+      {
+        name: "--td-swiper-nav-dots-bar-active-width",
+        defaultValue: "40rpx",
+        description: "-",
+      },
+      {
+        name: "--td-swiper-nav-fraction-bg-color",
+        defaultValue: "@font-gray-3",
+        description: "-",
+      },
+      {
+        name: "--td-swiper-nav-fraction-color",
+        defaultValue: "@text-color-anti",
+        description: "-",
+      },
+      {
+        name: "--td-swiper-nav-fraction-font-size",
+        defaultValue: "24rpx",
+        description: "-",
+      },
+      {
+        name: "--td-swiper-nav-fraction-height",
+        defaultValue: "48rpx",
+        description: "-",
+      },
+    ],
+  },
+  // 反馈
+  "t-action-sheet": {
+    attrs: [],
   },
 };

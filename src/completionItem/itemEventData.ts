@@ -2,13 +2,14 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-08-27 14:17:28
+ * @LastEditTime: 2025-10-21 18:15:23
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemEventData.ts
  * @Description:
  */
 import { type CompletionEventObject } from "./types";
 
 export const CompletionEventData: CompletionEventObject = {
+  // 基础
   "t-button": {
     attrs: [
       {
@@ -141,6 +142,57 @@ export const CompletionEventData: CompletionEventObject = {
       },
     ],
   },
+  // 导航
+  "t-side-bar": {
+    attrs: [
+      {
+        name: "change",
+        params: "`(value: number | string, label: string)`",
+        description: "选项值发生变化时触发",
+      },
+      {
+        name: "click",
+        params: "`(value: number | string, label: string)`",
+        description: "点击选项时触发",
+      },
+    ],
+  },
+  // 输入
+  "t-textarea": {
+    attrs: [
+      {
+        name: "blur",
+        params: "`(value: TextareaValue, cursor: number)`",
+        description: "失去焦点时触发",
+      },
+      {
+        name: "change",
+        params: "`(value: TextareaValue, cursor: number)`",
+        description: "输入内容变化时触发",
+      },
+      {
+        name: "enter",
+        params: "`(value: TextareaValue)`",
+        description: "点击完成时触发",
+      },
+      {
+        name: "focus",
+        params: "`(value: TextareaValue)`",
+        description: "获得焦点时触发",
+      },
+      {
+        name: "keyboardheightchange",
+        params: "`(height: number, duration: number)`",
+        description: "键盘高度发生变化的时候触发此事件",
+      },
+      {
+        name: "line-change",
+        params: "`(value: TextareaValue)`",
+        description: "行高发生变化时触发",
+      },
+    ],
+  },
+  // 数据展示
   "t-qrcode": {
     attrs: [
       {
@@ -149,5 +201,37 @@ export const CompletionEventData: CompletionEventObject = {
         description: "点击`点击刷新`的回调",
       },
     ],
+  },
+  "t-swiper": {
+    attrs: [
+      {
+        name: "animationfinish",
+        params: "`(current: number, source: SwiperChangeSource)`",
+        description: "`1.11.0`。轮播切换时触发",
+      },
+      {
+        name: "change",
+        params: "`(current: number, source: SwiperChangeSource)`",
+        description:
+          "轮播切换时触发。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/swiper/type.ts)。<br/>`type SwiperChangeSource = 'autoplay' \\",
+      },
+      {
+        name: "click",
+        params: "`(index: number)`",
+        description: "`0.34.0`。点击轮播项时触发",
+      },
+      {
+        name: "image-load",
+        params: "`(index: number)`",
+        description: "`1.1.4`。图片加载时触发",
+      },
+    ],
+  },
+  "t-swiper-nav": {
+    attrs: [],
+  },
+  // 反馈
+  "t-action-sheet": {
+    attrs: [],
   },
 };

@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-08-27 14:13:20
+ * @LastEditTime: 2025-10-21 16:42:02
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description:
  */
@@ -5423,6 +5423,132 @@ export const CompletionData: CompletionObject = {
       },
     ],
   },
+  "t-watermark": {
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description:"样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description:"样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "alpha",
+        type: "Number",
+        default: "1",
+        description:"水印整体透明度，取值范围 [0-1]",
+        required: "N",
+      },
+      {
+        name: "content",
+        type: "String / Slot",
+        default: "-",
+        description:"水印所覆盖的内容节点。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
+        required: "N",
+      },
+      {
+        name: "height",
+        type: "Number",
+        default: "-",
+        description:"水印高度",
+        required: "N",
+      },
+      {
+        name: "is-repeat",
+        type: "Boolean",
+        default: "true",
+        description:"水印是否重复出现",
+        required: "N",
+      },
+      {
+        name: "layout",
+        type: "String",
+        default: "rectangular",
+        description:"水印的布局方式，rectangular：矩形，即横平竖直的水印；hexagonal：六边形，即错位的水印。可选项：rectangular/hexagonal",
+        required: "N",
+      },
+      {
+        name: "line-space",
+        type: "Number",
+        default: "16",
+        description:"行间距，只作用在多行（`content` 配置为数组）情况下",
+        required: "N",
+      },
+      {
+        name: "movable",
+        type: "Boolean",
+        default: "false",
+        description:"水印是否可移动",
+        required: "N",
+      },
+      {
+        name: "move-interval",
+        type: "Number",
+        default: "3000",
+        description:"水印发生运动位移的间隙，单位：毫秒",
+        required: "N",
+      },
+      {
+        name: "offset",
+        type: "Array",
+        default: "-",
+        description:"水印在画布上绘制的水平和垂直偏移量，正常情况下水印绘制在中间位置，即 `offset = [gapX / 2, gapY / 2]`。TS 类型：`Array<number>`",
+        required: "N",
+      },
+      {
+        name: "removable",
+        type: "Boolean",
+        default: "true",
+        description:"水印是否可被删除",
+        required: "N",
+      },
+      {
+        name: "rotate",
+        type: "Number",
+        default: "-22",
+        description:"水印旋转的角度，单位 °",
+        required: "N",
+      },
+      {
+        name: "watermark-content",
+        type: "Object / Array",
+        default: "-",
+        description:"水印内容，需要显示多行情况下可配置为数组。TS 类型：`WatermarkText\\",
+        required: "WatermarkImage\\",
+      },
+      {
+        name: "width",
+        type: "Number",
+        default: "-",
+        description:"水印宽度",
+        required: "N",
+      },
+      {
+        name: "x",
+        type: "Number",
+        default: "-",
+        description:"水印之间的水平间距",
+        required: "N",
+      },
+      {
+        name: "y",
+        type: "Number",
+        default: "-",
+        description:"水印之间的垂直间距",
+        required: "N",
+      },
+      {
+        name: "z-index",
+        type: "Number",
+        default: "-",
+        description:"水印元素的 `z-index`，默认值写在 CSS 中",
         required: "N",
       },
     ],

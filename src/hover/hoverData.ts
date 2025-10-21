@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:18
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-08-05 19:05:44
+ * @LastEditTime: 2025-10-21 16:45:13
  * @FilePath: /tdesign-miniprogram-snippets/src/hover/hoverData.ts
  * @Description: 
  */
@@ -84,6 +84,7 @@ export const hoverData = {
   't-swiper-nav': '打开 [TDesign Swiper](https://tdesign.tencent.com/miniprogram/components/swiper)',
   't-tag': '打开 [TDesign Tag](https://tdesign.tencent.com/miniprogram/components/tag)',
   't-check-tag': '打开 [TDesign Tag](https://tdesign.tencent.com/miniprogram/components/tag)',
+  't-watermark': '打开 [TDesign Watermark](https://tdesign.tencent.com/miniprogram/components/watermark)',
 
   't-action-sheet': '打开 [TDesign ActionSheet](https://tdesign.tencent.com/miniprogram/components/action-sheet)',
   't-dialog': '打开 [TDesign Dialog](https://tdesign.tencent.com/miniprogram/components/dialog)',

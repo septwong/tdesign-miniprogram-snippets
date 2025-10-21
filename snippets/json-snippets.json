@@ -391,6 +391,13 @@
     ],
     "description": "TDesign Tag 组件"
   },
+  "TDesign Watermark 水印": {
+    "prefix": "t-watermark",
+    "body": [
+      "\"t-watermark\": \"tdesign-miniprogram/watermark/watermark\""
+    ],
+    "description": "TDesign Watermark 组件"
+  },
   "TDesign ActionSheet 动作面板": {
     "prefix": "t-action-sheet",
     "body": [

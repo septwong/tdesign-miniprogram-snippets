@@ -840,6 +840,68 @@
     ],
     "description": "TDesign Tag 组件"
   },
+  "TDesign Watermark:text 水印": {
+    "prefix": "t-watermark",
+    "body": [
+      "<t-watermark watermark-content=\"{{{ text: '文字水印' }}}\" y=\"{{56}}\" x=\"{{56}}\" width=\"{{68}}\" height=\"{{52}}\">",
+      "  <view style=\"width: 100%; height: 340px\" />",
+      "</t-watermark>"
+    ],
+    "description": "TDesign Watermark 水印：文字水印"
+  },
+  "TDesign Watermark:url 水印": {
+    "prefix": "t-watermark:url",
+    "body": [
+      "<t-watermark watermark-content=\"{{{ url: 'https://tdesign.gtimg.com/starter/brand-logo-light.png' }}}\" width=\"{{120}}\" height=\"{{20}}\" x=\"{{56}}\" y=\"{{76}}\">",
+      "  <view style=\"width: 100%; height: 300px\" />",
+      "</t-watermark>"
+    ],
+    "description": "TDesign Watermark 水印：图片水印"
+  },
+  "TDesign Watermark:isGrayscale 水印": {
+    "prefix": "t-watermark:isGrayscale",
+    "body": [
+      "<t-watermark watermark-content=\"{{{ url: 'https://tdesign.gtimg.com/starter/brand-logo-light.png', isGrayscale: true }}}\" width=\"{{120}}\" height=\"{{20}}\" x=\"{{56}}\" y=\"{{76}}\" alpha=\"{{0.3}}\">",
+      "  <view style=\"width: 100%; height: 300px\" />",
+      "</t-watermark>"
+    ],
+    "description": "TDesign Watermark 水印：图片灰阶水印"
+  },
+  "TDesign Watermark:multiple 水印": {
+    "prefix": "t-watermark:multiple",
+    "body": [
+      "<t-watermark",
+      "  watermark-content=\"{{[ { text: '水印文本', fontColor: 'black' },{ url: 'https://tdesign.gtimg.com/starter/brand-logo-light.png' },]}}\"",
+      "  line-space=\"{{24}}\"",
+      "  x=\"{{56}}\"",
+      "  y=\"{{76}}\"",
+      "  width=\"{{120}}\"",
+      "  height=\"{{20}}\"",
+      "  alpha=\"{{0.3}}\"",
+      ">",
+      "  <view style=\"width: 100%; height: 300px\" />",
+      "</t-watermark>"
+    ],
+    "description": "TDesign Watermark 水印：多行图文水印"
+  },
+  "TDesign Watermark:movable 水印": {
+    "prefix": "t-watermark:movable",
+    "body": [
+      "<t-watermark watermark-content=\"{{{ text: '文字水印' }}}\" width=\"{{120}}\" height=\"{{60}}\" y=\"{{200}}\" x=\"{{210}}\" movable>",
+      "  <view style=\"width: 100%; height: 300px\" />",
+      "</t-watermark>"
+    ],
+    "description": "TDesign Watermark 水印：运动文字水印"
+  },
+  "TDesign Watermark:layout 水印": {
+    "prefix": "t-watermark:layout",
+    "body": [
+      "<t-watermark watermark-content=\"{{{ text: '文字水印' }}}\" y=\"{{56}}\" x=\"{{56}}\" width=\"{{68}}\" height=\"{{52}}\" layout=\"${1|rectangular,hexagonal|}\">",
+      "  <view style=\"width: 100%; height: 340px\" />",
+      "</t-watermark>"
+    ],
+    "description": "TDesign Watermark 水印：不同布局的水印"
+  },
   "TDesign ActionSheet 动作面板": {
     "prefix": "t-action-sheet",
     "body": [

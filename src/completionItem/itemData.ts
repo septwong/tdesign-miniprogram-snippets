@@ -2,8 +2,8 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-10-21 19:11:18
- * @FilePath: /tdesign-miniprogram-snippets/packages/components/completionItem/itemData.ts
+ * @LastEditTime: 2025-10-22 18:30:46
+ * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description:
  */
 import { type CompletionObject } from "./types";
@@ -307,8 +307,8 @@ export const CompletionData: CompletionObject = {
         type: "String / Boolean",
         default: "false",
         description:
-          "是否可拖拽。`true` / `'all'`可拖动<br>`'vertical'`可垂直拖动<br>`'horizontal'`可水平拖动<br>`false`禁止拖动。TS 类型：`boolean \\",
-        required: "FabDirectionEnum ` `type FabDirectionEnum = 'all' \\",
+          "是否可拖拽。`true` / `'all'`可拖动<br>`'vertical'`可垂直拖动<br>`'horizontal'`可水平拖动<br>`false`禁止拖动。TS 类型：`boolean | FabDirectionEnum type FabDirectionEnum = 'all' | 'vertical' | 'horizontal'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/fab/type.ts)",
+        required: "N",
       },
       {
         name: "icon",
@@ -335,8 +335,8 @@ export const CompletionData: CompletionObject = {
         name: "y-bounds",
         type: "Array",
         default: "-",
-        description: "设置垂直方向边界限制，示例：[48, 48] 或 ['96rpx', 80]。TS 类型：`Array<string \\",
-        required: "number>`",
+        description: "设置垂直方向边界限制，示例：[48, 48] 或 ['96rpx', 80]。TS 类型：`Array<string | number>`",
+        required: "N",
       },
     ],
   },
@@ -1284,17 +1284,17 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "String / Number",
         default: "-",
-        description: "激活的选项卡值。TS 类型：`TabValue` `type TabValue = string | number`。",
-        required:
-          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/tabs/type.ts)",
+        description:
+          "激活的选项卡值。TS 类型：`TabValue` `type TabValue = string | number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/tabs/type.ts)",
+        required: "N",
       },
       {
         name: "default-value",
         type: "String / Number",
         default: "undefined",
-        description: "激活的选项卡值。非受控属性。TS 类型：`TabValue` `type TabValue = string | number`。",
-        required:
-          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/tabs/type.ts)",
+        description:
+          "激活的选项卡值。非受控属性。TS 类型：`TabValue` `type TabValue = string | number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/tabs/type.ts)",
+        required: "N",
       },
     ],
   },
@@ -1748,8 +1748,8 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "String / Number / Boolean",
         default: "-",
-        description: "多选框的值。TS 类型：`string \\",
-        required: "number \\",
+        description: "多选框的值。TS 类型：`string | number | boolean`",
+        required: "N",
       },
     ],
   },
@@ -1810,22 +1810,24 @@ export const CompletionData: CompletionObject = {
         type: "Array",
         default: "[]",
         description:
-          "以配置形式设置子元素。示例1：`['北京', '上海']` ，示例2: `[{ label: '全选', checkAll: true }, { label: '上海', value: 'shanghai' }]`。checkAll 值为 true 表示当前选项为「全选选项」。TS 类型：`Array<CheckboxOption>` `type CheckboxOption = string \\",
-        required: "number \\",
+          "以配置形式设置子元素。示例1：`['北京', '上海']` ，示例2: `[{ label: '全选', checkAll: true }, { label: '上海', value: 'shanghai' }]`。checkAll 值为 true 表示当前选项为「全选选项」。TS 类型：`Array<CheckboxOption>` `type CheckboxOption = string | number | CheckboxOptionObj` interface CheckboxOptionObj `{ label?: string; value?: string | number; disabled?: boolean; checkAll?: true }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/checkbox-group/type.ts)",
+        required: "N",
       },
       {
         name: "value",
         type: "Array",
         default: "[]",
-        description: "选中值。TS 类型：`T` `type CheckboxGroupValue = Array<string \\",
-        required: "number \\",
+        description:
+          "选中值。TS 类型：`T` `type CheckboxGroupValue = Array<string | number | boolean>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/checkbox-group/type.ts)",
+        required: "N",
       },
       {
         name: "default-value",
         type: "Array",
         default: "undefined",
-        description: "选中值。非受控属性。TS 类型：`T` `type CheckboxGroupValue = Array<string \\",
-        required: "number \\",
+        description:
+          "选中值。非受控属性。TS 类型：`T` `type CheckboxGroupValue = Array<string | number | boolean>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/checkbox-group/type.ts)",
+        required: "N",
       },
     ],
   },
@@ -1903,17 +1905,16 @@ export const CompletionData: CompletionObject = {
         type: "Array",
         default: "-",
         description:
-          "系统预设的颜色样例，值为 `null` 或 `[]` 则不显示系统色，值为 `undefined` 会显示组件内置的系统默认色。TS 类型：`Array<string> \\",
-        required: "null`",
+          "系统预设的颜色样例，值为 `null` 或 `[]` 则不显示系统色，值为 `undefined` 会显示组件内置的系统默认色。TS 类型：`Array<string> | null | undefined`",
+        required: "N",
       },
       {
         name: "type",
         type: "String",
         default: "base",
         description:
-          "颜色选择器类型。（base 表示仅展示系统预设内容; multiple 表示展示色板和系统预设内容。可选项：base/multiple。TS 类型：`TypeEnum ` `type TypeEnum = 'base' | 'multiple'`。",
-        required:
-          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/color-picker/type.ts)",
+          "颜色选择器类型。（base 表示仅展示系统预设内容; multiple 表示展示色板和系统预设内容。可选项：base/multiple。TS 类型：`TypeEnum ` `type TypeEnum = 'base' | 'multiple'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/color-picker/type.ts)",
+        required: "N",
       },
       {
         name: "use-popup",
@@ -2040,8 +2041,8 @@ export const CompletionData: CompletionObject = {
         type: "String / Array",
         default: "'date'",
         description:
-          "year = 年；month = 年月；date = 年月日；hour = 年月日时； minute = 年月日时分；当类型为数组时，第一个值控制年月日，第二个值控制时分秒。TS 类型：`DateTimePickerMode` `type DateTimePickerMode = TimeModeValues \\",
-        required: "Array<TimeModeValues> ` `type TimeModeValues = 'year' \\",
+          "year = 年；month = 年月；date = 年月日；hour = 年月日时； minute = 年月日时分；当类型为数组时，第一个值控制年月日，第二个值控制时分秒。TS 类型：`DateTimePickerMode` `type DateTimePickerMode = TimeModeValues TimeModeValues | Array<TimeModeValues>` `type TimeModeValues = 'year' | 'month' | 'date' | 'hour' | 'minute' | 'second'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/date-time-picker/type.ts)",
+        required: "N",
       },
       {
         name: "popup-props",
@@ -2090,17 +2091,17 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "String / Number",
         default: "-",
-        description: "选中值。TS 类型：`DateValue` `type DateValue = string \\",
-        required:
-          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/date-time-picker/type.ts)",
+        description:
+          "选中值。TS 类型：`DateValue` `type DateValue = string | number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/date-time-picker/type.ts)",
+        required: "N",
       },
       {
         name: "default-value",
         type: "String / Number",
         default: "undefined",
-        description: "选中值。非受控属性。TS 类型：`DateValue` `type DateValue = string \\",
-        required:
-          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/date-time-picker/type.ts)",
+        description:
+          "选中值。非受控属性。TS 类型：`DateValue` `type DateValue = string ｜ number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/date-time-picker/type.ts)",
+        required: "N",
       },
       {
         name: "visible",
@@ -2399,8 +2400,8 @@ export const CompletionData: CompletionObject = {
         name: "size",
         type: "String",
         default: "medium",
-        description: "已废弃。输入框尺寸。可选项：small/medium。TS 类型：`'medium' \\",
-        required: "'small'`",
+        description: "已废弃。输入框尺寸。可选项：small/medium。TS 类型：`'medium' | 'small'`",
+        required: "N",
       },
       {
         name: "status",
@@ -2444,17 +2445,17 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "String / Number",
         default: "-",
-        description: "输入框的值。TS 类型：`InputValue` `type InputValue = string | number`。",
-        required:
-          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/input/type.ts)",
+        description:
+          "输入框的值。TS 类型：`InputValue` `type InputValue = string | number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/input/type.ts)",
+        required: "N",
       },
       {
         name: "default-value",
         type: "String / Number",
         default: "undefined",
-        description: "输入框的值。非受控属性。TS 类型：`InputValue` `type InputValue = string | number`。",
-        required:
-          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/input/type.ts)",
+        description:
+          "输入框的值。非受控属性。TS 类型：`InputValue` `type InputValue = string | number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/input/type.ts)",
+        required: "N",
       },
     ],
   },
@@ -2567,17 +2568,17 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "Array",
         default: "-",
-        description: "选中值。TS 类型：`Array<PickerValue>` `type PickerValue = string | number`。",
-        required:
-          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/picker/type.ts)",
+        description:
+          "选中值。TS 类型：`Array<PickerValue>` `type PickerValue = string | number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/picker/type.ts)",
+        required: "N",
       },
       {
         name: "default-value",
         type: "Array",
         default: "undefined",
-        description: "选中值。非受控属性。TS 类型：`Array<PickerValue>` `type PickerValue = string | number`。",
-        required:
-          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/picker/type.ts)",
+        description:
+          "选中值。非受控属性。TS 类型：`Array<PickerValue>` `type PickerValue = string | number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/picker/type.ts)",
+        required: "N",
       },
       {
         name: "visible",
@@ -2616,9 +2617,8 @@ export const CompletionData: CompletionObject = {
         type: "Array",
         default: "[]",
         description:
-          "数据源。TS 类型：`PickerItemOption[]` `interface PickerItemOption { label: string; value: string | number; icon?: string }`。",
-        required:
-          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/picker-item/type.ts)",
+          "数据源。TS 类型：`PickerItemOption[]` `interface PickerItemOption { label: string; value: string | number; icon?: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/picker-item/type.ts)",
+        required: "N",
       },
     ],
   },
@@ -2791,7 +2791,7 @@ export const CompletionData: CompletionObject = {
         type: "String / Array",
         default: "'circle'",
         description:
-          "自定义选中图标和非选中图标。示例：[选中态图标，非选中态图标]。使用 String 时，值为 circle 表示填充型图标、值为 line 表示描边型图标、值为 dot 表示圆点图标；仅在使用 options 时生效。TS 类型：`'circle' \\",
+          "自定义选中图标和非选中图标。示例：[选中态图标，非选中态图标]。使用 String 时，值为 circle 表示填充型图标、值为 line 表示描边型图标、值为 dot 表示圆点图标；仅在使用 options 时生效。TS 类型：`'circle'  | 'line' | 'dot' | Array<string>`",
         required: "N",
       },
       {
@@ -2875,8 +2875,8 @@ export const CompletionData: CompletionObject = {
         type: "String / Array",
         default: "'#ED7B2F'",
         description:
-          "`0.30.0`。评分图标的颜色，样式中默认为 #ED7B2F。一个值表示设置选中高亮的五角星颜色，示例：[选中颜色]。数组则表示分别设置 选中高亮的五角星颜色 和 未选中暗灰的五角星颜色，[选中颜色，未选中颜色]。示例：['#ED7B2F', '#E3E6EB']。TS 类型：`string \\",
-        required: "Array<string>`",
+          "`0.30.0`。评分图标的颜色，样式中默认为 #ED7B2F。一个值表示设置选中高亮的五角星颜色，示例：[选中颜色]。数组则表示分别设置 选中高亮的五角星颜色 和 未选中暗灰的五角星颜色，[选中颜色，未选中颜色]。示例：['#ED7B2F', '#E3E6EB']。TS 类型：`string | Array<string>`",
+        required: "N",
       },
       {
         name: "count",
@@ -2903,8 +2903,8 @@ export const CompletionData: CompletionObject = {
         name: "icon",
         type: "String / Array",
         default: "-",
-        description: "`0.30.0`。自定义评分图标，[选中图标，未选中图标]。TS 类型：`string \\",
-        required: "string[]`",
+        description: "`0.30.0`。自定义评分图标，[选中图标，未选中图标]。TS 类型：`string | string[]`",
+        required: "N",
       },
       {
         name: "icon-prefix",
@@ -3270,17 +3270,17 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "Number / Array",
         default: "0",
-        description: "滑块值。TS 类型：`SliderValue` `type SliderValue = number | Array<number>`。",
-        required:
-          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/slider/type.ts)",
+        description:
+          "滑块值。TS 类型：`SliderValue` `type SliderValue = number | Array<number>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/slider/type.ts)",
+        required: "N",
       },
       {
         name: "default-value",
         type: "Number / Array",
         default: "undefined",
-        description: "滑块值。非受控属性。TS 类型：`SliderValue` `type SliderValue = number | Array<number>`。",
-        required:
-          "[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/slider/type.ts)",
+        description:
+          "滑块值。非受控属性。TS 类型：`SliderValue` `type SliderValue = number | Array<number>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/slider/type.ts)",
+        required: "N",
       },
       {
         name: "vertical",
@@ -3451,15 +3451,17 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "String / Number / Boolean",
         default: "null",
-        description: "开关值。TS 类型：`SwitchValue` `type SwitchValue = string \\",
-        required: "number \\",
+        description:
+          "开关值。TS 类型：`SwitchValue` `type SwitchValue = string | number | boolean`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/switch/type.ts)",
+        required: "N",
       },
       {
         name: "default-value",
         type: "String / Number / Boolean",
         default: "undefined",
-        description: "开关值。非受控属性。TS 类型：`SwitchValue` `type SwitchValue = string \\",
-        required: "number \\",
+        description:
+          "开关值。非受控属性。TS 类型：`SwitchValue` `type SwitchValue = string | number | boolean`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/switch/type.ts)",
+        required: "N",
       },
     ],
   },
@@ -3505,8 +3507,8 @@ export const CompletionData: CompletionObject = {
         type: "Boolean / Object",
         default: "false",
         description:
-          "是否自动增高，值为 true 时，style.height 不生效。支持传入对象，如 { maxHeight: 120, minHeight: 20 }。TS 类型：`boolean \\",
-        required: "{ maxHeight?: number, minHeight?: number }`",
+          "是否自动增高，值为 true 时，style.height 不生效。支持传入对象，如 { maxHeight: 120, minHeight: 20 }。TS 类型：`boolean | { maxHeight?: number, minHeight?: number }`",
+        required: "N",
       },
       {
         name: "bordered",
@@ -3527,8 +3529,8 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "return",
         description:
-          "设置键盘右下角按钮的文字，仅在 type='text'时生效。可选项：return/send/search/next/go/done。TS 类型：`'return' \\",
-        required: "'send' \\",
+          "设置键盘右下角按钮的文字，仅在 type='text'时生效。可选项：return/send/search/next/go/done。TS 类型：`'return' | 'send' | 'search' | 'next' | 'go' | 'done'`",
+        required: "N",
       },
       {
         name: "cursor",
@@ -3669,17 +3671,17 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "String / Number",
         default: "-",
-        description: "文本框值。TS 类型：`TextareaValue` `type TextareaValue = string \\",
-        required:
-          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/textarea/type.ts)",
+        description:
+          "文本框值。TS 类型：`TextareaValue` `type TextareaValue = string | number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/textarea/type.ts)",
+        required: "N",
       },
       {
         name: "default-value",
         type: "String / Number",
         default: "undefined",
-        description: "文本框值。非受控属性。TS 类型：`TextareaValue` `type TextareaValue = string \\",
-        required:
-          "number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/textarea/type.ts)",
+        description:
+          "文本框值。非受控属性。TS 类型：`TextareaValue` `type TextareaValue = string | number`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/textarea/type.ts)",
+        required: "N",
       },
     ],
   },
@@ -3732,15 +3734,17 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "String / Number / Array",
         default: "-",
-        description: "选中值。TS 类型：`TreeSelectValue` `type TreeSelectValue = string \\",
-        required: "number \\",
+        description:
+          "选中值。TS 类型：`TreeSelectValue` `type TreeSelectValue = string | number | Array<TreeSelectValue>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/tree-select/type.ts)",
+        required: "N",
       },
       {
         name: "default-value",
         type: "String / Number / Array",
         default: "undefined",
-        description: "选中值。非受控属性。TS 类型：`TreeSelectValue` `type TreeSelectValue = string \\",
-        required: "number \\",
+        description:
+          "选中值。非受控属性。TS 类型：`TreeSelectValue` `type TreeSelectValue = string | number | Array<TreeSelectValue>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/tree-select/type.ts)",
+        required: "N",
       },
     ],
   },
@@ -3787,9 +3791,8 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "图片上传配置，视频上传配置，文件上传配置等，包含图片尺寸、图片来源、视频来源、视频拍摄最长时间等。更多细节查看小程序官网。[图片上传](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseImage.html)。[视频上传](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.chooseVideo.html)。TS 类型：`UploadMpConfig` `type UploadMpConfig = ImageConfig \\",
-        required:
-          "VideoConfig` `interface ImageConfig { count?: number; sizeType?: Array<SizeTypeValues>; sourceType?: Array<SourceTypeValues> }` `type SizeTypeValues = 'original' \\",
+          "图片上传配置，视频上传配置，文件上传配置等，包含图片尺寸、图片来源、视频来源、视频拍摄最长时间等。更多细节查看小程序官网。[图片上传](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseImage.html)。[视频上传](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.chooseVideo.html)。TS 类型：`UploadMpConfig` `type UploadMpConfig = ImageConfig | VideoConfig` `interface ImageConfig { count?: number; sizeType?: Array<SizeTypeValues>; sourceType?: Array<SourceTypeValues> }` `type SizeTypeValues = 'original' | 'compressed'` `type SourceTypeValues = 'album' | 'camera'` `interface VideoConfig { sourceType?: Array<SourceTypeValues>; compressed?: boolean; maxDuration?: number; camera?: 'back' | 'front' }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/upload/type.ts)",
+        required: "N",
       },
       {
         name: "disabled",
@@ -3803,24 +3806,24 @@ export const CompletionData: CompletionObject = {
         type: "Boolean / Object",
         default: "-",
         description:
-          "是否支持拖拽排序。长按时是否振动，碰撞时是否振动。示例一：`true`。示例二：`{ vibrate: true, collisionVibrate: true }`。TS 类型：`boolean \\",
-        required: "{vibrate?: boolean; collisionVibrate?: boolean}`",
+          "是否支持拖拽排序。长按时是否振动，碰撞时是否振动。示例一：`true`。示例二：`{ vibrate: true, collisionVibrate: true }`。TS 类型：`boolean | {vibrate?: boolean; collisionVibrate?: boolean}`",
+        required: "N",
       },
       {
         name: "files",
         type: "Array",
         default: "-",
         description:
-          "已上传文件列表。TS 类型：`Array<UploadFile>` `interface UploadFile { url: string; name?: string; size?: number; type?: 'image' \\",
-        required: "'video'; percent?: number; status: 'loading' \\",
+          "已上传文件列表。TS 类型：`Array<UploadFile>` `interface UploadFile { url: string; name?: string; size?: number; type?: 'image' | 'video'; percent?: number; status: 'loading' | 'reload' | 'failed' | 'done' }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/upload/type.ts)",
+        required: "N",
       },
       {
         name: "default-files",
         type: "Array",
         default: "undefined",
         description:
-          "已上传文件列表。非受控属性。TS 类型：`Array<UploadFile>` `interface UploadFile { url: string; name?: string; size?: number; type?: 'image' \\",
-        required: "'video'; percent?: number; status: 'loading' \\",
+          "已上传文件列表。非受控属性。TS 类型：`Array<UploadFile>` `interface UploadFile { url: string; name?: string; size?: number; type?: 'image' | 'video'; percent?: number; status: 'loading' | 'reload' | 'failed' | 'done' }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/upload/type.ts)",
+        required: "N",
       },
       {
         name: "grid-config",
@@ -3856,9 +3859,9 @@ export const CompletionData: CompletionObject = {
         name: "media-type",
         type: "Array",
         default: "['image', 'video']",
-        description: "支持上传的文件类型，图片或视频。TS 类型：`Array<MediaType>` `type MediaType = 'image' \\",
-        required:
-          "'video'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/upload/type.ts)",
+        description:
+          "支持上传的文件类型，图片或视频。TS 类型：`Array<MediaType>` `type MediaType = 'image' | 'video'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/upload/type.ts)",
+        required: "N",
       },
       {
         name: "preview",
@@ -3885,8 +3888,9 @@ export const CompletionData: CompletionObject = {
         name: "size-limit",
         type: "Number / Object",
         default: "-",
-        description: "图片文件大小限制，默认单位 KB。可选单位有：`'B' \\",
-        required: "'KB' \\",
+        description:
+          "图片文件大小限制，默认单位 KB。可选单位有：`'B' | 'KB' | 'MB' | 'GB'` 示例一：`1000`。示例二：`{ size: 2, unit: 'MB', message: '图片大小不超过 {sizeLimit} MB' }`。TS 类型：`number | SizeLimitObj` `interface SizeLimitObj { size: number; unit: SizeUnit ; message?: string } type SizeUnitArray = ['B', 'KB', 'MB', 'GB']` `type SizeUnit = SizeUnitArray[number]`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/upload/type.ts)",
+        required: "N",
       },
       {
         name: "source",
@@ -4012,9 +4016,8 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "'left-up'",
         description:
-          "图片之间的层叠关系，可选值：左侧图片在上和右侧图片在上。可选项：left-up/right-up。TS 类型：`CascadingValue` `type CascadingValue = 'left-up' \\",
-        required:
-          "'right-up'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/avatar-group/type.ts)",
+          "图片之间的层叠关系，可选值：左侧图片在上和右侧图片在上。可选项：left-up/right-up。TS 类型：`CascadingValue` `type CascadingValue = 'left-up' | 'right-up'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/avatar-group/type.ts)",
+        required: "N",
       },
       {
         name: "collapse-avatar",
@@ -4104,8 +4107,8 @@ export const CompletionData: CompletionObject = {
         name: "offset",
         type: "Array",
         default: "-",
-        description: "设置状态点的位置偏移，示例：[-10, 20] 或 ['10em', '8rem']。TS 类型：`Array<string \\",
-        required: "number>`",
+        description: "设置状态点的位置偏移，示例：[-10, 20] 或 ['10em', '8rem']。TS 类型：`Array<string | number>`",
+        required: "N",
       },
       {
         name: "shape",
@@ -4311,17 +4314,17 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "Array",
         default: "[]",
-        description: "展开的面板集合。TS 类型：`CollapseValue` `type CollapseValue = Array<string \\",
-        required:
-          "number>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/collapse/type.ts)",
+        description:
+          "展开的面板集合。TS 类型：`CollapseValue` `type CollapseValue = Array<string | number>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/collapse/type.ts)",
+        required: "N",
       },
       {
         name: "default-value",
         type: "Array",
         default: "undefined",
-        description: "展开的面板集合。非受控属性。TS 类型：`CollapseValue` `type CollapseValue = Array<string \\",
-        required:
-          "number>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/collapse/type.ts)",
+        description:
+          "展开的面板集合。非受控属性。TS 类型：`CollapseValue` `type CollapseValue = Array<string | number>`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/collapse/type.ts)",
+        required: "N",
       },
     ],
   },
@@ -4563,8 +4566,8 @@ export const CompletionData: CompletionObject = {
         type: "Array",
         default: "[]",
         description:
-          "`1.0.0`。链接列表。name 表示链接名称， url 表示链接 page 路径，目前只支持小程序内部跳转，openType 表示跳转方式。TS 类型：`Array<LinkObj>` `interface LinkObj { name: string; url?: string; openType?: 'navigate' \\",
-        required: "'redirect' \\",
+          "`1.0.0`。链接列表。name 表示链接名称， url 表示链接 page 路径，目前只支持小程序内部跳转，openType 表示跳转方式。TS 类型：`Array<LinkObj>` `interface LinkObj { name: string; url?: string; openType?: 'navigate' | 'redirect' | 'relaunch' | 'switchTab' | 'navigateBack' }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/footer/type.ts)",
+        required: "N",
       },
       {
         name: "logo",
@@ -4586,8 +4589,8 @@ export const CompletionData: CompletionObject = {
         type: "Array",
         default: "[]",
         description:
-          "已废弃。链接列表，type 为`text`生效。name 表示链接名称， url 表示链接 page 路径，目前只支持小程序内部跳转，openType 表示跳转方式。TS 类型：`Array<LinkObj>` `interface LinkObj { name: string; url?: string; openType?: 'navigate' \\",
-        required: "'redirect' \\",
+          "已废弃。链接列表，type 为`text`生效。name 表示链接名称， url 表示链接 page 路径，目前只支持小程序内部跳转，openType 表示跳转方式。TS 类型：`Array<LinkObj>` `interface LinkObj { name: string; url?: string; openType?: 'navigate' | 'redirect' | 'relaunch' | 'switchTab' | 'navigateBack' }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/footer/type.ts)",
+        required: "N",
       },
       {
         name: "theme",
@@ -4626,8 +4629,8 @@ export const CompletionData: CompletionObject = {
         type: "Boolean / Object",
         default: "false",
         description:
-          "边框，默认不显示。值为 true 则显示默认边框，值类型为 object 则表示自定义边框样式。TS 类型：`boolean \\",
-        required: "{ color?: string; width?: string; style?: 'solid' \\",
+          "边框，默认不显示。值为 true 则显示默认边框，值类型为 object 则表示自定义边框样式。TS 类型：`boolean | { color?: string; width?: string; style?: 'solid' | 'dashed' | 'dotted' | 'double' | 'groove' | 'inset' | 'outset' }`",
+        required: "N",
       },
       {
         name: "column",
@@ -4948,8 +4951,8 @@ export const CompletionData: CompletionObject = {
         type: "String / Object / Array",
         default: "''",
         description:
-          "进度条颜色。示例：'#ED7B2F' 或 'orange' 或 `['#f00', '#0ff', '#f0f']` 或 `{ '0%': '#f00', '100%': '#0ff' }` 或  `{ from: '#000', to: '#000' }` 等。TS 类型：`string \\",
-        required: "Array<string> \\",
+          "进度条颜色。示例：'#ED7B2F' 或 'orange' 或 `['#f00', '#0ff', '#f0f']` 或 `{ '0%': '#f00', '100%': '#0ff' }` 或  `{ from: '#000', to: '#000' }` 等。TS 类型：`string | Array<string> | Record<string, string>`",
+        required: "N",
       },
       {
         name: "label",
@@ -4978,8 +4981,8 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "-",
         description:
-          "进度条状态。可选项：success/error/warning/active。TS 类型：`ProgressStatus` `type ProgressStatus = 'success' \\",
-        required: "'error' \\",
+          "进度条状态。可选项：success/error/warning/active。TS 类型：`ProgressStatus` `type ProgressStatus = 'success' | 'error' | 'warning' | 'active'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/progress/type.ts)",
+        required: "N",
       },
       {
         name: "stroke-width",
@@ -4993,8 +4996,8 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "line",
         description:
-          "进度条风格。值为 line，标签（label）显示在进度条右侧；值为 plump，标签（label）显示在进度条里面；值为 circle，标签（label）显示在进度条正中间。可选项：line/plump/circle。TS 类型：`ProgressTheme` `type ProgressTheme = 'line' \\",
-        required: "'plump' \\",
+          "进度条风格。值为 line，标签（label）显示在进度条右侧；值为 plump，标签（label）显示在进度条里面；值为 circle，标签（label）显示在进度条正中间。可选项：line/plump/circle。TS 类型：`ProgressTheme` `type ProgressTheme = 'line' | 'plump' | 'circle'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/progress/type.ts)",
+        required: "N",
       },
       {
         name: "track-color",
@@ -5053,8 +5056,8 @@ export const CompletionData: CompletionObject = {
         name: "icon-size",
         type: "Number / Object",
         default: "40",
-        description: "二维码中图片的大小。TS 类型：`number \\",
-        required: "{ width: number; height: number }`",
+        description: "二维码中图片的大小。TS 类型：`number | { width: number; height: number }`",
+        required: "N",
       },
       {
         name: "level",
@@ -5075,8 +5078,8 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "active",
         description:
-          '二维码状态。可选项：active/expired/loading/scanned。TS 类型：`QRStatus` `type QRStatus = "active" \\',
-        required: '"expired" \\',
+          '二维码状态。可选项：active/expired/loading/scanned。TS 类型：`QRStatus` `type QRStatus = "active" | "expired" | "loading" | "scanned"`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/qrcode/type.ts)',
+        required: "N",
       },
       {
         name: "status-render",
@@ -5195,8 +5198,8 @@ export const CompletionData: CompletionObject = {
         type: "Array",
         default: "-",
         description:
-          "高级设置，用于自定义行列数量、宽度高度、间距等。【示例一】，`[1, 1, 2]` 表示输出三行骨架图，第一行一列，第二行一列，第三行两列。【示例二】，`[1, 1, { width: '100px' }]` 表示自定义第三行的宽度为 `100px`。【示例三】，`[1, 2, [{ width, height }, { width, height, marginLeft }]]` 表示第三行有两列，且自定义宽度、高度、尺寸（圆形或方形使用）、间距、内容等。TS 类型：`SkeletonRowCol` `type SkeletonRowCol = Array<Number \\",
-        required: "SkeletonRowColObj \\",
+          "高级设置，用于自定义行列数量、宽度高度、间距等。【示例一】，`[1, 1, 2]` 表示输出三行骨架图，第一行一列，第二行一列，第三行两列。【示例二】，`[1, 1, { width: '100px' }]` 表示自定义第三行的宽度为 `100px`。【示例三】，`[1, 2, [{ width, height }, { width, height, marginLeft }]]` 表示第三行有两列，且自定义宽度、高度、尺寸（圆形或方形使用）、间距、内容等。TS 类型：`SkeletonRowCol` `type SkeletonRowCol = Array<Number | SkeletonRowColObj | Array<SkeletonRowColObj>> interface SkeletonRowColObj { width?: string; size?: string;height?: string; marginRight?: string; marginLeft?: string; margin?: string; type?: 'rect' | 'circle' | 'text';}`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/skeleton/type.ts)",
+        required: "N",
       },
       {
         name: "theme",
@@ -5338,9 +5341,9 @@ export const CompletionData: CompletionObject = {
         name: "list",
         type: "Array",
         default: "-",
-        description: "`0.32.0`。图片列表。TS 类型：`string[] \\",
-        required:
-          "SwiperList[]` `interface SwiperList { value: string, ariaLabel: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/swiper/type.ts)",
+        description:
+          "`0.32.0`。图片列表。TS 类型：`string[] | SwiperList[]` `interface SwiperList { value: string, ariaLabel: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/swiper/type.ts)",
+        required: "N",
       },
       {
         name: "loop",
@@ -5353,9 +5356,9 @@ export const CompletionData: CompletionObject = {
         name: "navigation",
         type: "Boolean / Object / Slot",
         default: "true",
-        description: "导航器全部配置，true 的话使用默认配置。TS 类型：`SwiperNavProps \\",
-        required:
-          "boolean`，[SwiperNav API Documents](./swiper-nav?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/swiper/type.ts)",
+        description:
+          "导航器全部配置，true 的话使用默认配置。TS 类型：`SwiperNavProps | boolean`，[SwiperNav API Documents](./swiper-nav?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/swiper/type.ts)",
+        required: "N",
       },
       {
         name: "next-margin",
@@ -5451,8 +5454,8 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "dots",
         description:
-          "导航器类型，点状(dots)、点条状(dots-bar)、分式(fraction)等。TS 类型：`SwiperNavigationType` `type SwiperNavigationType = 'dots' \\",
-        required: "'dots-bar' \\",
+          "导航器类型，点状(dots)、点条状(dots-bar)、分式(fraction)等。TS 类型：`SwiperNavigationType` `type SwiperNavigationType = 'dots' | 'dots-bar' | 'fraction'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/swiper-nav/type.ts)",
+        required: "N",
       },
     ],
   },
@@ -5573,8 +5576,8 @@ export const CompletionData: CompletionObject = {
         name: "content",
         type: "String / Number / Array / Slot",
         default: "-",
-        description: "组件子元素；传入数组时：[选中内容，非选中内容]。TS 类型：`string \\",
-        required: "number \\",
+        description: "组件子元素；传入数组时：[选中内容，非选中内容]。TS 类型：`string | number | string[]`",
+        required: "N",
       },
       {
         name: "disabled",
@@ -5715,8 +5718,9 @@ export const CompletionData: CompletionObject = {
         name: "watermark-content",
         type: "Object / Array",
         default: "-",
-        description: "水印内容，需要显示多行情况下可配置为数组。TS 类型：`WatermarkText\\",
-        required: "WatermarkImage\\",
+        description:
+          "水印内容，需要显示多行情况下可配置为数组。TS 类型：`WatermarkText|WatermarkImage|Array<WatermarkText|WatermarkImage>`",
+        required: "N",
       },
       {
         name: "width",
@@ -5797,9 +5801,9 @@ export const CompletionData: CompletionObject = {
         name: "items",
         type: "Array",
         default: "-",
-        description: "必需。菜单项。TS 类型：`Array<string \\",
-        required:
-          "ActionSheetItem>` `interface ActionSheetItem {label: string; color?: string; disabled?: boolean;icon?: string;suffixIcon?: string; }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/action-sheet/type.ts)",
+        description:
+          "必需。菜单项。TS 类型：`Array<string | ActionSheetItem>` `interface ActionSheetItem {label: string; color?: string; disabled?: boolean;icon?: string;suffixIcon?: string; }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/action-sheet/type.ts)",
+        required: "N",
       },
       {
         name: "popup-props",
@@ -6115,15 +6119,17 @@ export const CompletionData: CompletionObject = {
         name: "value",
         type: "String / Number / Array",
         default: "undefined",
-        description: "选中值。TS 类型：`DropdownValue ` `type DropdownValue = string \\",
-        required: "number \\",
+        description:
+          "选中值。TS 类型：`DropdownValue ` `type DropdownValue = string | number | Array<DropdownValue>;`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/dropdown-item/type.ts)",
+        required: "N",
       },
       {
         name: "default-value",
         type: "String / Number / Array",
         default: "undefined",
-        description: "选中值。非受控属性。TS 类型：`DropdownValue ` `type DropdownValue = string \\",
-        required: "number \\",
+        description:
+          "选中值。非受控属性。TS 类型：`DropdownValue ` `type DropdownValue = string | number | Array<DropdownValue>;`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/dropdown-item/type.ts)",
+        required: "N",
       },
     ],
   },
@@ -6378,9 +6384,8 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "left",
         description:
-          "文本对齐方式。可选项：left/center。TS 类型：`MessageAlignType` `type MessageAlignType = 'left' \\",
-        required:
-          "'center'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/message/type.ts)",
+          "文本对齐方式。可选项：left/center。TS 类型：`MessageAlignType` `type MessageAlignType = 'left' | 'center'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/message/type.ts)",
+        required: "N",
       },
       {
         name: "close-btn",
@@ -6433,17 +6438,16 @@ export const CompletionData: CompletionObject = {
         type: "Boolean / Object",
         default: "false",
         description:
-          "跑马灯效果。speed 指速度控制；loop 指循环播放次数，值为 -1 表示循环播放，值为 0 表示不循环播放；delay 表示延迟多久开始播放。TS 类型：`boolean \\",
-        required:
-          "MessageMarquee` `interface MessageMarquee { speed?: number; loop?: number; delay?: number }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/message/type.ts)",
+          "跑马灯效果。speed 指速度控制；loop 指循环播放次数，值为 -1 表示循环播放，值为 0 表示不循环播放；delay 表示延迟多久开始播放。TS 类型：`boolean | MessageMarquee` `interface MessageMarquee { speed?: number; loop?: number; delay?: number }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/message/type.ts)",
+        required: "N",
       },
       {
         name: "offset",
         type: "Array",
         default: "-",
         description:
-          "相对于 placement 的偏移量，默认单位 rpx。示例：[-10, 20] 或 ['10rpx', '8rpx']。TS 类型：`Array<string \\",
-        required: "number>`",
+          "相对于 placement 的偏移量，默认单位 rpx。示例：[-10, 20] 或 ['10rpx', '8rpx']。TS 类型：`Array<string | number>`",
+        required: "N",
       },
       {
         name: "single",
@@ -6457,8 +6461,8 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "info",
         description:
-          "消息组件风格。可选项：info/success/warning/error。TS 类型：`MessageThemeList` `type MessageThemeList = 'info' \\",
-        required: "'success' \\",
+          "消息组件风格。可选项：info/success/warning/error。TS 类型：`MessageThemeList` `type MessageThemeList = 'info' | 'success' | 'warning' | 'error'。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/message/type.ts)",
+        required: "N",
       },
       {
         name: "visible",
@@ -6526,9 +6530,8 @@ export const CompletionData: CompletionObject = {
         type: "Boolean / Object",
         default: "false",
         description:
-          "跑马灯效果。speed 指速度控制；loop 指循环播放次数，值为 -1 表示循环播放，值为 0 表示不循环播放；delay 表示延迟多久开始播放【仅在 direction='horizontal' 有效】。TS 类型：`boolean \\",
-        required:
-          "NoticeBarMarquee` `interface NoticeBarMarquee { speed?: number; loop?: number; delay?: number }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/notice-bar/type.ts)",
+          "跑马灯效果。speed 指速度控制；loop 指循环播放次数，值为 -1 表示循环播放，值为 0 表示不循环播放；delay 表示延迟多久开始播放【仅在 direction='horizontal' 有效】。TS 类型：`boolean | NoticeBarMarquee` `interface NoticeBarMarquee { speed?: number; loop?: number; delay?: number }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/notice-bar/type.ts)",
+        required: "N",
       },
       {
         name: "operation",
@@ -6909,17 +6912,17 @@ export const CompletionData: CompletionObject = {
         name: "opened",
         type: "Boolean / Array",
         default: "false",
-        description: "操作项是否呈现为打开态，值为数组时表示分别控制左右滑动的展开和收起状态。TS 类型：`boolean \\",
-        required: "Array<boolean>`",
+        description:
+          "操作项是否呈现为打开态，值为数组时表示分别控制左右滑动的展开和收起状态。TS 类型：`boolean | Array<boolean>`",
+        required: "N",
       },
       {
         name: "right",
         type: "Array / Slot",
         default: "-",
         description:
-          "右侧滑动操作项。有两种定义方式，一种是使用数组，二种是使用插槽。`right.text` 表示操作文本，`right.className` 表示操作项类名，`right.style` 表示操作项样式，`right.onClick` 表示点击操作项后执行的回调函数。示例：`[{ text: '删除', icon: 'delete', style: 'background-color: red', onClick: () => {} }]`。TS 类型：`Array<SwipeActionItem>` `interface SwipeActionItem {text?: string; icon?: string \\",
-        required:
-          "object, className?: string; style?: string; onClick?: () => void; [key: string]: any }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/swipe-cell/type.ts)",
+          "右侧滑动操作项。有两种定义方式，一种是使用数组，二种是使用插槽。`right.text` 表示操作文本，`right.className` 表示操作项类名，`right.style` 表示操作项样式，`right.onClick` 表示点击操作项后执行的回调函数。示例：`[{ text: '删除', icon: 'delete', style: 'background-color: red', onClick: () => {} }]`。TS 类型：`Array<SwipeActionItem>` `interface SwipeActionItem {text?: string; icon?: string | object, className?: string; style?: string; onClick?: () => void; [key: string]: any }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/swipe-cell/type.ts)",
+        required: "N",
       },
     ],
   },

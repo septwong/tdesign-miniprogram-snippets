@@ -1,4 +1,4 @@
-https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/button/README.md
+<!-- https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/button/README.md -->
 
 <!-- Props -->
 
@@ -15,8 +15,8 @@ https://github.com/Tencent/tdesign-miniprogram/blob/develop/src/button/README.md
 <!-- External Classes -->
 
 | className | description |
-| --------- | ----------- | --- |
-| style     | Object      | -   |
+| --------- | ----------- |
+| style     | Object      |
 
 <!-- CSS Variables -->
 

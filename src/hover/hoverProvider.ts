@@ -2,26 +2,23 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-10-14 16:02:24
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-11-12 13:22:10
+ * @LastEditTime: 2025-11-10 18:14:08
  * @FilePath: /tdesign-miniprogram-snippets/src/hover/hoverProvider.ts
  * @Description: 悬停提示
  */
-import * as vscode from 'vscode';
-import { schemes } from '../utils';
-import { config, Config } from '../config';
-import { hoverData as _hoverData } from './hoverData';
+import * as vscode from "vscode";
+import { schemes } from "../utils";
+import { config, Config } from "../config";
+import { hoverData as _hoverData } from "./hoverData";
 
 let hoverProvider: vscode.Disposable | undefined; // 存储悬停提供器
 
 /**
  * 获取当前光标位置的完整组件名称（支持 `t-button` 等）。
  */
-export function getComponentNameAtPosition(
-  document: vscode.TextDocument,
-  position: vscode.Position
-): string {
+export function getComponentNameAtPosition(document: vscode.TextDocument, position: vscode.Position): string {
   const range = document.getWordRangeAtPosition(position, /[a-zA-Z-]+/);
-  return range ? document.getText(range) : '';
+  return range ? document.getText(range) : "";
 }
 
 /**
@@ -43,16 +40,16 @@ export function getTDesignHoverContent(word: string): vscode.Hover | undefined {
 // 注册悬停提供器的函数
 export function registerHoverProvider(context: vscode.ExtensionContext) {
   // if (!hoverProvider) { // 避免重复注册
-    const wxml = config.documentSelector.map(l => schemes(l));
-    hoverProvider = vscode.languages.registerHoverProvider(wxml, {
-      provideHover(document, position) {
-        const word = getComponentNameAtPosition(document, position);
-        return getTDesignHoverContent(word);
-      }
-    });
+  const wxml = config.documentSelector.map((l) => schemes(l));
+  hoverProvider = vscode.languages.registerHoverProvider(wxml, {
+    provideHover(document, position) {
+      const word = getComponentNameAtPosition(document, position);
+      return getTDesignHoverContent(word);
+    },
+  });
 
-    // 注册到 context.subscriptions，确保插件停用时自动清理
-    context.subscriptions.push(hoverProvider);
+  // 注册到 context.subscriptions，确保插件停用时自动清理
+  context.subscriptions.push(hoverProvider);
   // }
 }
 
@@ -80,17 +77,21 @@ export class wxmlHoverProvider implements vscode.HoverProvider {
 /**
  *  hover  listener
  * @param e - The configuration change event.
- * @param enableHover  hover 
+ * @param enableHover  hover
  * @param context vscode  context
  */
 export function hoverListener(
   enableHover: boolean,
   context: vscode.ExtensionContext,
-  e?: vscode.ConfigurationChangeEvent,
+  e?: vscode.ConfigurationChangeEvent
 ) {
-  console.log("🚀 ~ affectsConfiguration: enableHover: ", enableHover, e && !e.affectsConfiguration('tdesign-miniprogram-snippets.enableHover'));
+  // console.log(
+  //   "🚀 ~ affectsConfiguration: enableHover: ",
+  //   enableHover,
+  //   e && !e.affectsConfiguration("tdesign-miniprogram-snippets.enableHover")
+  // );
   // 检查是否影响了需要的配置项
-  if (e && !e.affectsConfiguration('tdesign-miniprogram-snippets.enableHover')) {
+  if (e && !e.affectsConfiguration("tdesign-miniprogram-snippets.enableHover")) {
     // console.log("🚀 ~ affectsConfiguration: enableHover");
     return;
   }
@@ -101,10 +102,7 @@ export function hoverListener(
     if (!hoverProvider) {
       // 避免重复注册
       // console.log("🚀 ~ hoverListener ~ hoverProvider:", hoverProvider);
-      hoverProvider = languages.registerHoverProvider(
-        wxml,
-        new wxmlHoverProvider(config)
-      );
+      hoverProvider = languages.registerHoverProvider(wxml, new wxmlHoverProvider(config));
       context.subscriptions.push(hoverProvider);
       // registerHoverProvider(context);
     }

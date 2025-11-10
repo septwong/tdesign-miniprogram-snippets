@@ -4,22 +4,22 @@
  * @LastEditors: Wong septwong@foxmail.com
  * @LastEditTime: 2025-10-21 16:32:15
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/wxmlData.ts
- * @Description: 
+ * @Description:
  */
 // https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/
 import { type Attributes } from "./types";
 
 export const WxmlDataList: Attributes[] = [
   {
-    name: '{{}}',
+    name: "{{}}",
     type: "",
     default: "",
     description: "Reference: 数据绑定",
     required: "",
-    body: '{{${1:value}}}',
+    body: "{{${1:value}}}",
   },
   {
-    name: 'wx:for',
+    name: "wx:for",
     type: "",
     default: "",
     description: "Reference: 列表渲染",
@@ -27,7 +27,7 @@ export const WxmlDataList: Attributes[] = [
     body: 'wx:for="{{${1:array}}}"',
   },
   {
-    name: 'wx:for-index',
+    name: "wx:for-index",
     type: "",
     default: "",
     description: "Reference: 列表渲染 index",
@@ -35,7 +35,7 @@ export const WxmlDataList: Attributes[] = [
     body: 'wx:for-index="${1:idx}"',
   },
   {
-    name: 'wx:for-item',
+    name: "wx:for-item",
     type: "",
     default: "",
     description: "Reference: 列表渲染 item",
@@ -43,7 +43,7 @@ export const WxmlDataList: Attributes[] = [
     body: 'wx:for-item="${1:itemName}"',
   },
   {
-    name: 'wx:key',
+    name: "wx:key",
     type: "",
     default: "",
     description: "Reference: 列表渲染 key",
@@ -51,7 +51,7 @@ export const WxmlDataList: Attributes[] = [
     body: 'wx:key="${1:index}"',
   },
   {
-    name: 'wx:for-index-item',
+    name: "wx:for-index-item",
     type: "",
     default: "",
     description: "Reference: 列表渲染 index item",
@@ -59,7 +59,7 @@ export const WxmlDataList: Attributes[] = [
     body: 'wx:for="{{${1:array}}}" wx:for-index="${2:idx}" wx:for-item="${3:itemName}"',
   },
   {
-    name: 'wx:if',
+    name: "wx:if",
     type: "",
     default: "",
     description: "Reference: 条件渲染",
@@ -67,7 +67,7 @@ export const WxmlDataList: Attributes[] = [
     body: 'wx:if="{{${1:condition}}}"',
   },
   {
-    name: 'wx:elif',
+    name: "wx:elif",
     type: "",
     default: "",
     description: "Reference: 条件渲染 elif",
@@ -75,11 +75,11 @@ export const WxmlDataList: Attributes[] = [
     body: 'wx:elif="{{${1:condition}}}"',
   },
   {
-    name: 'wx:else',
+    name: "wx:else",
     type: "",
     default: "",
     description: "Reference: 条件渲染 else",
     required: "",
-    body: 'wx:else',
+    body: "wx:else",
   },
 ];

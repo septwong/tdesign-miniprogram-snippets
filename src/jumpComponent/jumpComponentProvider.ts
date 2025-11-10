@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-11-07 14:48:49
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-11-12 13:24:15
+ * @LastEditTime: 2025-11-10 18:14:16
  * @FilePath: /tdesign-miniprogram-snippets/src/jumpComponent/jumpComponentProvider.ts
  * @Description: 在 wxml 页面，'alt + 点击自定义组件的标签名'跳转到对应的组件页面
  */
@@ -35,11 +35,7 @@ function findRootPath(path: string): string {
 export class jumpCompDefinitionProvider implements vscode.DefinitionProvider {
   constructor(public config: Config) {}
 
-  provideDefinition(
-    doc: vscode.TextDocument,
-    position: vscode.Position,
-    token: vscode.CancellationToken
-  ) {
+  provideDefinition(doc: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken) {
     const lineText = doc.lineAt(position).text;
     const wordRange = doc.getWordRangeAtPosition(position, /[\w|\-]+\b/);
     const tag = (lineText.match(/(?<=<\/?)[\w|\-]+\b/) || [])[0];
@@ -83,10 +79,7 @@ export class jumpCompDefinitionProvider implements vscode.DefinitionProvider {
 
     const componentPath = path.join(rootPath, `${compPath}.js`);
 
-    return new vscode.Location(
-      vscode.Uri.file(componentPath),
-      new vscode.Position(0, 0)
-    );
+    return new vscode.Location(vscode.Uri.file(componentPath), new vscode.Position(0, 0));
   }
 }
 
@@ -99,10 +92,10 @@ export class jumpCompDefinitionProvider implements vscode.DefinitionProvider {
 export function jumpCompListener(
   enableJumpComponent: boolean,
   context: vscode.ExtensionContext,
-  e?: vscode.ConfigurationChangeEvent,
+  e?: vscode.ConfigurationChangeEvent
 ) {
-  console.log("🚀 ~ affectsConfiguration: enableJumpComponent: ", enableJumpComponent, e &&!e.affectsConfiguration('tdesign-miniprogram-snippets.enableJumpComponent'));
-  if (e &&!e.affectsConfiguration('tdesign-miniprogram-snippets.enableJumpComponent')) {
+  // console.log("🚀 ~ affectsConfiguration: enableJumpComponent: ", enableJumpComponent, e &&!e.affectsConfiguration('tdesign-miniprogram-snippets.enableJumpComponent'));
+  if (e && !e.affectsConfiguration("tdesign-miniprogram-snippets.enableJumpComponent")) {
     // console.log("🚀 ~ affectsConfiguration: enableJumpComponent");
     return;
   }
@@ -112,10 +105,7 @@ export function jumpCompListener(
     // hover
     if (!jumpCompProvider) {
       // 避免重复注册
-      jumpCompProvider = languages.registerDefinitionProvider(
-        wxml,
-        new jumpCompDefinitionProvider(config)
-      );
+      jumpCompProvider = languages.registerDefinitionProvider(wxml, new jumpCompDefinitionProvider(config));
       context.subscriptions.push(jumpCompProvider);
     }
   } else {

@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-10-14 17:59:26
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-11-12 13:52:56
+ * @LastEditTime: 2025-11-10 18:18:08
  * @FilePath: /tdesign-miniprogram-snippets/src/extension.ts
  * @Description:
  */
@@ -20,9 +20,7 @@ const { languages } = vscode;
 let listener_index = 0;
 
 export function activate(context: vscode.ExtensionContext) {
-  console.log(
-    '🎉 Congratulations, your extension "tdesign-miniprogram-snippets" is now active!'
-  );
+  // console.log('🎉 Congratulations, your extension "tdesign-miniprogram-snippets" is now active!');
 
   vscode.languages.getLanguages().then((resp) => {
     // console.log("🚀 ~ getLanguages ~ : ", JSON.stringify(resp));
@@ -54,20 +52,15 @@ export function activate(context: vscode.ExtensionContext) {
   // listener 监听
   function listenFunc(e?: vscode.ConfigurationChangeEvent, configs?: any) {
     // console.log("🚀 ~ configActivate ~ config:", configs);
-    const {
-      enableHover,
-      enableCreatePage,
-      enableCreateComponent,
-      enableJumpComponent,
-      enableHighlightComponent,
-    } = configs;
+    const { enableHover, enableCreatePage, enableCreateComponent, enableJumpComponent, enableHighlightComponent } =
+      configs;
     // if (!e) {
     //   return;
     // }
     // console.log('e:', e);
-    console.log(
-      `---------------- listenFunc: ${listener_index++} - ${new Date().toLocaleString()} -------------------------------`
-    );
+    // console.log(
+    //   `---------------- listenFunc: ${listener_index++} - ${new Date().toLocaleString()} -------------------------------`
+    // );
     // hover 悬停
     hoverListener(enableHover, context, e);
     // 注册创建页面命令

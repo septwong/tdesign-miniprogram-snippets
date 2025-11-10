@@ -2,21 +2,13 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-11-07 15:55:25
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-11-12 13:24:58
+ * @LastEditTime: 2025-11-10 18:13:29
  * @FilePath: /tdesign-miniprogram-snippets/src/highlightComponent/index.ts
  * @Description: 组件高亮，支持自定义颜色，支持配置不需要高亮的组件
  */
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
 import { Config, config } from "../config";
-import {
-  TextEditor,
-  window,
-  Disposable,
-  workspace,
-  TextDocument,
-  Range,
-  TextEditorDecorationType,
-} from "vscode";
+import { TextEditor, window, Disposable, workspace, TextDocument, Range, TextEditorDecorationType } from "vscode";
 
 const COMMENT_REGEXP = /<!--([\s\S]*?)-->/g;
 // const TAG_REGEXP = /<\/?([A-Z]+\w+)/g
@@ -51,11 +43,7 @@ export default class HighlightComponent {
         this.updateDecorationCache();
       }),
       workspace.onDidChangeTextDocument((e) => {
-        if (
-          e &&
-          window.activeTextEditor &&
-          e.document === window.activeTextEditor.document
-        ) {
+        if (e && window.activeTextEditor && e.document === window.activeTextEditor.document) {
           update(window.activeTextEditor, true);
         }
       })
@@ -97,9 +85,7 @@ export default class HighlightComponent {
     });
   }
   dispose() {
-    Object.keys(this.decorationCache).forEach((k) =>
-      this.decorationCache[k].style.dispose()
-    );
+    Object.keys(this.decorationCache).forEach((k) => this.decorationCache[k].style.dispose());
     this.decorationCache = {};
     this.disposables.forEach((d) => d.dispose());
   }
@@ -111,9 +97,7 @@ export default class HighlightComponent {
     for (let i in tag) {
       let TAG_REGEXP_POINTER = new RegExp(`</?(${i}\\w*)`, "g");
       let ranges = [...getRanges(text, TAG_REGEXP_POINTER, doc, comments, i)];
-      let decorationType = window.createTextEditorDecorationType(
-        Object.assign({}, { color: tag[i] })
-      );
+      let decorationType = window.createTextEditorDecorationType(Object.assign({}, { color: tag[i] }));
       const _cacheName = doc.fileName + "-cnyballk-" + i;
       if (this.decorationCache[_cacheName]) {
         this.decorationCache[_cacheName].style.dispose();
@@ -126,9 +110,7 @@ export default class HighlightComponent {
       };
     }
     let ranges = getRanges(text, TAG_REGEXP, doc, comments);
-    let decorationType = window.createTextEditorDecorationType(
-      Object.assign({}, { color })
-    );
+    let decorationType = window.createTextEditorDecorationType(Object.assign({}, { color }));
     const _cacheName = doc.fileName + "-cnyballk-color";
     if (this.decorationCache[_cacheName]) {
       this.decorationCache[_cacheName].style.dispose();
@@ -141,13 +123,7 @@ export default class HighlightComponent {
     };
   }
 }
-function getRanges(
-  content: string,
-  regexp: RegExp,
-  doc: TextDocument,
-  excludeRanges: Range[],
-  tag?: string
-) {
+function getRanges(content: string, regexp: RegExp, doc: TextDocument, excludeRanges: Range[], tag?: string) {
   let match: RegExpExecArray | null;
   let ranges: Range[] = [];
   // tslint:disable:no-conditional-assignment
@@ -212,15 +188,20 @@ function shouldCreateRange(word: string) {
 export function highlightCompListener(
   enableHighlightComponent: boolean,
   context: vscode.ExtensionContext,
-  e?: vscode.ConfigurationChangeEvent,
+  e?: vscode.ConfigurationChangeEvent
 ) {
-  console.log("🚀 ~ affectsConfiguration: highlightComponent.enableHighlightComponent: ", enableHighlightComponent, e && !e.affectsConfiguration('tdesign-miniprogram-snippets.highlightComponent.enableHighlightComponent'));
-  if (e && !e.affectsConfiguration('tdesign-miniprogram-snippets.highlightComponent.enableHighlightComponent')) {
+  // console.log(
+  //   "🚀 ~ affectsConfiguration: highlightComponent.enableHighlightComponent: ",
+  //   enableHighlightComponent,
+  //   e && !e.affectsConfiguration("tdesign-miniprogram-snippets.highlightComponent.enableHighlightComponent")
+  // );
+  if (e && !e.affectsConfiguration("tdesign-miniprogram-snippets.highlightComponent.enableHighlightComponent")) {
     // console.log("🚀 ~ affectsConfiguration: highlightComponent.enableHighlightComponent");
     return;
   }
   let tid: NodeJS.Timer = null as any;
-  if (tid) {}
+  if (tid) {
+  }
   const highlightComponent = new HighlightComponent(config);
   tid = setTimeout(() => {
     highlightComponent.onChange(vscode.window.activeTextEditor, true);

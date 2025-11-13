@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-10-22 18:30:46
+ * @LastEditTime: 2025-11-13 15:56:23
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description:
  */
@@ -1385,6 +1385,13 @@ export const CompletionData: CompletionObject = {
         required: "N",
       },
       {
+        name: "allow-same-day",
+        type: "Boolean",
+        default: "false",
+        description: "`1.11.2`。是否允许区间选择日历的起止时间相同，仅当 `type='range'` 时有效",
+        required: "N",
+      },
+      {
         name: "auto-close",
         type: "Boolean",
         default: "true",
@@ -1549,7 +1556,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "用来定义 value / label 在 `options` 中对应的字段别名。TS 类型：`KeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
+          "用来定义 value / label / children / disabled 在 `options` 中对应的字段别名。TS 类型：`CascaderKeysType` `type CascaderKeysType = TreeKeysType`。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
         required: "N",
       },
       {
@@ -2523,8 +2530,8 @@ export const CompletionData: CompletionObject = {
       {
         name: "item-height",
         type: "Number",
-        default: "80",
-        description: "PickerItem 的子项高度，单位 rpx",
+        default: "40",
+        description: "PickerItem 的子项高度，单位 px",
         required: "N",
       },
       {
@@ -2585,6 +2592,13 @@ export const CompletionData: CompletionObject = {
         type: "Boolean",
         default: "false",
         description: "是否显示",
+        required: "N",
+      },
+      {
+        name: "visible-item-count",
+        type: "Number",
+        default: "5",
+        description: "可视区域 PickerItem 的子项个数",
         required: "N",
       },
     ],

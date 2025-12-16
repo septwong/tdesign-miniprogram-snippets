@@ -1,4 +1,68 @@
 {
+  // 高阶
+  "TDesign ChatList 对话列表": {
+    "prefix": "t-chat",
+    "body": [
+      "xxxxxx"
+    ],
+    "description": "TDesign ChatList 组件"
+  },
+  "TDesign ChatSender 对话输入": {
+    "prefix": "t-chat-sender",
+    "body": [
+      "xxxxxx"
+    ],
+    "description": "TDesign ChatSender 组件"
+  },
+  "TDesign ChatMessage 对话消息体": {
+    "prefix": "t-chat-message",
+    "body": [
+      "xxxxxx"
+    ],
+    "description": "TDesign ChatMessage 组件"
+  },
+  "TDesign ChatActionbar 对话操作": {
+    "prefix": "t-chat-actionbar",
+    "body": [
+      "xxxxxx"
+    ],
+    "description": "TDesign ChatActionbar 组件"
+  },
+  "TDesign ChatMarkdown Markdown内容": {
+    "prefix": "t-chat-markdown",
+    "body": [
+      "xxxxxx"
+    ],
+    "description": "TDesign ChatMarkdown 组件"
+  },
+  "TDesign ChatThinking 思考过程": {
+    "prefix": "t-chat-thinking",
+    "body": [
+      "xxxxxx"
+    ],
+    "description": "TDesign ChatThinking 组件"
+  },
+  "TDesign ChatLoading 对话加载": {
+    "prefix": "t-chat-loading",
+    "body": [
+      "xxxxxx"
+    ],
+    "description": "TDesign ChatLoading 组件"
+  },
+  "TDesign Attachments 文件附件": {
+    "prefix": "t-attachments",
+    "body": [
+      "xxxxxx"
+    ],
+    "description": "TDesign Attachments 组件"
+  },
+  "TDesign ChatContent 对话正文": {
+    "prefix": "t-chat-content",
+    "body": [
+      "xxxxxx"
+    ],
+    "description": "TDesign ChatContent 组件"
+  },
   "TDesign Button 按钮": {
     "prefix": "t-button",
     "body": [
@@ -1190,6 +1254,27 @@
     "prefix": "t-overlay",
     "body": [
       "<t-overlay visible=\"{{visible}}\" duration=\"{{500}}\" bind:click=\"handleOverlayClick\" />"
+    ],
+    "description": "TDesign Overlay 组件"
+  },
+  "TDesign Popover 遮罩层": {
+    "prefix": "t-popover",
+    "body": [
+      "<t-popover",
+      "  placement=\"top\"",
+      "  theme=\"dark\"",
+      "  bind:visible-change=\"onVisibleChange\"",
+      "  data-target=\"normal\"",
+      "  visible=\"{{visible}}\"",
+      "  closeOnClickOutside=\"{{false}}\"",
+      ">",
+      "  <view slot=\"content\">弹出气泡内容</view>",
+      "  <view class=\"popover-example__content\">",
+      "    <t-button theme=\"primary\" variant=\"outline\" size=\"large\" data-target=\"normal\" bind:tap=\"showPopover\">",
+      "      带箭头",
+      "    </t-button>",
+      "  </view>",
+      "</t-popover>"
     ],
     "description": "TDesign Overlay 组件"
   },

@@ -2,13 +2,141 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-11-13 15:56:23
+ * @LastEditTime: 2025-12-16 18:52:20
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description:
  */
 import { type CompletionObject } from "./types";
 
 export const CompletionData: CompletionObject = {
+  // 高阶
+  "t-chat": {
+    // AI Chat 对话 - 对话列表
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "animation",
+        type: "String",
+        default: "skeleton",
+        description:
+          "动画效果，支持「渐变加载动画」,「闪烁加载动画」, 「骨架屏」三种。可选项：skeleton/moving/gradient/dot",
+        required: "N",
+      },
+      {
+        name: "data",
+        type: "Array",
+        default: "-",
+        description:
+          "对话列表的数据。TS 类型：`Array<TdChatItemMeta>` ` interface TdChatItemMeta { avatar?: string; name?:string; role?:string; datetime?: string; content?: string; status?: string }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/pro-components/chat/chat-list/type.ts)",
+        required: "N",
+      },
+      {
+        name: "layout",
+        type: "String",
+        default: "both",
+        description:
+          "对话布局形式，支持两侧对齐与左对齐。使用插槽自定义对话内容时不生效，得用`t-chat-message`的`placement`属性。可选项：both/single",
+        required: "N",
+      },
+      {
+        name: "reverse",
+        type: "Boolean",
+        default: "true",
+        description: "是否表现为倒序",
+        required: "N",
+      },
+    ],
+  },
+  "t-chat-sender": {
+    // AI Chat 对话 - 对话输入
+    attrs: [],
+  },
+  "t-chat-message": {
+    // AI Chat 对话 - 对话消息体
+    attrs: [],
+  },
+  "t-chat-actionbar": {
+    // AI Chat 对话 - 对话操作
+    attrs: [],
+  },
+  "t-chat-markdown": {
+    // AI Chat 对话 - Markdown内容
+    attrs: [],
+  },
+  "t-chat-thinking": {
+    // AI Chat 对话 - 思考过程
+    attrs: [],
+  },
+  "t-chat-loading": {
+    // AI Chat 对话 - 对话加载
+    attrs: [],
+  },
+  "t-attachments": {
+    // AI Chat 对话 - 文件附件
+    attrs: [],
+  },
+  "t-chat-content": {
+    // AI Chat 对话 - 对话正文
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "content",
+        type: "Object",
+        default: "-",
+        description:
+          "必需。聊天内容对象。TS 类型：`TdChatContentType ` `interface TdChatContentType { type: 'text' | 'markdown'; data: string; }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/pro-components/chat/chat-content/type.ts)",
+        required: "Y",
+      },
+      {
+        name: "markdown-props",
+        type: "Object",
+        default: "-",
+        description:
+          "marked 解析器的配置选项。TS 类型：`ChatMarkdownProps`，[ChatMarkdown API Documents](./chat-markdown?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/pro-components/chat/chat-content/type.ts)",
+        required: "N",
+      },
+      {
+        name: "role",
+        type: "String",
+        default: "-",
+        description: "必需。消息角色，用于区分用户和助手的消息样式\t。可选项：user/assistant/system",
+        required: "Y",
+      },
+      {
+        name: "status",
+        type: "String",
+        default: "-",
+        description: "正文状态。可选项：error / ''",
+        required: "N",
+      },
+    ],
+  },
   // 基础
   "t-button": {
     attrs: [
@@ -3859,7 +3987,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "透传 Image 组件全部属性。TS 类型：`ImageProps`，[Image API Documents](./image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/upload/type.ts)",
+          "透传 Image 组件全部属性。TS 类型：`ImageProps`，[Image API Documents](https://tdesign.tencent.com/miniprogram/components/image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/upload/type.ts)",
         required: "N",
       },
       {
@@ -3988,7 +4116,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "透传至 Image 组件。TS 类型：`ImageProps`，[Image API Documents](./image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/avatar/type.ts)",
+          "透传至 Image 组件。TS 类型：`ImageProps`，[Image API Documents](https://tdesign.tencent.com/miniprogram/components/image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/avatar/type.ts)",
         required: "N",
       },
       {
@@ -4728,7 +4856,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "透传至 Image 组件。TS 类型：`ImageProps`，[Image API Documents](./image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/grid-item/type.ts)",
+          "透传至 Image 组件。TS 类型：`ImageProps`，[Image API Documents](https://tdesign.tencent.com/miniprogram/components/image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/grid-item/type.ts)",
         required: "N",
       },
       {
@@ -4898,6 +5026,14 @@ export const CompletionData: CompletionObject = {
         default: "false",
         description:
           "是否显示删除操作，前提需要开启页码。值为字符串表示图标名称，值为 `true` 表示使用默认图标 `delete`，值为 `Object` 类型，表示透传至 `icon`，不传表示不显示图标。[通用类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/common/common.ts)",
+        required: "N",
+      },
+      {
+        name: "image-props",
+        type: "Object",
+        default: "-",
+        description:
+          "`1.12.0`。透传至 Image 组件。TS 类型：`ImageProps`，[Image API Documents](https://tdesign.tencent.com/miniprogram/components/image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/image-viewer/type.ts)",
         required: "N",
       },
       {
@@ -6650,6 +6786,60 @@ export const CompletionData: CompletionObject = {
         type: "Number",
         default: "11000",
         description: "遮罩层级",
+        required: "N",
+      },
+    ],
+  },
+  "t-popover": {
+    attrs: [
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "close-on-click-outside",
+        type: "Boolean",
+        default: "true",
+        description: "是否在点击外部元素后关闭菜单",
+        required: "N",
+      },
+      {
+        name: "content",
+        type: "String",
+        default: "-",
+        description: "确认框内容",
+        required: "N",
+      },
+      {
+        name: "placement",
+        type: "String",
+        default: "top",
+        description:
+          "浮层出现位置。可选项：top/left/right/bottom/top-left/top-right/bottom-left/bottom-right/left-top/left-bottom/right-top/right-bottom",
+        required: "N",
+      },
+      {
+        name: "show-arrow",
+        type: "Boolean",
+        default: "true",
+        description: "是否显示浮层箭头",
+        required: "N",
+      },
+      {
+        name: "theme",
+        type: "String",
+        default: "dark",
+        description: "弹出气泡主题。可选项：dark/light/brand/success/warning/error",
+        required: "N",
+      },
+      {
+        name: "visible",
+        type: "Boolean",
+        default: "-",
+        description: "是否显示气泡确认框",
         required: "N",
       },
     ],

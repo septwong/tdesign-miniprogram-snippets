@@ -2,11 +2,25 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:18
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-11-10 18:12:00
+ * @LastEditTime: 2025-12-16 18:45:11
  * @FilePath: /tdesign-miniprogram-snippets/src/hover/hoverData.ts
  * @Description:
  */
 export const hoverData = {
+  // 高阶
+  "t-chat": "打开 [TDesign ChatList](https://tdesign.tencent.com/miniprogram-chat/components/chat-list)",
+  "t-chat-sender": "打开 [TDesign ChatSender](https://tdesign.tencent.com/miniprogram-chat/components/chat-sender)",
+  "t-chat-message": "打开 [TDesign ChatMessage](https://tdesign.tencent.com/miniprogram-chat/components/chat-message)",
+  "t-chat-actionbar":
+    "打开 [TDesign ChatActionbar](https://tdesign.tencent.com/miniprogram-chat/components/chat-actionbar)",
+  "t-chat-markdown":
+    "打开 [TDesign ChatMarkdown](https://tdesign.tencent.com/miniprogram-chat/components/chat-markdown)",
+  "t-chat-thinking":
+    "打开 [TDesign ChatThinking](https://tdesign.tencent.com/miniprogram-chat/components/chat-thinking)",
+  "t-chat-loading": "打开 [TDesign ChatLoading](https://tdesign.tencent.com/miniprogram-chat/components/chat-loading)",
+  "t-attachments": "打开 [TDesign Attachments](https://tdesign.tencent.com/miniprogram-chat/components/attachments)",
+  "t-chat-content": "打开 [TDesign ChatContent](https://tdesign.tencent.com/miniprogram-chat/components/chat-content)",
+  // 基础
   "t-button": "打开 [TDesign Button](https://tdesign.tencent.com/miniprogram/components/button)",
   "t-divider": "打开 [TDesign Divider](https://tdesign.tencent.com/miniprogram/components/divider)",
   "t-fab": "打开 [TDesign Fab](https://tdesign.tencent.com/miniprogram/components/fab)",
@@ -14,7 +28,7 @@ export const hoverData = {
   "t-row": "打开 [TDesign Row](https://tdesign.tencent.com/miniprogram/components/col)",
   "t-col": "打开 [TDesign Col](https://tdesign.tencent.com/miniprogram/components/col)",
   "t-link": "打开 [TDesign Link](https://tdesign.tencent.com/miniprogram/components/link)",
-
+  // 导航
   "t-back-top": "打开 [TDesign BackTop](https://tdesign.tencent.com/miniprogram/components/back-top)",
   "t-drawer": "打开 [TDesign Drawer](https://tdesign.tencent.com/miniprogram/components/drawer)",
   "t-indexes": "打开 [TDesign Indexes](https://tdesign.tencent.com/miniprogram/components/indexes)",
@@ -28,7 +42,7 @@ export const hoverData = {
   "t-tab-bar-item": "打开 [TDesign TabBarItem](https://tdesign.tencent.com/miniprogram/components/tab-bar)",
   "t-tabs": "打开 [TDesign Tabs](https://tdesign.tencent.com/miniprogram/components/tabs)",
   "t-tab-panel": "打开 [TDesign TabPanel](https://tdesign.tencent.com/miniprogram/components/tabs)",
-
+  // 输入
   "t-calendar": "打开 [TDesign Calendar](https://tdesign.tencent.com/miniprogram/components/calendar)",
   "t-cascader": "打开 [TDesign Cascader](https://tdesign.tencent.com/miniprogram/components/cascader)",
   "t-checkbox": "打开 [TDesign Checkbox](https://tdesign.tencent.com/miniprogram/components/checkbox)",
@@ -49,7 +63,7 @@ export const hoverData = {
   "t-textarea": "打开 [TDesign Textarea](https://tdesign.tencent.com/miniprogram/components/textarea)",
   "t-tree-select": "打开 [TDesign TreeSelect](https://tdesign.tencent.com/miniprogram/components/tree-select)",
   "t-upload": "打开 [TDesign Upload](https://tdesign.tencent.com/miniprogram/components/upload)",
-
+  // 数据展示
   "t-avatar": "打开 [TDesign Avatar](https://tdesign.tencent.com/miniprogram/components/avatar)",
   "t-avatar-group": "打开 [TDesign Avatar](https://tdesign.tencent.com/miniprogram/components/avatar)",
   "t-badge": "打开 [TDesign Badge](https://tdesign.tencent.com/miniprogram/components/badge)",
@@ -74,7 +88,7 @@ export const hoverData = {
   "t-tag": "打开 [TDesign Tag](https://tdesign.tencent.com/miniprogram/components/tag)",
   "t-check-tag": "打开 [TDesign Tag](https://tdesign.tencent.com/miniprogram/components/tag)",
   "t-watermark": "打开 [TDesign Watermark](https://tdesign.tencent.com/miniprogram/components/watermark)",
-
+  // 反馈
   "t-action-sheet": "打开 [TDesign ActionSheet](https://tdesign.tencent.com/miniprogram/components/action-sheet)",
   "t-dialog": "打开 [TDesign Dialog](https://tdesign.tencent.com/miniprogram/components/dialog)",
   "t-dropdown-menu": "打开 [TDesign DropdownMenu](https://tdesign.tencent.com/miniprogram/components/dropdown-menu)",
@@ -84,6 +98,7 @@ export const hoverData = {
   "t-message": "打开 [TDesign Message](https://tdesign.tencent.com/miniprogram/components/message)",
   "t-notice-bar": "打开 [TDesign NoticeBar](https://tdesign.tencent.com/miniprogram/components/notice-bar)",
   "t-overlay": "打开 [TDesign Overlay](https://tdesign.tencent.com/miniprogram/components/overlay)",
+  "t-popover": "打开 [TDesign Overlay](https://tdesign.tencent.com/miniprogram/components/popover)",
   "t-popup": "打开 [TDesign Popup](https://tdesign.tencent.com/miniprogram/components/popup)",
   "t-pull-down-refresh":
     "打开 [TDesign PullDownRefresh](https://tdesign.tencent.com/miniprogram/components/pull-down-refresh)",

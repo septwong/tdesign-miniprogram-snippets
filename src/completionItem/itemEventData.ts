@@ -2,13 +2,50 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-10-21 18:15:23
+ * @LastEditTime: 2025-12-16 18:55:06
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemEventData.ts
  * @Description:
  */
 import { type CompletionEventObject } from "./types";
 
 export const CompletionEventData: CompletionEventObject = {
+  // 高阶
+  "t-chat": {
+    // AI Chat 对话 - 对话列表
+    attrs: [],
+  },
+  "t-chat-sender": {
+    // AI Chat 对话 - 对话输入
+    attrs: [],
+  },
+  "t-chat-message": {
+    // AI Chat 对话 - 对话消息体
+    attrs: [],
+  },
+  "t-chat-actionbar": {
+    // AI Chat 对话 - 对话操作
+    attrs: [],
+  },
+  "t-chat-markdown": {
+    // AI Chat 对话 - Markdown内容
+    attrs: [],
+  },
+  "t-chat-thinking": {
+    // AI Chat 对话 - 思考过程
+    attrs: [],
+  },
+  "t-chat-loading": {
+    // AI Chat 对话 - 对话加载
+    attrs: [],
+  },
+  "t-attachments": {
+    // AI Chat 对话 - 文件附件
+    attrs: [],
+  },
+  "t-chat-content": {
+    // AI Chat 对话 - 对话正文
+    attrs: [],
+  },
   // 基础
   "t-button": {
     attrs: [
@@ -232,6 +269,32 @@ export const CompletionEventData: CompletionEventObject = {
   },
   // 反馈
   "t-action-sheet": {
-    attrs: [],
+    attrs: [
+      {
+        name: "cancel",
+        params: "\\-",
+        description: "点击取消按钮时触发",
+      },
+      {
+        name: "close",
+        params: "`(trigger: ActionSheetTriggerSource)`",
+        description:
+          "关闭时触发。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/action-sheet/type.ts)。<br/>`type ActionSheetTriggerSource = 'overlay' | 'command' | 'select' `<br/>",
+      },
+      {
+        name: "selected",
+        params: "`(selected: ActionSheetItem | string, index: number)`",
+        description: "选择菜单项时触发",
+      },
+    ],
+  },
+  "t-popover": {
+    attrs: [
+      {
+        name: "visible-change",
+        params: "`(visible: boolean)`",
+        description: "确认框显示或隐藏时触发",
+      },
+    ],
   },
 };

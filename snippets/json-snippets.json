@@ -1,4 +1,69 @@
 {
+  // 高阶
+  "TDesign ChatList 对话列表": {
+    "prefix": "t-chat",
+    "body": [
+      "\"t-chat\": \"tdesign-miniprogram/chat-list/chat-list\""
+    ],
+    "description": "TDesign ChatList 组件"
+  },
+  "TDesign ChatSender 对话输入": {
+    "prefix": "t-chat-sender",
+    "body": [
+      "\"t-chat-sender\": \"tdesign-miniprogram/chat-sender/chat-sender\""
+    ],
+    "description": "TDesign ChatSender 组件"
+  },
+  "TDesign ChatMessage 对话消息体": {
+    "prefix": "t-chat-message",
+    "body": [
+      "\"t-chat-message\": \"tdesign-miniprogram/chat-message/chat-message\""
+    ],
+    "description": "TDesign ChatMessage 组件"
+  },
+  "TDesign ChatActionbar 对话操作": {
+    "prefix": "t-chat-actionbar",
+    "body": [
+      "\"t-chat-actionbar\": \"tdesign-miniprogram/chat-actionbar/chat-actionbar\""
+    ],
+    "description": "TDesign ChatActionbar 组件"
+  },
+  "TDesign ChatMarkdown Markdown内容": {
+    "prefix": "t-chat-markdown",
+    "body": [
+      "\"t-chat-markdown\": \"tdesign-miniprogram/chat-markdown/chat-markdown\""
+    ],
+    "description": "TDesign ChatMarkdown 组件"
+  },
+  "TDesign ChatThinking 思考过程": {
+    "prefix": "t-chat-thinking",
+    "body": [
+      "\"t-chat-thinking\": \"tdesign-miniprogram/chat-thinking/chat-thinking\""
+    ],
+    "description": "TDesign ChatThinking 组件"
+  },
+  "TDesign ChatLoading 对话加载": {
+    "prefix": "t-chat-loading",
+    "body": [
+      "\"t-chat-loading\": \"tdesign-miniprogram/chat-loading/chat-loading\""
+    ],
+    "description": "TDesign ChatLoading 组件"
+  },
+  "TDesign Attachments 文件附件": {
+    "prefix": "t-attachments",
+    "body": [
+      "\"t-attachments\": \"tdesign-miniprogram/attachments/attachments\""
+    ],
+    "description": "TDesign Attachments 组件"
+  },
+  "TDesign ChatContent 对话正文": {
+    "prefix": "t-chat-content",
+    "body": [
+      "\"t-chat-content\": \"tdesign-miniprogram/chat-content/chat-content\""
+    ],
+    "description": "TDesign ChatContent 组件"
+  },
+  // 基础
   "TDesign Button 按钮": {
     "prefix": "t-button",
     "body": [
@@ -454,6 +519,13 @@
       "\"t-overlay\": \"tdesign-miniprogram/overlay/overlay\""
     ],
     "description": "TDesign Overlay 组件"
+  },
+  "TDesign Popover 弹出气泡": {
+    "prefix": "t-popover",
+    "body": [
+      "\"t-popover\": \"tdesign-miniprogram/popover/popover\""
+    ],
+    "description": "TDesign Popover 组件"
   },
   "TDesign Popup 弹出层": {
     "prefix": "t-popup",

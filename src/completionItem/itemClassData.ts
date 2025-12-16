@@ -2,13 +2,50 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:19:58
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-10-21 18:38:49
+ * @LastEditTime: 2025-12-16 18:54:33
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemClassData.ts
  * @Description:
  */
 import { type CompletionClassObject } from "./types";
 
 export const CompletionClassData: CompletionClassObject = {
+  // 高阶
+  "t-chat": {
+    // AI Chat 对话 - 对话列表
+    attrs: [],
+  },
+  "t-chat-sender": {
+    // AI Chat 对话 - 对话输入
+    attrs: [],
+  },
+  "t-chat-message": {
+    // AI Chat 对话 - 对话消息体
+    attrs: [],
+  },
+  "t-chat-actionbar": {
+    // AI Chat 对话 - 对话操作
+    attrs: [],
+  },
+  "t-chat-markdown": {
+    // AI Chat 对话 - Markdown内容
+    attrs: [],
+  },
+  "t-chat-thinking": {
+    // AI Chat 对话 - 思考过程
+    attrs: [],
+  },
+  "t-chat-loading": {
+    // AI Chat 对话 - 对话加载
+    attrs: [],
+  },
+  "t-attachments": {
+    // AI Chat 对话 - 文件附件
+    attrs: [],
+  },
+  "t-chat-content": {
+    // AI Chat 对话 - 对话正文
+    attrs: [],
+  },
   // 基础
   "t-button": {
     attrs: [
@@ -142,6 +179,31 @@ export const CompletionClassData: CompletionClassObject = {
   },
   // 反馈
   "t-action-sheet": {
-    attrs: [],
+    attrs: [
+      {
+        className: "t-class",
+        description: "根节点样式类",
+      },
+      {
+        className: "t-class-cancel",
+        description: "取消样式类",
+      },
+      {
+        className: "t-class-content",
+        description: "内容样式类",
+      },
+    ],
+  },
+  "t-popover": {
+    attrs: [
+      {
+        className: "t-class",
+        description: "根节点样式类",
+      },
+      {
+        className: "t-class-content",
+        description: "内容样式类",
+      },
+    ],
   },
 };

@@ -2,13 +2,50 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-31 10:19:00
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-10-21 18:33:11
+ * @LastEditTime: 2025-12-16 18:54:49
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemCssData.ts
  * @Description:
  */
 import { type CompletionCssObject } from "./types";
 
 export const CompletionCssData: CompletionCssObject = {
+  // 高阶
+  "t-chat": {
+    // AI Chat 对话 - 对话列表
+    attrs: [],
+  },
+  "t-chat-sender": {
+    // AI Chat 对话 - 对话输入
+    attrs: [],
+  },
+  "t-chat-message": {
+    // AI Chat 对话 - 对话消息体
+    attrs: [],
+  },
+  "t-chat-actionbar": {
+    // AI Chat 对话 - 对话操作
+    attrs: [],
+  },
+  "t-chat-markdown": {
+    // AI Chat 对话 - Markdown内容
+    attrs: [],
+  },
+  "t-chat-thinking": {
+    // AI Chat 对话 - 思考过程
+    attrs: [],
+  },
+  "t-chat-loading": {
+    // AI Chat 对话 - 对话加载
+    attrs: [],
+  },
+  "t-attachments": {
+    // AI Chat 对话 - 文件附件
+    attrs: [],
+  },
+  "t-chat-content": {
+    // AI Chat 对话 - 对话正文
+    attrs: [],
+  },
   // 基础
   "t-button": {
     attrs: [
@@ -198,7 +235,7 @@ export const CompletionCssData: CompletionCssObject = {
         description: "-",
       },
       {
-        name: "--td-button-extra-small-icon-font-size",
+        name: "--td-button-extra-small-icon-size",
         defaultValue: "36rpx",
         description: "-",
       },
@@ -283,7 +320,7 @@ export const CompletionCssData: CompletionCssObject = {
         description: "-",
       },
       {
-        name: "--td-button-large-icon-font-size",
+        name: "--td-button-large-icon-size",
         defaultValue: "48rpx",
         description: "-",
       },
@@ -383,7 +420,7 @@ export const CompletionCssData: CompletionCssObject = {
         description: "-",
       },
       {
-        name: "--td-button-medium-icon-font-size",
+        name: "--td-button-medium-icon-size",
         defaultValue: "40rpx",
         description: "-",
       },
@@ -498,7 +535,7 @@ export const CompletionCssData: CompletionCssObject = {
         description: "-",
       },
       {
-        name: "--td-button-small-icon-font-size",
+        name: "--td-button-small-icon-size",
         defaultValue: "36rpx",
         description: "-",
       },
@@ -836,6 +873,71 @@ export const CompletionCssData: CompletionCssObject = {
   },
   // 反馈
   "t-action-sheet": {
-    attrs: [],
+    attrs: [
+      {
+        name: "--td-action-sheet-border-color",
+        defaultValue: "@component-stroke",
+        description: "-",
+      },
+      {
+        name: "--td-action-sheet-border-radius",
+        defaultValue: "@radius-extraLarge",
+        description: "-",
+      },
+      {
+        name: "--td-action-sheet-cancel-color",
+        defaultValue: "@text-color-primary",
+        description: "-",
+      },
+      {
+        name: "--td-action-sheet-color",
+        defaultValue: "@text-color-primary",
+        description: "-",
+      },
+      {
+        name: "--td-action-sheet-description-color",
+        defaultValue: "@text-color-placeholder",
+        description: "-",
+      },
+      {
+        name: "--td-action-sheet-description-font",
+        defaultValue: "@font-body-medium",
+        description: "-",
+      },
+      {
+        name: "--td-action-sheet-disabled-color",
+        defaultValue: "@text-color-disabled",
+        description: "-",
+      },
+      {
+        name: "--td-action-sheet-dot-active-color",
+        defaultValue: "@brand-color",
+        description: "-",
+      },
+      {
+        name: "--td-action-sheet-dot-color",
+        defaultValue: "@text-color-disabled",
+        description: "-",
+      },
+      {
+        name: "--td-action-sheet-dot-size",
+        defaultValue: "16rpx",
+        description: "-",
+      },
+      {
+        name: "--td-action-sheet-gap-color",
+        defaultValue: "@bg-color-page",
+        description: "-",
+      },
+    ],
+  },
+  "t-popover": {
+    attrs: [
+      {
+        name: "--td-popover-padding",
+        defaultValue: "24rpx",
+        description: "-",
+      },
+    ],
   },
 };

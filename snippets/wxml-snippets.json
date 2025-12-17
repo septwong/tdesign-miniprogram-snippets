@@ -3,66 +3,155 @@
   "TDesign ChatList 对话列表": {
     "prefix": "t-chat",
     "body": [
-      "xxxxxx"
+      "<view class=\"chat-box\" style=\"height: {{contentHeight}};\">",
+      "  <t-chat id=\"chatList\" bindscroll=\"onScroll\">",
+      "    <block wx:for=\"{{chatList}}\" wx:key=\"index\">",
+      "      <t-chat-message",
+      "        avatar=\"{{item.avatar || ''}}\"",
+      "        name=\"{{item.name || ''}}\"",
+      "        datetime=\"{{item.datetime || ''}}\"",
+      "        content=\"{{item.content}}\"",
+      "        role=\"{{item.role}}\"",
+      "        placement=\"{{item.role === 'user' ? 'right' : 'left'}}\"",
+      "        status=\"{{item.status || ''}}\"",
+      "      >",
+      "        <t-chat-actionbar",
+      "          wx:if=\"{{chatIndex !== chatList.length - 1 && item.status === 'complete' && item.role === 'assistant'}}\"",
+      "          slot=\"actionbar\"",
+      "          placement=\"end\"",
+      "          bind:actions=\"handleAction\"",
+      "        />",
+      "      </t-chat-message>",
+      "    </block>",
+      "    <view slot=\"footer\">",
+      "      <t-chat-sender",
+      "        value=\"{{value}}\"",
+      "        loading=\"{{loading}}\"",
+      "        disabled=\"{{disabled}}\"",
+      "        autoRiseWithKeyboard=\"{{true}}\"",
+      "        renderPresets=\"{{renderPresets}}\"",
+      "        bind:send=\"onSend\"",
+      "        bind:stop=\"onStop\"",
+      "        bind:focus=\"onFocus\"",
+      "      />",
+      "    </view>",
+      "  </t-chat>",
+      "  <!-- 内置虚拟列表优化性能仅在data属性中使用 -->",
+      "  <!-- <t-chat id=\"chatList\" bindscroll=\"onScroll\" data=\"{{chatList}}\"></t-chat> -->",
+      "</view>",
+      "<t-toast id=\"t-toast\" />"
     ],
     "description": "TDesign ChatList 组件"
   },
   "TDesign ChatSender 对话输入": {
     "prefix": "t-chat-sender",
     "body": [
-      "xxxxxx"
+      "<view class=\"demo-base-container\">",
+      "  <!-- 聊天发送器组件 -->",
+      "  <view class=\"chat-sender-demo-wrapper\">",
+      "    <view class=\"chat-sender-height-limit\">",
+      "      <view class=\"chat-sender-height-left-limit\"> </view>",
+      "      <view class=\"chat-sender-height-right-limit\"> </view>",
+      "    </view>",
+      "    <view class=\"chat-sender-placeholder\"> 高度限制：最大高度为132px </view>",
+      "    <view class=\"chat-sender-wrapper\">",
+      "      <t-chat-sender",
+      "        value=\"{{value}}\"",
+      "        loading=\"{{loading}}\"",
+      "        disabled=\"{{disabled}}\"",
+      "        placeholder=\"{{placeholder}}\"",
+      "        textareaProps=\"{{textareaProps}}\"",
+      "        fileList=\"{{fileList}}\"",
+      "        attachmentsProps=\"{{attachmentsProps}}\"",
+      "        renderPresets=\"{{renderPresets}}\"",
+      "        visible=\"{{visible}}\"",
+      "        bind:send=\"onSend\"",
+      "        bind:stop=\"onStop\"",
+      "        bind:focus=\"onFocus\"",
+      "        bind:blur=\"onBlur\"",
+      "        bind:change=\"onChange\"",
+      "        bind:uploadClick=\"onUploadClick\"",
+      "        bind:fileClick=\"onFileClick\"",
+      "        bind:fileDelete=\"onFileDelete\"",
+      "        bind:fileChange=\"onFileChange\"",
+      "        bind:fileAdd=\"onFileAdd\"",
+      "        bind:fileSelect=\"onFileSelect\"",
+      "        bind:updateVisible=\"onUpdateVisible\"",
+      "        bind:keyboardheightchange=\"onKeyboardHeightChange\"",
+      "      >",
+      "        <view slot=\"footer-prefix\" class=\"demo-footer-prefix\">",
+      "          <view class=\"deep-think-block {{deepThinkActive ? 'active' : ''}}\" bind:tap=\"onDeepThinkTap\">",
+      "            <t-icon name=\"system-sum\" size=\"40rpx\" />",
+      "            <text class=\"deep-think-text\">深度思考</text>",
+      "          </view>",
+      "          <view class=\"net-search-block {{ netSearchActive ? 'active' : '' }}\" bind:tap=\"onNetSearchTap\">",
+      "            <t-icon name=\"internet\" size=\"40rpx\" />",
+      "          </view>",
+      "        </view>",
+      "      </t-chat-sender>",
+      "    </view>",
+      "    <view class=\"demo-footer\"> 内容由AI生成，仅供参考 </view>",
+      "  </view>",
+      "</view>"
     ],
     "description": "TDesign ChatSender 组件"
   },
   "TDesign ChatMessage 对话消息体": {
     "prefix": "t-chat-message",
     "body": [
-      "xxxxxx"
+      "<t-chat-message content=\"{{userMessage.content}}\" role=\"{{userMessage.role}}\"></t-chat-message>"
     ],
     "description": "TDesign ChatMessage 组件"
   },
   "TDesign ChatActionbar 对话操作": {
     "prefix": "t-chat-actionbar",
     "body": [
-      "xxxxxx"
+      "<t-chat-actionbar content=\"{{content}}\" bind:actions=\"handleAction\" />"
     ],
     "description": "TDesign ChatActionbar 组件"
   },
   "TDesign ChatMarkdown Markdown内容": {
     "prefix": "t-chat-markdown",
     "body": [
-      "xxxxxx"
+      "<t-chat-markdown content=\"{{markdownContent}}\" bind:click=\"handleLinkTap\" />"
     ],
     "description": "TDesign ChatMarkdown 组件"
   },
   "TDesign ChatThinking 思考过程": {
     "prefix": "t-chat-thinking",
     "body": [
-      "xxxxxx"
+      "<t-chat-thinking",
+      "  content=\"{{content}}\"",
+      "  layout=\"block\"",
+      "  status=\"{{status}}\"",
+      "  animation=\"moving\"",
+      "  bind:expandChange=\"handleExpandChange\"",
+      "/>"
     ],
     "description": "TDesign ChatThinking 组件"
   },
   "TDesign ChatLoading 对话加载": {
     "prefix": "t-chat-loading",
     "body": [
-      "xxxxxx"
+      "<t-chat-loading animation=\"gradient\" />"
     ],
     "description": "TDesign ChatLoading 组件"
   },
   "TDesign Attachments 文件附件": {
     "prefix": "t-attachments",
     "body": [
-      "xxxxxx"
+      "<t-attachments items=\"{{items}}\" bind:fileClick=\"onFileClick\" bind:remove=\"onRemove\" bind:add=\"onAdd\" />"
     ],
     "description": "TDesign Attachments 组件"
   },
   "TDesign ChatContent 对话正文": {
     "prefix": "t-chat-content",
     "body": [
-      "xxxxxx"
+      "<t-chat-content content=\"{{userContent}}\" role=\"user\"></t-chat-content>"
     ],
     "description": "TDesign ChatContent 组件"
   },
+  // 基础
   "TDesign Button 按钮": {
     "prefix": "t-button",
     "body": [

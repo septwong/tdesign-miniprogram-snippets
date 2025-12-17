@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-12-16 18:52:20
+ * @LastEditTime: 2025-12-17 17:28:03
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description:
  */
@@ -62,31 +62,445 @@ export const CompletionData: CompletionObject = {
   },
   "t-chat-sender": {
     // AI Chat 对话 - 对话输入
-    attrs: [],
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "adjust-position",
+        type: "Boolean",
+        default: "false",
+        description: "默认键盘弹起不会把页面顶起来",
+        required: "N",
+      },
+      {
+        name: "attachments-props",
+        type: "Object",
+        default: "-",
+        description:
+          "附件列表属性。TS 类型：`AttachmentsProps`，[Attachments API Documents](./attachments?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/pro-components/chat/chat-sender/type.ts)",
+        required: "N",
+      },
+      {
+        name: "auto-rise-with-keyboard",
+        type: "Boolean",
+        default: "false",
+        description: "键盘弹起时自动顶起来输入框",
+        required: "N",
+      },
+      {
+        name: "disabled",
+        type: "Boolean",
+        default: "false",
+        description: "是否禁用输入框",
+        required: "N",
+      },
+      {
+        name: "file-list",
+        type: "Array",
+        default: "[]",
+        description: "附件文件列表。TS 类型：`FileItem[]`",
+        required: "N",
+      },
+      {
+        name: "loading",
+        type: "Boolean",
+        default: "false",
+        description: "发送按钮是否处于加载状态",
+        required: "N",
+      },
+      {
+        name: "placeholder",
+        type: "String",
+        default: "请输入消息...",
+        description: "输入框默认文案",
+        required: "N",
+      },
+      {
+        name: "render-presets",
+        type: "Array",
+        default:
+          "[{name: 'upload', presets: ['uploadCamera', 'uploadImage', 'uploadAttachment'], status: ''},{ name: 'send', type: 'icon'}]",
+        description:
+          "预设发送区渲染配置，用于灵活配置发送区的上传入口和发送按钮，支持自定义类型、顺序、样式。TS 类型：`ChatActionButtons` `type ChatActionButtons = Array<ChatActionButton>` `type ChatActionButton = UploadButton | SendButton` `interface UploadButton { name: 'upload'; presets: string[]; status?: string; }` `interface SendButton { name: 'send'; type: 'icon' | 'text';}`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/pro-components/chat/chat-sender/type.ts)",
+        required: "N",
+      },
+      {
+        name: "textarea-props",
+        type: "Boolean / Object",
+        default: "{ autosize: { maxHeight: 264, minHeight: 48 } }",
+        description: "透传给 Textarea 组件的属性，autosize数值单位为 rpx",
+        required: "N",
+      },
+      {
+        name: "value",
+        type: "String",
+        default: "-",
+        description: "输入框的值",
+        required: "N",
+      },
+      {
+        name: "visible",
+        type: "Boolean",
+        default: "false",
+        description: "上传面板是否可见",
+        required: "N",
+      },
+    ],
   },
   "t-chat-message": {
     // AI Chat 对话 - 对话消息体
-    attrs: [],
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "animation",
+        type: "String",
+        default: "skeleton",
+        description: "动画效果。可选项：skeleton/moving/gradient/dots",
+        required: "N",
+      },
+      {
+        name: "avatar",
+        type: "String",
+        default: "-",
+        description: "自定义的头像配置",
+        required: "N",
+      },
+      {
+        name: "chat-content-props",
+        type: "Object",
+        default: "-",
+        description:
+          "聊天内容组件的属性。TS 类型：`ChatContentProps`，[ChatContent API Documents](./chat-content?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/pro-components/chat/chat-message/type.ts)",
+        required: "N",
+      },
+      {
+        name: "chat-id",
+        type: "String",
+        default: "-",
+        description: "聊天消息的唯一标识",
+        required: "N",
+      },
+      {
+        name: "content",
+        type: "Array",
+        default: "-",
+        description:
+          "消息内容，数组中的每一项为一个消息内容对象。TS 类型：`ChatMessageContent[] ` `type ChatMessageContent = TextContent | MarkdownContent | ThinkingContent | AttachmentContent` ` type AttachmentContent = ChatBaseContent<'attachment', FileItem[]>` `type ThinkingContent = ChatBaseContent<'thinking', ThinkingContentData>` `type MarkdownContent = ChatBaseContent<'markdown', string>` `type TextContent = ChatBaseContent<'text', string>` `interface ThinkingContentData {title?: string; text: string}` `interface ChatBaseContent<T extends ChatContentType, TData> {type: T; data: TData}` `type ChatMessageStatus = 'pending' | 'streaming' | 'complete' | 'stop' | 'error'` `type ChatContentType = | 'text' | 'markdown' | 'thinking' | 'attachment'`，[Attachments API Documents](./attachments?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/pro-components/chat/chat-message/type.ts)",
+        required: "N",
+      },
+      {
+        name: "datetime",
+        type: "String",
+        default: "-",
+        description: "对话单元的时间配置",
+        required: "N",
+      },
+      {
+        name: "name",
+        type: "String",
+        default: "-",
+        description: "自定义的昵称",
+        required: "N",
+      },
+      {
+        name: "placement",
+        type: "String",
+        default: "-",
+        description: "消息显示位置。可选项：left/right",
+        required: "N",
+      },
+      {
+        name: "role",
+        type: "String",
+        default: "user",
+        description: "消息角色。可选项：user/assistant/system",
+        required: "N",
+      },
+      {
+        name: "status",
+        type: "String",
+        default: "-",
+        description: "消息状态。可选项：pending/streaming/complete/stop/error",
+        required: "N",
+      },
+      {
+        name: "variant",
+        type: "String",
+        default: "base",
+        description: "气泡框样式，支持基础、线框、文字三种类型。可选项：base/outline/text",
+        required: "N",
+      },
+    ],
   },
   "t-chat-actionbar": {
     // AI Chat 对话 - 对话操作
-    attrs: [],
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "action-bar",
+        type: "Array",
+        default: "['replay', 'copy', 'good', 'bad', 'share']",
+        description: "操作栏配置。TS 类型：`Array<'replay'|'copy'|'good'|'bad'|'share'>`",
+        required: "N",
+      },
+      {
+        name: "chat-id",
+        type: "String",
+        default: "-",
+        description: "【实验】聊天消息的唯一标识",
+        required: "N",
+      },
+      {
+        name: "comment",
+        type: "String",
+        default: "-",
+        description: "评价内容",
+        required: "N",
+      },
+      {
+        name: "content",
+        type: "String",
+        default: "-",
+        description: "被复制的内容",
+        required: "N",
+      },
+      {
+        name: "copy-mode",
+        type: "String",
+        default: "markdown",
+        description:
+          "【实验】复制内容的模式，可选 'markdown'（复制markdown原文）或 'text'（复制纯文本）。可选项：markdown/text",
+        required: "N",
+      },
+      {
+        name: "disabled",
+        type: "Boolean",
+        default: "false",
+        description: "【讨论中】操作按钮是否可点击",
+        required: "N",
+      },
+      {
+        name: "placement",
+        type: "String",
+        default: "start",
+        description: "【实验】操作栏位置。可选项：start/end/space-around/space-between",
+        required: "N",
+      },
+    ],
   },
   "t-chat-markdown": {
     // AI Chat 对话 - Markdown内容
-    attrs: [],
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "content",
+        type: "String",
+        default: "-",
+        description: "必需。markdown 内容文本",
+        required: "Y",
+      },
+      {
+        name: "options",
+        type: "Object",
+        default: "{ gfm: true, pedantic: false, breaks: true }",
+        description:
+          "Markdown 解析器基础配置。TS 类型：`TdChatContentMDOptions ` `interface TdChatContentMDOptions {gfm?: boolean; pedantic?: boolean; smartLists?: boolean; breaks?: boolean}`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/pro-components/chat/chat-markdown/type.ts)",
+        required: "N",
+      },
+    ],
   },
   "t-chat-thinking": {
     // AI Chat 对话 - 思考过程
-    attrs: [],
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "animation",
+        type: "String",
+        default: "moving",
+        description: "内容区域最大高度，超出会自动滚动。可选项：skeleton/moving/gradient/dot",
+        required: "N",
+      },
+      {
+        name: "collapsed",
+        type: "Boolean",
+        default: "false",
+        description: "是否折叠",
+        required: "N",
+      },
+      {
+        name: "content",
+        type: "Object",
+        default: "-",
+        description: "必需。思考内容对象。TS 类型：`{ text?: string; title?: string }`",
+        required: "Y",
+      },
+      {
+        name: "layout",
+        type: "String",
+        default: "block",
+        description: "布局方式。可选项：block/border",
+        required: "N",
+      },
+      {
+        name: "max-height",
+        type: "Number",
+        default: "-",
+        description: "内容区域最大高度，超出会自动滚动",
+        required: "N",
+      },
+      {
+        name: "status",
+        type: "String",
+        default: "pending",
+        description: "必需。思考状态。可选项：complete/stop/error/pending",
+        required: "Y",
+      },
+    ],
   },
   "t-chat-loading": {
     // AI Chat 对话 - 对话加载
-    attrs: [],
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "animation",
+        type: "String",
+        default: "moving",
+        description: "加载的状态形式。可选项：skeleton/moving/gradient/dot",
+        required: "N",
+      },
+      {
+        name: "text",
+        type: "String",
+        default: "-",
+        description: "加载过程展示的文字内容",
+        required: "N",
+      },
+    ],
   },
   "t-attachments": {
     // AI Chat 对话 - 文件附件
-    attrs: [],
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "addable",
+        type: "Boolean",
+        default: "true",
+        description: "【讨论中】是否显示添加按钮",
+        required: "N",
+      },
+      {
+        name: "image-viewer",
+        type: "Boolean",
+        default: "true",
+        description: "是否启用图片预览功能",
+        required: "N",
+      },
+      {
+        name: "items",
+        type: "Array",
+        default: "[]",
+        description:
+          "必需。附件列表。TS 类型：`FileItem[]` `interface FileItem { fileType: 'image'|'video'|'audio'|'pdf'|'doc'|'ppt'|'txt'; name: string; url: string; size: number; status?: 'success'|'fail'|'pending'|'error'; progress?: number; errorMessage?: string; fileIcon?: string; width?: number; height?: number; mode?: 'aspectFit' | 'aspectFill' | 'widthFix' | 'heightFix' | 'scaleToFill'}`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/pro-components/chat/attachments/type.ts)",
+        required: "Y",
+      },
+      {
+        name: "removable",
+        type: "Boolean",
+        default: "true",
+        description: "是否显示删除按钮",
+        required: "N",
+      },
+    ],
   },
   "t-chat-content": {
     // AI Chat 对话 - 对话正文

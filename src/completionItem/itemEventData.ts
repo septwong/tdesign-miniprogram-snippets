@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-12-16 18:55:06
+ * @LastEditTime: 2025-12-17 17:28:24
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemEventData.ts
  * @Description:
  */
@@ -12,27 +12,118 @@ export const CompletionEventData: CompletionEventObject = {
   // 高阶
   "t-chat": {
     // AI Chat 对话 - 对话列表
-    attrs: [],
+    attrs: [
+      {
+        name: "scroll",
+        params: "`(detail: {scrollLeft, scrollTop, scrollHeight, scrollWidth, deltaX, deltaY})`",
+        description: "滚动事件的回调",
+      },
+    ],
   },
   "t-chat-sender": {
     // AI Chat 对话 - 对话输入
-    attrs: [],
+    attrs: [
+      {
+        name: "blur",
+        params: "`(value:string, context: { e: FocusEvent })`",
+        description: "输入框聚焦时触发",
+      },
+      {
+        name: "change",
+        params: "`(value:string, context: { e: InputEvent | MouseEvent | KeyboardEvent })`",
+        description: "输入框值发生变化时触发",
+      },
+      {
+        name: "file-add",
+        params: "\\-",
+        description: "添加附件时触发",
+      },
+      {
+        name: "file-change",
+        params: "`(file:FileItem)`",
+        description: "附件列表变化时触发",
+      },
+      {
+        name: "file-click",
+        params: "`(file:FileItem)`",
+        description: "点击附件时触发",
+      },
+      {
+        name: "file-delete",
+        params: "`(file:FileItem)`",
+        description: "删除附件时触发",
+      },
+      {
+        name: "file-select",
+        params: "`(detail: {files: FileList, name: UploadActionType})`",
+        description: "选择文件（图片/微信文件）时触发",
+      },
+      {
+        name: "focus",
+        params: "`(value:string, context: { e: FocusEvent }) `",
+        description: "输入框聚焦时触发",
+      },
+      {
+        name: "keyboardheightchange",
+        params: "`(detail: {height: number, duration: number})`",
+        description: "选择文件（图片/微信文件）时触发",
+      },
+      {
+        name: "send",
+        params: "`(value:string, context: {| KeyboardEvent })`",
+        description: "点击消息发送的回调方法",
+      },
+      {
+        name: "stop",
+        params: "`(value:string)`",
+        description: "点击消息终止的回调方法",
+      },
+      {
+        name: "upload-click",
+        params: "\\-",
+        description: "【实验】点击上传按钮时触发",
+      },
+    ],
   },
   "t-chat-message": {
     // AI Chat 对话 - 对话消息体
-    attrs: [],
+    attrs: [
+      {
+        name: "longpress",
+        params: "`(detail: { id: string })`",
+        description: "\\-",
+      },
+    ],
   },
   "t-chat-actionbar": {
     // AI Chat 对话 - 对话操作
-    attrs: [],
+    attrs: [
+      {
+        name: "actions",
+        params: "`(detail: {name: string, active: boolean})`",
+        description: "点击点赞，点踩，复制，分享，重新生成按钮时触发发",
+      },
+    ],
   },
   "t-chat-markdown": {
     // AI Chat 对话 - Markdown内容
-    attrs: [],
+    attrs: [
+      {
+        name: "click",
+        params: "`(detail: {detail:{event, node}, currentTarget, target})`",
+        description: "点击链接时触发",
+      },
+    ],
   },
   "t-chat-thinking": {
     // AI Chat 对话 - 思考过程
-    attrs: [],
+    attrs: [
+      {
+        name: "collapsed-change",
+        params: "`(value: Boolean)`",
+        description: "切换折叠面板时触发",
+      },
+    ],
   },
   "t-chat-loading": {
     // AI Chat 对话 - 对话加载
@@ -40,7 +131,23 @@ export const CompletionEventData: CompletionEventObject = {
   },
   "t-attachments": {
     // AI Chat 对话 - 文件附件
-    attrs: [],
+    attrs: [
+      {
+        name: "add",
+        params: "\\-",
+        description: "点击添加按钮时触发",
+      },
+      {
+        name: "file-click",
+        params: "`(item: FileItem)`",
+        description: "点击文件时触发",
+      },
+      {
+        name: "remove",
+        params: "`(item: FileItem, index: number)`",
+        description: "点击删除按钮时触发",
+      },
+    ],
   },
   "t-chat-content": {
     // AI Chat 对话 - 对话正文

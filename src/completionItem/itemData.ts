@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-12-17 17:28:03
+ * @LastEditTime: 2026-01-01 18:45:31
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description:
  */
@@ -1374,6 +1374,20 @@ export const CompletionData: CompletionObject = {
         required: "N",
       },
       {
+        name: "placeholder",
+        type: "Boolean",
+        default: "false",
+        description: "`1.21.1`。固定在顶部时是否开启占位",
+        required: "N",
+      },
+      {
+        name: "safe-area-inset-top",
+        type: "Boolean",
+        default: "true",
+        description: "是否开启顶部安全区适配",
+        required: "N",
+      },
+      {
         name: "title",
         type: "String / Slot",
         default: "-",
@@ -1393,6 +1407,13 @@ export const CompletionData: CompletionObject = {
         type: "Boolean",
         default: "true",
         description: "是否显示",
+        required: "N",
+      },
+      {
+        name: "z-index",
+        type: "Number",
+        default: "1",
+        description: "导航条层级",
         required: "N",
       },
     ],
@@ -1641,6 +1662,13 @@ export const CompletionData: CompletionObject = {
         required: "N",
       },
       {
+        name: "placeholder",
+        type: "Boolean",
+        default: "false",
+        description: "`1.21.1`。固定在底部时是否开启占位",
+        required: "N",
+      },
+      {
         name: "safe-area-inset-bottom",
         type: "Boolean",
         default: "true",
@@ -1680,6 +1708,13 @@ export const CompletionData: CompletionObject = {
         type: "String / Number / Array",
         default: "undefined",
         description: "当前选中标签的索引。非受控属性。TS 类型：`string | number | Array<string | number>`",
+        required: "N",
+      },
+      {
+        name: "z-index",
+        type: "Number",
+        default: "1",
+        description: "标签栏层级",
         required: "N",
       },
     ],
@@ -3596,6 +3631,14 @@ export const CompletionData: CompletionObject = {
         required: "Y",
       },
       {
+        name: "cursor-color",
+        type: "String",
+        default: "#0052d9",
+        description:
+          "`1.12.1`。光标颜色。iOS 下的格式为十六进制颜色值 #000000，安卓下的只支持 default 和 green，Skyline 下无限制",
+        required: "Y",
+      },
+      {
         name: "cursor-spacing",
         type: "Number",
         default: "0",
@@ -4670,7 +4713,7 @@ export const CompletionData: CompletionObject = {
         name: "shape",
         type: "String",
         default: "circle",
-        description: "形状。可选项：circle/square/bubble/ribbon",
+        description: "形状。可选项：circle/square/bubble/ribbon/ribbon-right/ribbon-left/triangle-right/triangle-left",
         required: "N",
       },
       {
@@ -7225,6 +7268,14 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "-",
         description: "确认框内容",
+        required: "N",
+      },
+      {
+        name: "fixed",
+        type: "Boolean",
+        default: "false",
+        description:
+          "`1.12.1`。如果触发元素为`fixed`场景，需要显示指定`fixed`属性为`true`，同时需在触发元素层添加`t-popover-wrapper--fixed`类，用于定位触发元素",
         required: "N",
       },
       {

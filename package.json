@@ -260,7 +260,7 @@
         },
         "tdesign-miniprogram-snippets.others.disableAutoConfig": {
           "type": "boolean",
-          "default": false,
+          "default": true,
           "scope": "window",
           "description": "默认在启动时会自动相关文件关联的配置项，配置成功后会将此配置自动设置成 true，避免下次启动再重新配置"
         }

@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-11-06 11:39:45
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2024-11-12 14:03:06
+ * @LastEditTime: 2026-01-13 22:49:10
  * @FilePath: /tdesign-miniprogram-snippets/src/config/index.ts
  * @Description: 配置项
  */
@@ -29,10 +29,10 @@ export interface Config {
   //
   enableJumpComponent: boolean;
   // 组件高亮
-  enableHighlightComponent: Boolean;
+  enableHighlightComponent: boolean;
   editTagName: object;
   ignoreHighlightComponentArray: string[];
-  cache: Boolean;
+  cache: boolean;
 }
 
 export const config: Config = {

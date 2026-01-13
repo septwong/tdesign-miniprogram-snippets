@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-11-05 18:26:31
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-11-10 18:13:46
+ * @LastEditTime: 2026-01-13 22:48:28
  * @FilePath: /tdesign-miniprogram-snippets/src/commands/index.ts
  * @Description: 指令
  */
@@ -19,173 +19,154 @@ const types = {
   component: "组件",
 };
 
-type Type = keyof typeof types; // Create a type that is a union of the keys in types
+type Type = keyof typeof types;
 
-const copyFile = function (pageDir: any, pageSource: any, type: Type) {
-  // console.log('copyFile: ', pageDir, pageSource, type);
-
+async function copyFile(pageDir: string, pageSource: string, type: Type) {
   // 目录不存在时，使用默认模板
   if (!fs.pathExistsSync(pageDir)) {
-    // 页面/组件所在目录不存在
     vscode.window.showErrorMessage(`${types[type]}所在目录不存在！`);
     return;
   }
 
   if (!fs.pathExistsSync(pageSource)) {
-    // 页面/组件模板不存在
     vscode.window.showErrorMessage(`${types[type]}模板不存在！`);
     return;
   }
 
   // 预设路径为当前目录
-  vscode.window
-    .showInputBox({
-      placeHolder: `请输入${types[type]}目录名称`,
-      prompt: `请输入${types[type]}目录名称`,
-    })
-    .then((pageName) => {
-      if (pageName) {
-        const targetPath = path.join(pageDir, pageName);
-        fs.ensureDirSync(targetPath);
-        fs.copySync(pageSource, targetPath);
-      } else {
-        vscode.window.showErrorMessage("名称不能为空！");
-      }
-    });
-};
+  const pageName = await vscode.window.showInputBox({
+    placeHolder: `请输入${types[type]}目录名称`,
+    prompt: `请输入${types[type]}目录名称`,
+  });
 
-const createPage = function (type: Type, url: any) {
-  let pageSource = "";
-  // console.log('createPage: ', type, url);
-
-  if (type === "page") {
-    pageSource = config.createPageSource;
+  if (pageName) {
+    const targetPath = path.join(pageDir, pageName);
+    fs.ensureDirSync(targetPath);
+    fs.copySync(pageSource, targetPath);
   } else {
-    pageSource = config.createComponentSource;
+    vscode.window.showErrorMessage("名称不能为空！");
   }
+}
+
+async function createPage(type: Type, url: vscode.Uri | undefined) {
+  let pageSource = type === "page" ? config.createPageSource : config.createComponentSource;
 
   // 目录不存在时，使用默认模板
   if (!fs.pathExistsSync(pageSource)) {
-    pageSource = path.join(path.dirname(__filename), `../../templates/${type}`);
+    pageSource = path.join(__dirname, `../../templates/${type}`);
   }
-  // console.log('pageSource: ', pageSource);
 
-  if (!url) {
-    // const rootPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
-    let rootPath = "";
-    if (vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders.length > 0) {
-      rootPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
-    } else {
-      // 处理没有打开任何工作区文件夹的情况
-    }
-    const { activeTextEditor } = vscode.window;
-    let currentFileDir = "";
-
-    if (activeTextEditor) {
-      const currentFilePath = activeTextEditor.document.fileName;
-      currentFileDir = path.dirname(currentFilePath);
-    }
-
-    vscode.window
-      .showInputBox({
-        placeHolder: `请输入${types[type]}所在目录路径`,
-        prompt: `请输入${types[type]}所在目录路径`,
-        value: currentFileDir || rootPath,
-      })
-      .then((pageDir) => {
-        if (pageDir) {
-          copyFile(pageDir, pageSource, type);
-        } else {
-          vscode.window.showErrorMessage("路径不能为空！");
-        }
-      });
-
+  if (url?.fsPath) {
+    await copyFile(url.fsPath, pageSource, type);
     return;
   }
 
-  copyFile(url.fsPath, pageSource, type);
-};
+  let rootPath = "";
+  if (vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders.length > 0) {
+    rootPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
+  } else {
+    vscode.window.showErrorMessage("请先打开一个工作区！");
+    return;
+  }
+
+  let currentFileDir = "";
+  const { activeTextEditor } = vscode.window;
+  if (activeTextEditor) {
+    currentFileDir = path.dirname(activeTextEditor.document.fileName);
+  }
+
+  const pageDir = await vscode.window.showInputBox({
+    placeHolder: `请输入${types[type]}所在目录路径`,
+    prompt: `请输入${types[type]}所在目录路径`,
+    value: currentFileDir || rootPath,
+  });
+
+  if (pageDir) {
+    await copyFile(pageDir, pageSource, type);
+  } else {
+    vscode.window.showErrorMessage("路径不能为空！");
+  }
+}
 
 export const Commands = {
-  page: function (url: any) {
-    // console.log('page url: ', url);
+  page: function (url: vscode.Uri | undefined) {
     return createPage("page", url);
   },
-  component: function (url: any) {
-    // console.log('component url: ', url);
+  component: function (url: vscode.Uri | undefined) {
     return createPage("component", url);
   },
 };
 
-/**
- * Registers or disposes the create page command based on the configuration.
- * If `enableCreatePage` is true, it registers the command to create a page,
- * otherwise, it disposes of the command if it exists.
- *
- * @param e - The configuration change event.
- * @param enableCreatePage - A boolean indicating whether to enable the create page command.
- * @param context - The VSCode extension context for managing disposables.
- */
+function updateCommandRegistration(
+  context: vscode.ExtensionContext,
+  e: vscode.ConfigurationChangeEvent | undefined,
+  isEnabled: boolean,
+  configKey: string,
+  commandKey: "createPage" | "createComponent",
+  commandImpl: (url?: vscode.Uri) => void,
+  getCommand: () => vscode.Disposable | undefined,
+  setCommand: (disposable: vscode.Disposable | undefined) => void
+) {
+  if (e && !e.affectsConfiguration(`tdesign-miniprogram-snippets.${configKey}`)) {
+    return;
+  }
+
+  const showContextKey = `tdesign-miniprogram-snippets.show${
+    commandKey.charAt(0).toUpperCase() + commandKey.slice(1)
+  }Command`;
+  const commandId = `tdesign-miniprogram-snippets.${commandKey}`;
+  const commandDisposable = getCommand();
+
+  if (isEnabled) {
+    if (!commandDisposable) {
+      vscode.commands.executeCommand("setContext", showContextKey, true);
+      const newCommand = vscode.commands.registerCommand(commandId, commandImpl);
+      context.subscriptions.push(newCommand);
+      setCommand(newCommand);
+    }
+  } else {
+    vscode.commands.executeCommand("setContext", showContextKey, false);
+    if (commandDisposable) {
+      commandDisposable.dispose();
+      setCommand(undefined);
+    }
+  }
+}
+
 export function createPageListener(
   enableCreatePage: boolean,
   context: vscode.ExtensionContext,
   e?: vscode.ConfigurationChangeEvent
 ) {
-  // console.log("🚀 ~ affectsConfiguration: enableCreatePage: ", enableCreatePage, e && !e.affectsConfiguration('tdesign-miniprogram-snippets.enableCreatePage'));
-  if (e && !e.affectsConfiguration("tdesign-miniprogram-snippets.enableCreatePage")) {
-    // console.log("🚀 ~ affectsConfiguration: enableCreatePage");
-    return;
-  }
-  if (enableCreatePage) {
-    // 注册创建页面命令
-    if (!createPageCommand) {
-      vscode.commands.executeCommand("setContext", "tdesign-miniprogram-snippets.showCreatePageCommand", true);
-      createPageCommand = vscode.commands.registerCommand(`tdesign-miniprogram-snippets.createPage`, Commands.page);
-      context.subscriptions.push(createPageCommand);
+  updateCommandRegistration(
+    context,
+    e,
+    enableCreatePage,
+    "enableCreatePage",
+    "createPage",
+    Commands.page,
+    () => createPageCommand,
+    (d) => {
+      createPageCommand = d;
     }
-  } else {
-    vscode.commands.executeCommand("setContext", "tdesign-miniprogram-snippets.showCreatePageCommand", false);
-    createPageCommand && createPageCommand.dispose();
-    createPageCommand = undefined;
-  }
+  );
 }
 
-/**
- * Registers or disposes the create component command based on the configuration.
- * If `enableCreateComponent` is true, it registers the command to create a component,
- * otherwise, it disposes of the command if it exists.
- *
- * @param e - The configuration change event.
- * @param enableCreateComponent - A boolean indicating whether to enable the create component command.
- * @param context - The VSCode extension context for managing disposables.
- */
 export function createComponentListener(
   enableCreateComponent: boolean,
   context: vscode.ExtensionContext,
   e?: vscode.ConfigurationChangeEvent
 ) {
-  // console.log(
-  //   "🚀 ~ affectsConfiguration: enableCreateComponent: ",
-  //   enableCreateComponent,
-  //   e && !e.affectsConfiguration("tdesign-miniprogram-snippets.enableCreateComponent")
-  // );
-  if (e && !e.affectsConfiguration("tdesign-miniprogram-snippets.enableCreateComponent")) {
-    // console.log("🚀 ~ affectsConfiguration: enableCreateComponent");
-    return;
-  }
-  if (enableCreateComponent) {
-    // 注册创建组件命令
-    if (!createComponentCommand) {
-      vscode.commands.executeCommand("setContext", "tdesign-miniprogram-snippets.showCreateComponentCommand", true);
-      createComponentCommand = vscode.commands.registerCommand(
-        `tdesign-miniprogram-snippets.createComponent`,
-        Commands.component
-      );
-      context.subscriptions.push(createComponentCommand);
+  updateCommandRegistration(
+    context,
+    e,
+    enableCreateComponent,
+    "enableCreateComponent",
+    "createComponent",
+    Commands.component,
+    () => createComponentCommand,
+    (d) => {
+      createComponentCommand = d;
     }
-  } else {
-    vscode.commands.executeCommand("setContext", "tdesign-miniprogram-snippets.showCreateComponentCommand", false);
-    createComponentCommand && createComponentCommand.dispose();
-    createComponentCommand = undefined;
-  }
+  );
 }

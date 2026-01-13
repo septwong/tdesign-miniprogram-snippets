@@ -8,7 +8,7 @@
  */
 import * as vscode from "vscode";
 import { schemes } from "../utils";
-import { config, Config } from "../config";
+import { Config, getActiveConfig } from "../config";
 import { hoverData as _hoverData } from "./hoverData";
 
 let hoverProvider: vscode.Disposable | undefined; // 存储悬停提供器
@@ -40,7 +40,7 @@ export function getTDesignHoverContent(word: string): vscode.Hover | undefined {
 // 注册悬停提供器的函数
 export function registerHoverProvider(context: vscode.ExtensionContext) {
   // if (!hoverProvider) { // 避免重复注册
-  const wxml = config.documentSelector.map((l) => schemes(l));
+  const wxml = getActiveConfig().documentSelector.map((l: string) => schemes(l));
   hoverProvider = vscode.languages.registerHoverProvider(wxml, {
     provideHover(document, position) {
       const word = getComponentNameAtPosition(document, position);
@@ -82,8 +82,7 @@ export class wxmlHoverProvider implements vscode.HoverProvider {
  */
 export function hoverListener(
   enableHover: boolean,
-  context: vscode.ExtensionContext,
-  e?: vscode.ConfigurationChangeEvent
+  context: vscode.ExtensionContext
 ) {
   // console.log(
   //   "🚀 ~ affectsConfiguration: enableHover: ",
@@ -91,18 +90,15 @@ export function hoverListener(
   //   e && !e.affectsConfiguration("tdesign-miniprogram-snippets.enableHover")
   // );
   // 检查是否影响了需要的配置项
-  if (e && !e.affectsConfiguration("tdesign-miniprogram-snippets.enableHover")) {
-    // console.log("🚀 ~ affectsConfiguration: enableHover");
-    return;
-  }
+  // Removed e && !e.affectsConfiguration(...) check as e is no longer passed
   const { languages } = vscode;
-  const wxml = config.documentSelector.map((l) => schemes(l));
+  const wxml = getActiveConfig().documentSelector.map((l: string) => schemes(l));
   if (enableHover) {
     // hover
     if (!hoverProvider) {
       // 避免重复注册
       // console.log("🚀 ~ hoverListener ~ hoverProvider:", hoverProvider);
-      hoverProvider = languages.registerHoverProvider(wxml, new wxmlHoverProvider(config));
+      hoverProvider = languages.registerHoverProvider(wxml, new wxmlHoverProvider(getActiveConfig()));
       context.subscriptions.push(hoverProvider);
       // registerHoverProvider(context);
     }

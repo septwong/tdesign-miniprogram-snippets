@@ -9,7 +9,7 @@
 import * as vscode from "vscode";
 import * as path from "path";
 import * as fs from "fs-extra";
-import { config } from "../config";
+import { Config, getActiveConfig } from "../config";
 
 let createPageCommand: vscode.Disposable | undefined;
 let createComponentCommand: vscode.Disposable | undefined;
@@ -49,7 +49,7 @@ async function copyFile(pageDir: string, pageSource: string, type: Type) {
 }
 
 async function createPage(type: Type, url: vscode.Uri | undefined) {
-  let pageSource = type === "page" ? config.createPageSource : config.createComponentSource;
+  let pageSource = type === "page" ? getActiveConfig().createPageSource : getActiveConfig().createComponentSource;
 
   // 目录不存在时，使用默认模板
   if (!fs.pathExistsSync(pageSource)) {
@@ -99,7 +99,6 @@ export const Commands = {
 
 function updateCommandRegistration(
   context: vscode.ExtensionContext,
-  e: vscode.ConfigurationChangeEvent | undefined,
   isEnabled: boolean,
   configKey: string,
   commandKey: "createPage" | "createComponent",
@@ -107,9 +106,7 @@ function updateCommandRegistration(
   getCommand: () => vscode.Disposable | undefined,
   setCommand: (disposable: vscode.Disposable | undefined) => void
 ) {
-  if (e && !e.affectsConfiguration(`tdesign-miniprogram-snippets.${configKey}`)) {
-    return;
-  }
+
 
   const showContextKey = `tdesign-miniprogram-snippets.show${
     commandKey.charAt(0).toUpperCase() + commandKey.slice(1)
@@ -135,14 +132,11 @@ function updateCommandRegistration(
 
 export function createPageListener(
   enableCreatePage: boolean,
-  context: vscode.ExtensionContext,
-  e?: vscode.ConfigurationChangeEvent
+  context: vscode.ExtensionContext
 ) {
-  updateCommandRegistration(
-    context,
-    e,
-    enableCreatePage,
-    "enableCreatePage",
+      updateCommandRegistration(
+      context,
+      enableCreatePage,    "enableCreatePage",
     "createPage",
     Commands.page,
     () => createPageCommand,
@@ -154,14 +148,11 @@ export function createPageListener(
 
 export function createComponentListener(
   enableCreateComponent: boolean,
-  context: vscode.ExtensionContext,
-  e?: vscode.ConfigurationChangeEvent
+  context: vscode.ExtensionContext
 ) {
-  updateCommandRegistration(
-    context,
-    e,
-    enableCreateComponent,
-    "enableCreateComponent",
+      updateCommandRegistration(
+      context,
+      enableCreateComponent,    "enableCreateComponent",
     "createComponent",
     Commands.component,
     () => createComponentCommand,

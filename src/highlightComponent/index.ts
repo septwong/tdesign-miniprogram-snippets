@@ -7,7 +7,7 @@
  * @Description: 组件高亮，支持自定义颜色，支持配置不需要高亮的组件
  */
 import * as vscode from "vscode";
-import { Config, config } from "../config";
+import { Config, getActiveConfig } from "../config";
 import { TextEditor, window, Disposable, workspace, TextDocument, Range, TextEditorDecorationType } from "vscode";
 
 const COMMENT_REGEXP = /<!--([\s\S]*?)-->/g;
@@ -39,7 +39,7 @@ export default class HighlightComponent {
 
     this.disposables.push(
       window.onDidChangeVisibleTextEditors((editors) => {
-        editors.forEach((e) => this.onChange(e, !this.config.cache as any));
+        editors.forEach((e) => this.onChange(e, !getActiveConfig().cache as any));
         this.updateDecorationCache();
       }),
       workspace.onDidChangeTextDocument((e) => {
@@ -54,7 +54,7 @@ export default class HighlightComponent {
     if (!editor) {
       return;
     }
-    if (!this.config.enableHighlightComponent) {
+    if (!getActiveConfig().enableHighlightComponent) {
       return;
     }
     const { languageId, fileName } = editor.document;
@@ -93,7 +93,7 @@ export default class HighlightComponent {
     let doc = editor.document;
     let text = doc.getText();
     let comments = getRanges(text, COMMENT_REGEXP, doc, []);
-    const { color, ...tag } = this.config.editTagName as any;
+    const { color, ...tag } = getActiveConfig().editTagName as any;
     for (let i in tag) {
       let TAG_REGEXP_POINTER = new RegExp(`</?(${i}\\w*)`, "g");
       let ranges = [...getRanges(text, TAG_REGEXP_POINTER, doc, comments, i)];
@@ -116,7 +116,7 @@ export default class HighlightComponent {
       this.decorationCache[_cacheName].style.dispose();
     }
     editor.setDecorations(decorationType, ranges);
-    this.config.cache = true;
+    getActiveConfig().cache = true;
     this.decorationCache[_cacheName] = {
       style: decorationType,
       ranges,
@@ -138,7 +138,7 @@ function getRanges(content: string, regexp: RegExp, doc: TextDocument, excludeRa
       if (regexp === COMMENT_REGEXP) {
         word = match[0];
       } else {
-        if (config.ignoreHighlightComponentArray.indexOf(word) !== -1) {
+        if (getActiveConfig().ignoreHighlightComponentArray.indexOf(word) !== -1) {
           continue;
         }
         index += match[0].indexOf(word);
@@ -187,22 +187,18 @@ function shouldCreateRange(word: string) {
  */
 export function highlightCompListener(
   enableHighlightComponent: boolean,
-  context: vscode.ExtensionContext,
-  e?: vscode.ConfigurationChangeEvent
+  context: vscode.ExtensionContext
 ) {
   // console.log(
   //   "🚀 ~ affectsConfiguration: highlightComponent.enableHighlightComponent: ",
   //   enableHighlightComponent,
   //   e && !e.affectsConfiguration("tdesign-miniprogram-snippets.highlightComponent.enableHighlightComponent")
   // );
-  if (e && !e.affectsConfiguration("tdesign-miniprogram-snippets.highlightComponent.enableHighlightComponent")) {
-    // console.log("🚀 ~ affectsConfiguration: highlightComponent.enableHighlightComponent");
-    return;
-  }
+  // Removed e && !e.affectsConfiguration(...) check as e is no longer passed
   let tid: NodeJS.Timer = null as any;
   if (tid) {
   }
-  const highlightComponent = new HighlightComponent(config);
+  const highlightComponent = new HighlightComponent(getActiveConfig());
   tid = setTimeout(() => {
     highlightComponent.onChange(vscode.window.activeTextEditor, true);
   }, 500);

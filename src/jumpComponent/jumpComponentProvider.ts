@@ -10,7 +10,7 @@ import * as vscode from "vscode";
 import * as fs from "fs";
 import * as path from "path";
 import { wxTags } from "./wxTagsData";
-import { config, Config } from "../config";
+import { Config, getActiveConfig } from "../config";
 
 const appFile = "app.json";
 let rootPath = "";
@@ -91,21 +91,17 @@ export class jumpCompDefinitionProvider implements vscode.DefinitionProvider {
  */
 export function jumpCompListener(
   enableJumpComponent: boolean,
-  context: vscode.ExtensionContext,
-  e?: vscode.ConfigurationChangeEvent
+  context: vscode.ExtensionContext
 ) {
   // console.log("🚀 ~ affectsConfiguration: enableJumpComponent: ", enableJumpComponent, e &&!e.affectsConfiguration('tdesign-miniprogram-snippets.enableJumpComponent'));
-  if (e && !e.affectsConfiguration("tdesign-miniprogram-snippets.enableJumpComponent")) {
-    // console.log("🚀 ~ affectsConfiguration: enableJumpComponent");
-    return;
-  }
+  // Removed e && !e.affectsConfiguration(...) check as e is no longer passed
   const { languages } = vscode;
   const wxml = [{ scheme: "file", language: "wxml", pattern: "**/*.wxml" }];
   if (enableJumpComponent) {
     // hover
     if (!jumpCompProvider) {
       // 避免重复注册
-      jumpCompProvider = languages.registerDefinitionProvider(wxml, new jumpCompDefinitionProvider(config));
+      jumpCompProvider = languages.registerDefinitionProvider(wxml, new jumpCompDefinitionProvider(getActiveConfig()));
       context.subscriptions.push(jumpCompProvider);
     }
   } else {

@@ -12,6 +12,9 @@ import { debounce } from "../utils";
 
 let listener: vscode.Disposable;
 
+const _onDidConfigChange = new vscode.EventEmitter<Config>();
+export const onDidConfigChange: vscode.Event<Config> = _onDidConfigChange.event;
+
 export interface Config {
   getResolveRoots: (doc: vscode.TextDocument) => string[];
   resolveRoots: string[]; // 解析自定义组件的根目录
@@ -30,12 +33,12 @@ export interface Config {
   enableJumpComponent: boolean;
   // 组件高亮
   enableHighlightComponent: boolean;
-  editTagName: object;
+  editTagName: Record<string, string>;
   ignoreHighlightComponentArray: string[];
   cache: boolean;
 }
 
-export const config: Config = {
+const config: Config = {
   getResolveRoots,
   resolveRoots: [],
   documentSelector: ["wxml"],
@@ -59,14 +62,15 @@ export const config: Config = {
   //
 };
 
-function getAllConfig(
-  e?: vscode.ConfigurationChangeEvent,
-  cb?: (e?: vscode.ConfigurationChangeEvent, config?: Config | undefined) => void
-) {
-  // if (e && !e.affectsConfiguration('tdesign-miniprogram-snippets')) {
-  //   console.log("🚀 ~ getAllConfig ~ No affectsConfiguration: tdesign-miniprogram-snippets");
-  //   return;
-  // }
+export function getActiveConfig(): Config {
+  return config;
+}
+
+function getAllConfig(e?: vscode.ConfigurationChangeEvent) {
+  if (e && !e.affectsConfiguration('tdesign-miniprogram-snippets')) {
+
+    return;
+  }
   const TMS = vscode.workspace.getConfiguration("tdesign-miniprogram-snippets");
   //
   config.resolveRoots = TMS.get("resolveRoots", ["src", "node_modules"]);
@@ -89,31 +93,27 @@ function getAllConfig(
   config.ignoreHighlightComponentArray = TMS.get("highlightComponent.ignoreHighlightComponentArray", []);
   config.cache = false;
 
-  // console.log("🚀 ~ getAllConfig ~ config:", JSON.stringify(config));
-  cb && cb(e, config);
+
+  _onDidConfigChange.fire(config);
 }
 
-export function getConfig(key: string) {
-  const TMS = vscode.workspace.getConfiguration("tdesign-miniprogram-snippets");
-  const value = TMS.get(key);
-  return value;
-}
+
 
 function getResolveRoots(doc: vscode.TextDocument) {
   let root = vscode.workspace.getWorkspaceFolder(doc.uri) as vscode.WorkspaceFolder;
   return root ? config.resolveRoots.map((r) => path.resolve(root.uri.fsPath, r)) : [];
 }
 
-export function configActivate(cb?: (e?: vscode.ConfigurationChangeEvent, config?: Config | undefined) => void) {
+export function configActivate() {
   try {
     listener && listener.dispose();
     // 防抖
     listener = vscode.workspace.onDidChangeConfiguration(
       debounce((e: vscode.ConfigurationChangeEvent) => {
-        getAllConfig(e, cb);
+        getAllConfig(e);
       }, 150)
     );
-    getAllConfig(undefined, cb);
+    getAllConfig();
   } catch (error) {
     console.error("🚀 ~ Error in async operation:", error);
   }

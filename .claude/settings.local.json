@@ -5,7 +5,9 @@
       "Bash(ls:*)",
       "Bash(wc:*)",
       "Bash(python3:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(npm test:*)",
+      "Bash(sqlite3:*)"
     ]
   }
 }

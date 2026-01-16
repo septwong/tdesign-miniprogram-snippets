@@ -167,7 +167,6 @@ function createWxmlCompletionItem({
 /**
  * 提供 WXML 组件属性补全。
  */
-// export const RegisterCompletionItemProvider: vscode.CompletionItemProvider = {
 export class WxmlCompletionProvider implements vscode.CompletionItemProvider {
   constructor(public config: Config) {}
 

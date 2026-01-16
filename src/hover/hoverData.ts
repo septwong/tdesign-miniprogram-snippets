@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:18
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-12-16 18:45:11
+ * @LastEditTime: 2026-01-16 23:04:16
  * @FilePath: /tdesign-miniprogram-snippets/src/hover/hoverData.ts
  * @Description:
  */
@@ -79,7 +79,7 @@ export const hoverData = {
   "t-image": "打开 [TDesign Image](https://tdesign.tencent.com/miniprogram/components/image)",
   "t-image-viewer": "打开 [TDesign ImageViewer](https://tdesign.tencent.com/miniprogram/components/image-viewer)",
   "t-progress": "打开 [TDesign Progress](https://tdesign.tencent.com/miniprogram/components/progress)",
-  "t-qrcode": "打开 [TDesign Progress](https://tdesign.tencent.com/miniprogram/components/qrcode)",
+  "t-qrcode": "打开 [TDesign QRCode](https://tdesign.tencent.com/miniprogram/components/qrcode)",
   "t-result": "打开 [TDesign Result](https://tdesign.tencent.com/miniprogram/components/result)",
   "t-skeleton": "打开 [TDesign Skeleton](https://tdesign.tencent.com/miniprogram/components/skeleton)",
   "t-sticky": "打开 [TDesign Sticky](https://tdesign.tencent.com/miniprogram/components/sticky)",

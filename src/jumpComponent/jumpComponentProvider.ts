@@ -77,11 +77,25 @@ export class jumpCompDefinitionProvider implements vscode.DefinitionProvider {
       }
     }
 
-    // 支持两种路径格式：
+    // 支持三种路径格式：
     // 1. "navbar": "/components/navbar/index"
     // 2. "navbar": "/components/navbar/"
-    const normalizedPath = compPath.endsWith("/") ? `${compPath}index.js` : `${compPath}.js`;
-    const componentPath = path.join(rootPath, normalizedPath);
+    // 3. "t-button": "tdesign-miniprogram/button/button"
+    let componentPath;
+
+    // 处理 tdesign-miniprogram 组件
+    if (compPath.startsWith('tdesign-miniprogram/')) {
+      componentPath = path.join(rootPath, `miniprogram_npm/${compPath}.js`);
+    }
+    // 处理本地组件路径（以/开头或相对路径）
+    else if (compPath.startsWith('/') || !compPath.includes('://')) {
+      const normalizedPath = compPath.endsWith("/") ? `${compPath}index.js` : `${compPath}.js`;
+      componentPath = path.join(rootPath, normalizedPath);
+    }
+    // 其他情况下直接使用原路径
+    else {
+      componentPath = path.join(rootPath, `${compPath}.js`);
+    }
 
     return new vscode.Location(vscode.Uri.file(componentPath), new vscode.Position(0, 0));
   }

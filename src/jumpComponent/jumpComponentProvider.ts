@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-11-07 14:48:49
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-11-10 18:14:16
+ * @LastEditTime: 2026-01-17 13:38:43
  * @FilePath: /tdesign-miniprogram-snippets/src/jumpComponent/jumpComponentProvider.ts
  * @Description: 在 wxml 页面，'alt + 点击自定义组件的标签名'跳转到对应的组件页面
  */
@@ -77,7 +77,11 @@ export class jumpCompDefinitionProvider implements vscode.DefinitionProvider {
       }
     }
 
-    const componentPath = path.join(rootPath, `${compPath}.js`);
+    // 支持两种路径格式：
+    // 1. "navbar": "/components/navbar/index"
+    // 2. "navbar": "/components/navbar/"
+    const normalizedPath = compPath.endsWith("/") ? `${compPath}index.js` : `${compPath}.js`;
+    const componentPath = path.join(rootPath, normalizedPath);
 
     return new vscode.Location(vscode.Uri.file(componentPath), new vscode.Position(0, 0));
   }
@@ -89,10 +93,7 @@ export class jumpCompDefinitionProvider implements vscode.DefinitionProvider {
  * @param enableJumpComponent  Component
  * @param context vscode  context
  */
-export function jumpCompListener(
-  enableJumpComponent: boolean,
-  context: vscode.ExtensionContext
-) {
+export function jumpCompListener(enableJumpComponent: boolean, context: vscode.ExtensionContext) {
   // console.log("🚀 ~ affectsConfiguration: enableJumpComponent: ", enableJumpComponent, e &&!e.affectsConfiguration('tdesign-miniprogram-snippets.enableJumpComponent'));
   // Removed e && !e.affectsConfiguration(...) check as e is no longer passed
   const { languages } = vscode;

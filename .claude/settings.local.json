@@ -7,7 +7,11 @@
       "Bash(python3:*)",
       "Bash(echo:*)",
       "Bash(npm test:*)",
-      "Bash(sqlite3:*)"
+      "Bash(sqlite3:*)",
+      "Bash(npm run compile)",
+      "Bash(npm run lint)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

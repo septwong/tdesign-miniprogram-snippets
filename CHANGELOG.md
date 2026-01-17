@@ -18,12 +18,16 @@
 - `js` 通用代码片段
 - `wxss` 通用代码片段 -->
 
+#### `1.1.4` 2026-01-17
+
+- **体验优化**：组件跳转功能支持第四种路径格式
+  - 目录路径：`"demo": "/components/demo"`
+
 #### `1.1.3` 2026-01-17
 
-- **体验优化**：组件跳转功能支持四种路径格式
+- **体验优化**：组件跳转功能支持三种路径格式
   - 完整路径：`"demo": "/components/demo/index"`
   - 简化路径：`"demo": "/components/demo/"`
-  - 目录路径：`"header": "/components/header"`
   - tdesign-miniprogram：`"t-button": "tdesign-miniprogram/button/button"`
 - **功能增强**：自动检测路径格式并跳转到对应组件文件
 

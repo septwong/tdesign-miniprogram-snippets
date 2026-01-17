@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-11-07 14:48:49
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-01-17 13:52:55
+ * @LastEditTime: 2026-01-17 14:14:39
  * @FilePath: /tdesign-miniprogram-snippets/src/jumpComponent/jumpComponentProvider.ts
  * @Description: 在 wxml 页面，'alt + 点击自定义组件的标签名'跳转到对应的组件页面
  */
@@ -80,7 +80,7 @@ export class jumpCompDefinitionProvider implements vscode.DefinitionProvider {
     // 支持四种路径格式：
     // 1. "demo": "/components/demo/index"
     // 2. "demo": "/components/demo/"
-    // 3. "header": "/components/header"
+    // 3. "demo": "/components/demo"
     // 4. "t-button": "tdesign-miniprogram/button/button"
     let componentPath;
 

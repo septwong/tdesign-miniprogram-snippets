@@ -21,8 +21,8 @@
 #### `1.1.3` 2026-01-17
 
 - **体验优化**：组件跳转功能支持三种路径格式
-  - 完整路径：`"navbar": "/components/navbar/index"`
-  - 简化路径：`"navbar": "/components/navbar/"`
+  - 完整路径：`"demo": "/components/demo/index"`
+  - 简化路径：`"demo": "/components/demo/"`
   - tdesign-miniprogram：`"t-button": "tdesign-miniprogram/button/button"`
 - **功能增强**：自动检测路径格式并跳转到对应组件文件
 

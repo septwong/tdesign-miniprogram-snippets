@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-11-07 14:48:49
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-01-17 13:38:43
+ * @LastEditTime: 2026-01-17 13:52:55
  * @FilePath: /tdesign-miniprogram-snippets/src/jumpComponent/jumpComponentProvider.ts
  * @Description: 在 wxml 页面，'alt + 点击自定义组件的标签名'跳转到对应的组件页面
  */
@@ -78,17 +78,17 @@ export class jumpCompDefinitionProvider implements vscode.DefinitionProvider {
     }
 
     // 支持三种路径格式：
-    // 1. "navbar": "/components/navbar/index"
-    // 2. "navbar": "/components/navbar/"
+    // 1. "demo": "/components/demo/index"
+    // 2. "demo": "/components/demo/"
     // 3. "t-button": "tdesign-miniprogram/button/button"
     let componentPath;
 
     // 处理 tdesign-miniprogram 组件
-    if (compPath.startsWith('tdesign-miniprogram/')) {
+    if (compPath.startsWith("tdesign-miniprogram/")) {
       componentPath = path.join(rootPath, `miniprogram_npm/${compPath}.js`);
     }
     // 处理本地组件路径（以/开头或相对路径）
-    else if (compPath.startsWith('/') || !compPath.includes('://')) {
+    else if (compPath.startsWith("/") || !compPath.includes("://")) {
       const normalizedPath = compPath.endsWith("/") ? `${compPath}index.js` : `${compPath}.js`;
       componentPath = path.join(rootPath, normalizedPath);
     }

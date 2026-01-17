@@ -77,10 +77,11 @@ export class jumpCompDefinitionProvider implements vscode.DefinitionProvider {
       }
     }
 
-    // 支持三种路径格式：
+    // 支持四种路径格式：
     // 1. "demo": "/components/demo/index"
     // 2. "demo": "/components/demo/"
-    // 3. "t-button": "tdesign-miniprogram/button/button"
+    // 3. "header": "/components/header"
+    // 4. "t-button": "tdesign-miniprogram/button/button"
     let componentPath;
 
     // 处理 tdesign-miniprogram 组件
@@ -89,7 +90,21 @@ export class jumpCompDefinitionProvider implements vscode.DefinitionProvider {
     }
     // 处理本地组件路径（以/开头或相对路径）
     else if (compPath.startsWith("/") || !compPath.includes("://")) {
-      const normalizedPath = compPath.endsWith("/") ? `${compPath}index.js` : `${compPath}.js`;
+      let normalizedPath;
+      if (compPath.endsWith("/")) {
+        // 格式2: "/components/demo/" → "/components/demo/index.js"
+        normalizedPath = `${compPath}index.js`;
+      } else {
+        // 检查路径最后一段是否是 index
+        const lastSegment = path.basename(compPath);
+        if (lastSegment === "index") {
+          // 格式1: "/components/demo/index" → "/components/demo/index.js"
+          normalizedPath = `${compPath}.js`;
+        } else {
+          // 格式3: "/components/header" → "/components/header/index.js"
+          normalizedPath = `${compPath}/index.js`;
+        }
+      }
       componentPath = path.join(rootPath, normalizedPath);
     }
     // 其他情况下直接使用原路径

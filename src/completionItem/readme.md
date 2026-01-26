@@ -14,9 +14,9 @@
 
 <!-- Slots -->
 
-| name | description                  |
-| ---- | ---------------------------- |
-| \-   | 默认插槽，自定义内容区域内容 |
+| name  | description |
+| ----- | ----------- |
+| style | Object      |
 
 <!-- External Classes -->
 

@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-12-17 17:28:24
+ * @LastEditTime: 2026-01-26 18:50:04
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemEventData.ts
  * @Description:
  */
@@ -337,6 +337,15 @@ export const CompletionEventData: CompletionEventObject = {
     ],
   },
   // 数据展示
+  "t-collapse": {
+    attrs: [
+      {
+        name: "change",
+        params: "`(value: CollapseValue)`",
+        description: "切换面板时触发，返回变化的值",
+      },
+    ],
+  },
   "t-qrcode": {
     attrs: [
       {

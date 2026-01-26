@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-31 10:19:00
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-12-16 18:54:49
+ * @LastEditTime: 2026-01-26 18:49:22
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemCssData.ts
  * @Description:
  */
@@ -783,6 +783,80 @@ export const CompletionCssData: CompletionCssObject = {
     ],
   },
   // 数据展示
+  "t-collapse": {
+    attrs: [
+      {
+        name: "--td-collapse-border-color",
+        defaultValue: "@border-level-1-color",
+        description: "-",
+      },
+      {
+        name: "--td-collapse-content-font",
+        defaultValue: "@font-body-medium",
+        description: "-",
+      },
+      {
+        name: "--td-collapse-content-padding",
+        defaultValue: "32rpx",
+        description: "-",
+      },
+      {
+        name: "--td-collapse-content-text-color",
+        defaultValue: "@text-color-primary",
+        description: "-",
+      },
+      {
+        name: "--td-collapse-disabled-color",
+        defaultValue: "@text-color-disabled",
+        description: "-",
+      },
+      {
+        name: "--td-collapse-extra-font",
+        defaultValue: "@font-body-large",
+        description: "-",
+      },
+      {
+        name: "--td-collapse-header-height",
+        defaultValue: "auto",
+        description: "-",
+      },
+      {
+        name: "--td-collapse-header-text-color",
+        defaultValue: "@text-color-primary",
+        description: "-",
+      },
+      {
+        name: "--td-collapse-header-text-disabled-color",
+        defaultValue: "@collapse-disabled-color",
+        description: "-",
+      },
+      {
+        name: "--td-collapse-horizontal-padding",
+        defaultValue: "32rpx",
+        description: "-",
+      },
+      {
+        name: "--td-collapse-icon-color",
+        defaultValue: "@text-color-placeholder",
+        description: "-",
+      },
+      {
+        name: "--td-collapse-left-icon-color",
+        defaultValue: "@brand-color",
+        description: "-",
+      },
+      {
+        name: "--td-collapse-panel-bg-color",
+        defaultValue: "@bg-color-container",
+        description: "-",
+      },
+      {
+        name: "--td-collapse-title-font",
+        defaultValue: "@font-body-large",
+        description: "-",
+      },
+    ],
+  },
   "t-qrcode": {
     attrs: [
       {

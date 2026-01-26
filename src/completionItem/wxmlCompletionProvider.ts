@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 15:59:15
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-10-21 18:49:32
+ * @LastEditTime: 2026-01-26 18:54:07
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/wxmlCompletionProvider.ts
  * @Description:
  */
@@ -13,8 +13,9 @@ import { CompletionData } from "./itemData";
 import { CompletionEventData } from "./itemEventData";
 import { CompletionClassData } from "./itemClassData";
 import { CompletionCssData } from "./itemCssData";
+import { CompletionSlotData } from "./itemSlotData";
 import { WxmlDataList } from "./wxmlData";
-import { type Attributes, type ItemEvent, type ItemClass, type ItemCss } from "./types";
+import { type Attributes, type ItemEvent, type ItemSlot, type ItemClass, type ItemCss } from "./types";
 
 /**
  * 判断光标是否在指定标签内。
@@ -110,6 +111,17 @@ function createCompletionItemEvent({ name, params, description }: ItemEvent): vs
   return item;
 }
 
+function createCompletionItemSlot({ name, description }: ItemSlot): vscode.CompletionItem {
+  const item = new vscode.CompletionItem(name, vscode.CompletionItemKind.Property);
+  // 设置详细信息
+  // item.detail = `${params}`;
+  item.documentation = new vscode.MarkdownString(description);
+  // 设置插入的文本
+  const snippet = `${name}=${"'${1}'"}`;
+  item.insertText = new vscode.SnippetString(snippet);
+  return item;
+}
+
 function createCompletionItemClass({ className, description }: ItemClass): vscode.CompletionItem {
   const item = new vscode.CompletionItem(className, vscode.CompletionItemKind.Property);
   // 设置详细信息
@@ -153,7 +165,7 @@ function createWxmlCompletionItem({
   if (body) {
     let body_md = "```wxml\n" + body + "\n```";
     item.documentation = new vscode.MarkdownString(
-      description + `\n\n${body_md}` + (required ? "\n\n**是否必填**: " + required : "")
+      description + `\n\n${body_md}` + (required ? "\n\n**是否必填**: " + required : ""),
     );
     snippet = `${body}`;
   } else {
@@ -194,6 +206,15 @@ export class WxmlCompletionProvider implements vscode.CompletionItemProvider {
       //   for (const attrObj of tagData.attrs) {
       //     if (attrObj.name) {
       //       completionItems.push(createCompletionItemEvent(attrObj));
+      //     }
+      //   }
+      // }
+      // // Slots
+      // if (tagName in CompletionSlotData) {
+      //   const tagData = CompletionSlotData[tagName as keyof typeof CompletionSlotData];
+      //   for (const attrObj of tagData.attrs) {
+      //     if (attrObj.name) {
+      //       completionItems.push(createCompletionItemSlot(attrObj));
       //     }
       //   }
       // }

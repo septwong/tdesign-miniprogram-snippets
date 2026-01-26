@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-10-21 16:29:31
+ * @LastEditTime: 2026-01-26 18:41:16
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/types/index.ts
  * @Description:
  */
@@ -12,7 +12,7 @@ export interface Attributes {
   name: string;
   type: string;
   default: string;
-  description:string;
+  description: string;
   required: string;
   body?: string; // 可选 属性片段
 }
@@ -37,6 +37,17 @@ export interface CompletionEventObject {
   };
 }
 
+// Slots
+export interface ItemSlot {
+  name: string; // 名称
+  description: string; // 描述
+}
+
+export interface CompletionSlotObject {
+  [key: string]: {
+    attrs: ItemSlot[];
+  };
+}
 // External Classes
 export interface ItemClass {
   className: string; // 类名

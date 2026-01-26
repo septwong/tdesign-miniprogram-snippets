@@ -12,6 +12,12 @@
 | ----- | ------ | ----------- |
 | style | Object | -           |
 
+<!-- Slots -->
+
+| name  | description |
+| ----- | ----------- |
+| style | Object      |
+
 <!-- External Classes -->
 
 | className | description |

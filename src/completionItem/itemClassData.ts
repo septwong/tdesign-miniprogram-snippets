@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:19:58
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2025-12-16 18:54:33
+ * @LastEditTime: 2026-01-26 18:58:17
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemClassData.ts
  * @Description:
  */
@@ -142,6 +142,22 @@ export const CompletionClassData: CompletionClassObject = {
     ],
   },
   // 数据展示
+  "t-collapse": {
+    attrs: [
+      {
+        className: "t-class",
+        description: "根节点样式类",
+      },
+      {
+        className: "t-class-content",
+        description: "内容样式类",
+      },
+      {
+        className: "t-class-header",
+        description: "头部样式类",
+      },
+    ],
+  },
   "t-qrcode": {
     attrs: [],
   },

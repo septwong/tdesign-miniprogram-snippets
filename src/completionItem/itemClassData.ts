@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:19:58
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-01-26 18:58:17
+ * @LastEditTime: 2026-01-26 19:03:59
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemClassData.ts
  * @Description:
  */
@@ -143,6 +143,9 @@ export const CompletionClassData: CompletionClassObject = {
   },
   // 数据展示
   "t-collapse": {
+    attrs: [],
+  },
+  "t-collapse-panel": {
     attrs: [
       {
         className: "t-class",

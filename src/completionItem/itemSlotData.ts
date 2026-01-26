@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-01-26 18:57:04
+ * @LastEditTime: 2026-01-26 19:03:20
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemSlotData.ts
  * @Description:
  */
@@ -32,6 +32,14 @@ export const CompletionSlotData: CompletionSlotObject = {
   },
   // 数据展示
   "t-collapse": {
+    attrs: [
+      {
+        name: "\\-",
+        description: "默认插槽，自定义内容区域内容",
+      },
+    ],
+  },
+  "t-collapse-panel": {
     attrs: [
       {
         name: "\\-",

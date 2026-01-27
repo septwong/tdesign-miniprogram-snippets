@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-01-26 19:05:04
+ * @LastEditTime: 2026-01-27 11:58:23
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemSlotData.ts
  * @Description:
  */
@@ -39,6 +39,14 @@ export const CompletionSlotData: CompletionSlotObject = {
       },
     ],
   },
+  "t-qrcode": {
+    attrs: [
+      {
+        name: "status-render",
+        description: "自定义状态渲染器",
+      },
+    ],
+  },
   "t-collapse-panel": {
     attrs: [
       {
@@ -64,6 +72,19 @@ export const CompletionSlotData: CompletionSlotObject = {
       {
         name: "header-right-content",
         description: "自定义 `header-right-content` 显示内容",
+      },
+    ],
+  },
+  // 反馈
+  "t-popover": {
+    attrs: [
+      {
+        name: "\\-",
+        description: "默认插槽，用于自定义触发元素",
+      },
+      {
+        name: "content",
+        description: "自定义 `content` 显示内容",
       },
     ],
   },

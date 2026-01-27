@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-31 10:19:00
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-01-26 18:49:22
+ * @LastEditTime: 2026-01-27 11:59:23
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemCssData.ts
  * @Description:
  */
@@ -733,6 +733,75 @@ export const CompletionCssData: CompletionCssObject = {
     ],
   },
   // 输入
+  "t-cascader": {
+    attrs: [
+      {
+        name: "--td-cascader-active-color",
+        defaultValue: "@brand-color",
+        description: "-",
+      },
+      {
+        name: "--td-cascader-bg-color",
+        defaultValue: "@bg-color-container",
+        description: "-",
+      },
+      {
+        name: "--td-cascader-border-color",
+        defaultValue: "@component-stroke",
+        description: "-",
+      },
+      {
+        name: "--td-cascader-content-height",
+        defaultValue: "78vh",
+        description: "-",
+      },
+      {
+        name: "--td-cascader-disabled-color",
+        defaultValue: "@text-color-disabled",
+        description: "-",
+      },
+      {
+        name: "--td-cascader-options-height",
+        defaultValue: "calc(100% - @cascader-step-height)",
+        description: "-",
+      },
+      {
+        name: "--td-cascader-options-title-color",
+        defaultValue: "@text-color-placeholder",
+        description: "-",
+      },
+      {
+        name: "--td-cascader-step-arrow-color",
+        defaultValue: "@text-color-placeholder",
+        description: "-",
+      },
+      {
+        name: "--td-cascader-step-dot-size",
+        defaultValue: "16rpx",
+        description: "-",
+      },
+      {
+        name: "--td-cascader-step-height",
+        defaultValue: "88rpx",
+        description: "-",
+      },
+      {
+        name: "--td-cascader-title-color",
+        defaultValue: "@text-color-primary",
+        description: "-",
+      },
+      {
+        name: "--td-cascader-title-font",
+        defaultValue: "@font-title-large",
+        description: "-",
+      },
+      {
+        name: "--td-cascader-title-padding",
+        defaultValue: "@spacer-2",
+        description: "-",
+      },
+    ],
+  },
   "t-textarea": {
     attrs: [
       {
@@ -859,11 +928,6 @@ export const CompletionCssData: CompletionCssObject = {
   },
   "t-qrcode": {
     attrs: [
-      {
-        name: "--td-font-size-title-small",
-        defaultValue: "--td-font-size-title-small",
-        description: "-",
-      },
       {
         name: "--td-brand-color-hover",
         defaultValue: "--td-brand-color-hover",
@@ -1010,6 +1074,66 @@ export const CompletionCssData: CompletionCssObject = {
       {
         name: "--td-popover-padding",
         defaultValue: "24rpx",
+        description: "-",
+      },
+      {
+        name: "--td-popover-dark-color",
+        defaultValue: "@text-color-anti",
+        description: "-",
+      },
+      {
+        name: "--td-popover-dark-bg-color",
+        defaultValue: "@font-gray-1",
+        description: "-",
+      },
+      {
+        name: "--td-popover-light-color",
+        defaultValue: "@text-color-primary",
+        description: "-",
+      },
+      {
+        name: "--td-popover-light-bg-color",
+        defaultValue: "@bg-color-container",
+        description: "-",
+      },
+      {
+        name: "--td-popover-brand-color",
+        defaultValue: "@primary-color-7",
+        description: "-",
+      },
+      {
+        name: "--td-popover-brand-bg-color",
+        defaultValue: "@primary-color-1",
+        description: "-",
+      },
+      {
+        name: "--td-popover-success-color",
+        defaultValue: "@success-color-5",
+        description: "-",
+      },
+      {
+        name: "--td-popover-success-bg-color",
+        defaultValue: "@success-color-1",
+        description: "-",
+      },
+      {
+        name: "--td-popover-warning-color",
+        defaultValue: "@warning-color-5",
+        description: "-",
+      },
+      {
+        name: "--td-popover-warning-bg-color",
+        defaultValue: "@warning-color-1",
+        description: "-",
+      },
+      {
+        name: "--td-popover-error-color",
+        defaultValue: "@error-color-6",
+        description: "-",
+      },
+      {
+        name: "--td-popover-error-bg-color",
+        defaultValue: "@error-color-1",
         description: "-",
       },
     ],

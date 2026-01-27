@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:19:58
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-01-26 19:03:59
+ * @LastEditTime: 2026-01-27 11:48:44
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemClassData.ts
  * @Description:
  */
@@ -121,6 +121,9 @@ export const CompletionClassData: CompletionClassObject = {
     attrs: [],
   },
   // 输入
+  "t-cascader": {
+    attrs: [],
+  },
   "t-textarea": {
     attrs: [
       {

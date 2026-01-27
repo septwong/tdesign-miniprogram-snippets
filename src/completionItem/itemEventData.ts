@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-01-26 18:50:04
+ * @LastEditTime: 2026-01-27 12:31:22
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemEventData.ts
  * @Description:
  */
@@ -179,11 +179,6 @@ export const CompletionEventData: CompletionEventObject = {
         description: "新的一次性订阅消息下发机制回调，`open-type=liveActivity` 时有效",
       },
       {
-        name: "createliveactivity",
-        params: "\\-",
-        description: "新的一次性订阅消息下发机制回调，`open-type=liveActivity` 时有效",
-      },
-      {
         name: "error",
         params: "\\-",
         description: "原生按钮属性，当使用开放能力时，发生错误的回调，`open-type=launchApp` 时有效",
@@ -302,6 +297,26 @@ export const CompletionEventData: CompletionEventObject = {
     ],
   },
   // 输入
+  "t-cascader": {
+    attrs: [
+      {
+        name: "change",
+        params: "`(value: string | number, selectedOptions: string[])`",
+        description: "`1.0.1`。值发生变更时触发",
+      },
+      {
+        name: "close",
+        params: "`(trigger: CascaderTriggerSource)`",
+        description:
+          "`1.0.1`。关闭时触发。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/cascader/type.ts)。<br/>`type CascaderTriggerSource = 'overlay' | 'close-btn' | 'finish'`<br/>",
+      },
+      {
+        name: "pick",
+        params: "`(value: string | number, label: string, index: number, level: number)`",
+        description: "`1.0.1`。选择后触发",
+      },
+    ],
+  },
   "t-textarea": {
     attrs: [
       {
@@ -366,7 +381,7 @@ export const CompletionEventData: CompletionEventObject = {
         name: "change",
         params: "`(current: number, source: SwiperChangeSource)`",
         description:
-          "轮播切换时触发。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/swiper/type.ts)。<br/>`type SwiperChangeSource = 'autoplay' \\",
+          "轮播切换时触发。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/swiper/type.ts)。<br/>`type SwiperChangeSource = 'autoplay' | 'touch' | 'nav'`<br/>",
       },
       {
         name: "click",

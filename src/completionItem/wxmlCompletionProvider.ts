@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 15:59:15
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-01-26 18:54:07
+ * @LastEditTime: 2026-01-27 12:01:31
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/wxmlCompletionProvider.ts
  * @Description:
  */
@@ -111,7 +111,11 @@ function createCompletionItemEvent({ name, params, description }: ItemEvent): vs
   return item;
 }
 
-function createCompletionItemSlot({ name, description }: ItemSlot): vscode.CompletionItem {
+function createCompletionItemSlot({ name, description }: ItemSlot): vscode.CompletionItem | null {
+  // 默认插槽不需要补全
+  if (name === "-") {
+    return null;
+  }
   const item = new vscode.CompletionItem(name, vscode.CompletionItemKind.Property);
   // 设置详细信息
   // item.detail = `${params}`;
@@ -200,42 +204,43 @@ export class WxmlCompletionProvider implements vscode.CompletionItemProvider {
           }
         }
       }
-      // // Events
-      // if (tagName in CompletionEventData) {
-      //   const tagData = CompletionEventData[tagName as keyof typeof CompletionEventData];
-      //   for (const attrObj of tagData.attrs) {
-      //     if (attrObj.name) {
-      //       completionItems.push(createCompletionItemEvent(attrObj));
-      //     }
-      //   }
-      // }
-      // // Slots
-      // if (tagName in CompletionSlotData) {
-      //   const tagData = CompletionSlotData[tagName as keyof typeof CompletionSlotData];
-      //   for (const attrObj of tagData.attrs) {
-      //     if (attrObj.name) {
-      //       completionItems.push(createCompletionItemSlot(attrObj));
-      //     }
-      //   }
-      // }
-      // // External Classes
-      // if (tagName in CompletionClassData) {
-      //   const tagData = CompletionClassData[tagName as keyof typeof CompletionClassData];
-      //   for (const attrObj of tagData.attrs) {
-      //     if (attrObj.className) {
-      //       completionItems.push(createCompletionItemClass(attrObj));
-      //     }
-      //   }
-      // }
-      // // CSS Variables
-      // if (tagName in CompletionCssData) {
-      //   const tagData = CompletionCssData[tagName as keyof typeof CompletionCssData];
-      //   for (const attrObj of tagData.attrs) {
-      //     if (attrObj.name) {
-      //       completionItems.push(createCompletionItemCss(attrObj));
-      //     }
-      //   }
-      // }
+      // Events
+      if (tagName in CompletionEventData) {
+        const tagData = CompletionEventData[tagName as keyof typeof CompletionEventData];
+        for (const attrObj of tagData.attrs) {
+          if (attrObj.name) {
+            completionItems.push(createCompletionItemEvent(attrObj));
+          }
+        }
+      }
+      // Slots
+      if (tagName in CompletionSlotData) {
+        const tagData = CompletionSlotData[tagName as keyof typeof CompletionSlotData];
+        for (const attrObj of tagData.attrs) {
+          const item = createCompletionItemSlot(attrObj);
+          if (item) {
+            completionItems.push(item);
+          }
+        }
+      }
+      // External Classes
+      if (tagName in CompletionClassData) {
+        const tagData = CompletionClassData[tagName as keyof typeof CompletionClassData];
+        for (const attrObj of tagData.attrs) {
+          if (attrObj.className) {
+            completionItems.push(createCompletionItemClass(attrObj));
+          }
+        }
+      }
+      // CSS Variables
+      if (tagName in CompletionCssData) {
+        const tagData = CompletionCssData[tagName as keyof typeof CompletionCssData];
+        for (const attrObj of tagData.attrs) {
+          if (attrObj.name) {
+            completionItems.push(createCompletionItemCss(attrObj));
+          }
+        }
+      }
 
       // common: 微信小程序 WXML 语法参考
       for (const item of WxmlDataList) {

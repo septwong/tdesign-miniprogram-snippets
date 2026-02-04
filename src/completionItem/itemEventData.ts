@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-01-27 12:31:22
+ * @LastEditTime: 2026-02-04 16:27:56
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemEventData.ts
  * @Description:
  */
@@ -100,7 +100,7 @@ export const CompletionEventData: CompletionEventObject = {
     attrs: [
       {
         name: "actions",
-        params: "`(detail: {name: string, active: boolean})`",
+        params: "`(detail: {name: string, active: boolean, chatId: string})`",
         description: "点击点赞，点踩，复制，分享，重新生成按钮时触发发",
       },
     ],
@@ -169,6 +169,11 @@ export const CompletionEventData: CompletionEventObject = {
           "原生按钮属性，获取用户头像回调，`open-type=chooseAvatar` 时有效。返回 `e.detail.avatarUrl` 为头像临时文件链接",
       },
       {
+        name: "click",
+        params: "`(e: MouseEvent)`",
+        description: "点击时触发",
+      },
+      {
         name: "contact",
         params: "\\-",
         description: '原生按钮属性，客服消息回调，`open-type="contact"` 时有效',
@@ -188,12 +193,6 @@ export const CompletionEventData: CompletionEventObject = {
         params: "\\-",
         description:
           "原生按钮属性，手机号快速验证回调，open-type=getPhoneNumber时有效。Tips：在触发 bindgetphonenumber 回调后应立即隐藏手机号按钮组件，或置为 disabled 状态，避免用户重复授权手机号产生额外费用",
-      },
-      {
-        name: "getrealtimephonenumber",
-        params: "\\-",
-        description:
-          "原生按钮属性，手机号实时验证回调，open-type=getRealtimePhoneNumber 时有效。Tips：在触发 bindgetrealtimephonenumber 回调后应立即隐藏手机号按钮组件，或置为 disabled 状态，避免用户重复授权手机号产生额外费用",
       },
       {
         name: "getrealtimephonenumber",
@@ -316,6 +315,52 @@ export const CompletionEventData: CompletionEventObject = {
         description: "`1.0.1`。选择后触发",
       },
     ],
+  },
+  "t-radio": {
+    attrs: [],
+  },
+  "t-radio-group": {
+    attrs: [],
+  },
+  "t-rate": {
+    attrs: [],
+  },
+  "t-search": {
+    attrs: [
+      {
+        name: "action-click",
+        params: "`({})`",
+        description: "点击右侧操作按钮文字时触发",
+      },
+      {
+        name: "blur",
+        params: "`({ value: string })`",
+        description: "失去焦点时触发",
+      },
+      {
+        name: "change",
+        params: "`({ value: string, trigger: 'input-change' | 'option-click' | 'clear' })`",
+        description: "值发生变化时触发",
+      },
+      {
+        name: "clear",
+        params: "`({ value: string })`",
+        description: "点击清除时触发",
+      },
+      {
+        name: "focus",
+        params: "`({ value: string })`",
+        description: "聚焦时触发",
+      },
+      {
+        name: "submit",
+        params: "`({ value: string })`",
+        description: "提交时触发",
+      },
+    ],
+  },
+  "t-slider": {
+    attrs: [],
   },
   "t-textarea": {
     attrs: [

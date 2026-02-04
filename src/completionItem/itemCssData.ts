@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-31 10:19:00
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-01-27 11:59:23
+ * @LastEditTime: 2026-02-04 16:29:00
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemCssData.ts
  * @Description:
  */
@@ -585,7 +585,13 @@ export const CompletionCssData: CompletionCssObject = {
     ],
   },
   "t-icon": {
-    attrs: [],
+    attrs: [
+      {
+        name: "ant: norma",
+        defaultValue: "ant: norma",
+        description: "-",
+      },
+    ],
   },
   "t-row": {
     attrs: [],
@@ -801,6 +807,97 @@ export const CompletionCssData: CompletionCssObject = {
         description: "-",
       },
     ],
+  },
+  "t-radio": {
+    attrs: [],
+  },
+  "t-radio-group": {
+    attrs: [],
+  },
+  "t-rate": {
+    attrs: [],
+  },
+  "t-search": {
+    attrs: [
+      {
+        name: "--td-search-action-color",
+        defaultValue: "@brand-color",
+        description: "-",
+      },
+      {
+        name: "--td-search-bg-color",
+        defaultValue: "@bg-color-secondarycontainer",
+        description: "-",
+      },
+      {
+        name: "--td-search-clear-icon-color",
+        defaultValue: "@text-color-placeholder",
+        description: "-",
+      },
+      {
+        name: "--td-search-clear-icon-size",
+        defaultValue: "48rpx",
+        description: "-",
+      },
+      {
+        name: "--td-search-disabled-text-color",
+        defaultValue: "@text-color-disabled",
+        description: "-",
+      },
+      {
+        name: "--td-search-font",
+        defaultValue: "@font-body-large",
+        description: "-",
+      },
+      {
+        name: "--td-search-height",
+        defaultValue: "80rpx",
+        description: "-",
+      },
+      {
+        name: "--td-search-icon-color",
+        defaultValue: "@text-color-placeholder",
+        description: "-",
+      },
+      {
+        name: "--td-search-icon-size",
+        defaultValue: "48rpx",
+        description: "-",
+      },
+      {
+        name: "--td-search-label-color",
+        defaultValue: "@text-color-primary",
+        description: "-",
+      },
+      {
+        name: "--td-search-padding",
+        defaultValue: "16rpx 24rpx",
+        description: "-",
+      },
+      {
+        name: "--td-search-placeholder-color",
+        defaultValue: "@text-color-placeholder",
+        description: "-",
+      },
+      {
+        name: "--td-search-result-high-light-color",
+        defaultValue: "@brand-color",
+        description: "-",
+      },
+      {
+        name: "--td-search-square-radius",
+        defaultValue: "@radius-default",
+        description: "-",
+      },
+      {
+        name: "--td-search-text-color",
+        defaultValue: "@text-color-primary",
+        description: "-",
+      },
+    ],
+  },
+  "t-slider": {
+    attrs: [],
   },
   "t-textarea": {
     attrs: [

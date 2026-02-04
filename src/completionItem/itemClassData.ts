@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:19:58
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-01-27 11:48:44
+ * @LastEditTime: 2026-02-04 16:28:39
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemClassData.ts
  * @Description:
  */
@@ -122,6 +122,46 @@ export const CompletionClassData: CompletionClassObject = {
   },
   // 输入
   "t-cascader": {
+    attrs: [],
+  },
+  "t-radio": {
+    attrs: [],
+  },
+  "t-radio-group": {
+    attrs: [],
+  },
+  "t-rate": {
+    attrs: [],
+  },
+  "t-search": {
+    attrs: [
+      {
+        className: "t-class",
+        description: "根节点样式类",
+      },
+      {
+        className: "t-class-action",
+        description: "操作按钮样式类",
+      },
+      {
+        className: "t-class-clear",
+        description: "右侧图标样式类",
+      },
+      {
+        className: "t-class-input",
+        description: "输入框样式类",
+      },
+      {
+        className: "t-class-input-container",
+        description: "输入框容器样式类",
+      },
+      {
+        className: "t-class-left",
+        description: "左侧图标样式类",
+      },
+    ],
+  },
+  "t-slider": {
     attrs: [],
   },
   "t-textarea": {

@@ -11,3 +11,5 @@ vsc-extension-quickstart.md
 **/.vscode-test.*
 
 assets/md_images/**
+CLAUDE.md
+.claude

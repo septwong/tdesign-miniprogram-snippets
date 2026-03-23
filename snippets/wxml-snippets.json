@@ -3,15 +3,96 @@
 // 支持语言：WXML, HTML, Pug (.wpug)
 // 使用方法：输入组件前缀（如 "t-"）即可触发
 //
-// ==================== 高阶组件 ====================
-// 高阶：完整的业务级组件模板
-// 包含：组件标签、属性、数据绑定、事件处理
-//
-// ==================== 基础组件 ====================
-// 基础：简单的UI组件模板
-// 适合：快速搭建页面结构
-
 {
+  "TDesign ConfigProvider:upload 全局特性配置": {
+    "prefix": "t-config-provider:upload",
+    "body": [
+      "<t-config-provider global-config=\"{{globalConfig}}\">",
+      "  <view class=\"upload-demo\">",
+      "    <t-upload",
+      "      disabled",
+      "      media-type=\"{{['video','image']}}\"",
+      "      files=\"{{originFiles}}\"",
+      "      gridConfig=\"{{gridConfig}}\"",
+      "      bind:success=\"handleSuccess\"",
+      "      bind:remove=\"handleRemove\"",
+      "      bind:click=\"handleClick\"",
+      "    />",
+      "  </view>",
+      "</t-config-provider>"
+    ],
+    "description": "TDesign ConfigProvider 全局特性配置"
+  },
+  "TDesign ConfigProvider:chat 全局特性配置": {
+    "prefix": "t-config-provider:chat",
+    "body": [
+      "<t-config-provider global-config=\"{{globalConfig}}\" themeVars=\"{{themeVars}}\">",
+      "  <view class=\"chat-demo\">",
+      "    <t-chat-thinking",
+      "      content=\"{{content}}\"",
+      "      layout=\"block\"",
+      "      status=\"{{status}}\"",
+      "      animation=\"moving\"",
+      "      bind:expandChange=\"handleExpandChange\"",
+      "    />",
+      "  </view>",
+      "</t-config-provider>"
+    ],
+    "description": "TDesign ConfigProvider 全局特性配置"
+  },
+  "TDesign ConfigProvider 全局特性配置": {
+    "prefix": "t-config-provider",
+    "body": [
+      "<wxs src=\"../config-provider.wxs\" module=\"_this\" />",
+      "",
+      "<t-config-provider :global-config=\"globalConfig\">",
+      "  <!-- rate -->",
+      "  <view class=\"rate-demo-cell\">",
+      "    <view class=\"rate-demo-cell__title\">Rating</view>",
+      "",
+      "    <t-rate value=\"{{rateValue}}\" show-text bind:change=\"onRateChange\" />",
+      "  </view>",
+      "",
+      "  <!-- calendar -->",
+      "  <t-calendar",
+      "    visible=\"{{visible}}\"",
+      "    value=\"{{value}}\"",
+      "    bind:confirm=\"handleCalendarConfirm\"",
+      "    bind:close=\"onCalendarClose\"",
+      "  />",
+      "  <t-cell arrow title=\"Single select date\" note=\"{{_this.formatTimestamp(value)}}\" bind:tap=\"handleCalendar\" />",
+      "",
+      "  <!-- date-time-picker -->",
+      "  <t-cell",
+      "    title=\"Select time\"",
+      "    hover",
+      "    note=\"{{dateText || 'YY-MM-DD'}}\"",
+      "    arrow",
+      "    data-mode=\"date\"",
+      "    bindtap=\"showPicker\"",
+      "    class=\"test\"",
+      "    t-class=\"panel-item\"",
+      "  />",
+      "",
+      "  <t-date-time-picker",
+      "    auto-close",
+      "    showWeek",
+      "    visible=\"{{dateVisible}}\"",
+      "    mode=\"date\"",
+      "    default-value=\"{{date}}\"",
+      "    format=\"YYYY-MM-DD ddd\"",
+      "    filter=\"{{filter}}\"",
+      "    formatter=\"{{formatter}}\"",
+      "    popup-props=\"{{popupProps}}\"",
+      "    bindchange=\"onConfirm\"",
+      "    bindpick=\"onColumnChange\"",
+      "    bindcancel=\"hidePicker\"",
+      "    bindclose=\"handleClose\"",
+      "  />",
+      "</t-config-provider>"
+    ],
+    "description": "TDesign ConfigProvider 全局特性配置"
+  },
   "TDesign ChatList 对话列表": {
     "prefix": "t-chat",
     "body": [

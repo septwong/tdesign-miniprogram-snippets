@@ -3,12 +3,14 @@
 // 支持语言：JSON, JSONC, JSONL
 // 使用方法：输入组件前缀（如 "t-chat"）自动补全
 //
-// ==================== 高阶组件 ====================
-// 高阶：包含完整的业务级配置项
-// 适用场景：复杂应用、大型项目
-// 示例：完整的页面配置、组件引用配置
-
 {
+  "TDesign ConfigProvider 全局特性配置": {
+    "prefix": "t-config-provider",
+    "body": [
+      "\"t-config-provider\": \"tdesign-miniprogram/config-provider/config-provider\""
+    ],
+    "description": "TDesign ConfigProvider 全局特性配置"
+  },
   "TDesign ChatList 对话列表": {
     "prefix": "t-chat",
     "body": [

@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-02-04 16:27:56
+ * @LastEditTime: 2026-03-23 16:35:57
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemEventData.ts
  * @Description:
  */
@@ -32,11 +32,6 @@ export const CompletionEventData: CompletionEventObject = {
         name: "change",
         params: "`(value:string, context: { e: InputEvent | MouseEvent | KeyboardEvent })`",
         description: "输入框值发生变化时触发",
-      },
-      {
-        name: "file-add",
-        params: "\\-",
-        description: "添加附件时触发",
       },
       {
         name: "file-change",

@@ -2,13 +2,546 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-02-04 16:23:18
+ * @LastEditTime: 2026-03-23 17:12:00
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description:
  */
 import { type CompletionObject } from "./types";
 
 export const CompletionData: CompletionObject = {
+  // 全局配置
+  "t-config-provider": {
+    attrs: [
+      // ConfigProvider Props
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "global-config",
+        type: "Object",
+        default: "-",
+        description: "全局配置。TS 类型：`GlobalConfigProvider`",
+        required: "N",
+      },
+      {
+        name: "theme-vars",
+        type: "Object",
+        default: "-",
+        description: "全局配置",
+        required: "N",
+      },
+      // GlobalConfigProvider
+      {
+        name: "action-sheet",
+        type: "Object",
+        default: "-",
+        description: "动作面板全局配置。TS 类型：`ActionSheetConfig`",
+        required: "N",
+      },
+      {
+        name: "calendar",
+        type: "Object",
+        default: "-",
+        description: "日历组件全局配置。TS 类型：`CalendarConfig`",
+        required: "N",
+      },
+      {
+        name: "cascader",
+        type: "Object",
+        default: "-",
+        description: "级联选择器全局配置。TS 类型：`CascaderConfig`",
+        required: "N",
+      },
+      {
+        name: "class-prefix",
+        type: "String",
+        default: "t",
+        description: "CSS 类名前缀",
+        required: "N",
+      },
+      {
+        name: "date-time-picker",
+        type: "Object",
+        default: "-",
+        description: "时间选择器全局配置。TS 类型：`DateTimePickerConfig`",
+        required: "N",
+      },
+      {
+        name: "dropdown-menu",
+        type: "Object",
+        default: "-",
+        description: "下拉菜单全局配置。TS 类型：`DropdownMenuConfig`",
+        required: "N",
+      },
+      {
+        name: "guide",
+        type: "Object",
+        default: "-",
+        description: "引导全局配置。TS 类型：`GuideConfig`",
+        required: "N",
+      },
+      {
+        name: "picker",
+        type: "Object",
+        default: "-",
+        description: "选择器全局配置。TS 类型：`PickerConfig`",
+        required: "N",
+      },
+      {
+        name: "pull-down-refresh",
+        type: "Object",
+        default: "-",
+        description: "下拉刷新全局配置。TS 类型：`PullDownRefreshConfig`",
+        required: "N",
+      },
+      {
+        name: "qrcode",
+        type: "Object",
+        default: "-",
+        description: "二维码全局配置。TS 类型：`QRCodeConfig`",
+        required: "N",
+      },
+      {
+        name: "rate",
+        type: "Object",
+        default: "-",
+        description: "评分全局配置。TS 类型：`RateConfig`",
+        required: "N",
+      },
+      {
+        name: "tab-bar",
+        type: "Object",
+        default: "-",
+        description: "标签栏全局配置。TS 类型：`TabBarConfig`",
+        required: "N",
+      },
+      {
+        name: "upload",
+        type: "Object",
+        default: "-",
+        description: "上传组件全局配置。TS 类型：`UploadConfig`",
+        required: "N",
+      },
+      // ActionSheetConfig
+      {
+        name: "cancel",
+        type: "String",
+        default: "-",
+        description: "语言配置，“取消” 按钮描述文本",
+        required: "N",
+      },
+      // AttachmentsConfig
+      {
+        name: "status",
+        type: "Object",
+        default: "-",
+        description: "语言配置，附件上传状态描述文本。TS 类型：`{ pending: string; fail: string; }`",
+        required: "N",
+      },
+      // CalendarConfig
+      {
+        name: "confirm",
+        type: "String",
+        default: "-",
+        description: "语言配置，“确定” 按钮描述文本",
+        required: "N",
+      },
+      {
+        name: "month-title",
+        type: "String",
+        default: "-",
+        description: "语言配置，日期月面板标题描述文本。示例：“{year} / {month}”",
+        required: "N",
+      },
+      {
+        name: "months",
+        type: "Array",
+        default: "-",
+        description:
+          "月文本描述，默认值：['1 月', '2 月', '3 月', '4 月', '5 月', '6 月', '7 月', '8 月', '9 月', '10 月', '11 月', '12 月']。TS 类型：`string[]`",
+        required: "N",
+      },
+      {
+        name: "title",
+        type: "String",
+        default: "-",
+        description: "语言配置，组件标题“请选择日期”描述文本",
+        required: "N",
+      },
+      {
+        name: "weekdays",
+        type: "Array",
+        default: "-",
+        description: "星期文本描述，默认值：['日', '一', '二', '三', '四', '五', '六']。TS 类型：`string[]`",
+        required: "N",
+      },
+      // CascaderConfig
+      {
+        name: "placeholder",
+        type: "String",
+        default: "-",
+        description: "语言配置，未选中时的提示文案“选择选项”描述文本",
+        required: "N",
+      },
+      {
+        name: "title",
+        type: "String",
+        default: "-",
+        description: "语言配置，组件标题“选择地址”描述文本",
+        required: "N",
+      },
+      // ChatActionbarConfig
+      {
+        name: "action-bar",
+        type: "Object",
+        default: "-",
+        description:
+          "语言配置，对话操作栏描述文本。TS 类型：`{ replay: string; copy: string; good: string; bad: string; share: string; quote: string; }`",
+        required: "N",
+      },
+      // ChatSenderConfig
+      {
+        name: "placeholder",
+        type: "String",
+        default: "-",
+        description: "语言配置，占位符描述文本",
+        required: "N",
+      },
+      {
+        name: "send-text",
+        type: "String",
+        default: "-",
+        description: "语言配置，发送按钮描述文本",
+        required: "N",
+      },
+      {
+        name: "stop-text",
+        type: "String",
+        default: "-",
+        description: "语言配置，停止发送按钮描述文本",
+        required: "N",
+      },
+      // ChatThinkingConfig
+      {
+        name: "status",
+        type: "Object",
+        default: "-",
+        description: "语言配置，思考状态描述文本。TS 类型：`{ pending: string; complete: string; stop: string; }`",
+        required: "N",
+      },
+      // DateTimePickerConfig
+      {
+        name: "cancel",
+        type: "String",
+        default: "-",
+        description: "语言配置，\"取消\"按钮描述文本",
+        required: "N",
+      },
+      {
+        name: "confirm",
+        type: "String",
+        default: "-",
+        description: "语言配置，'确定'按钮描述文本",
+        required: "N",
+      },
+      {
+        name: "date-label",
+        type: "String",
+        default: "-",
+        description: "语言配置，'日' 描述文本",
+        required: "N",
+      },
+      {
+        name: "format",
+        type: "String",
+        default: "'YYYY-MM-DD HH:mm:ss'",
+        description: "日期格式化规则",
+        required: "N",
+      },
+      {
+        name: "hour-label",
+        type: "String",
+        default: "-",
+        description: "语言配置，'时' 描述文本",
+        required: "N",
+      },
+      {
+        name: "minute-label",
+        type: "String",
+        default: "-",
+        description: "语言配置，'分' 描述文本",
+        required: "N",
+      },
+      {
+        name: "month-label",
+        type: "String",
+        default: "-",
+        description: "语言配置，'月' 描述文本",
+        required: "N",
+      },
+      {
+        name: "second-label",
+        type: "String",
+        default: "-",
+        description: "语言配置，'秒' 描述文本",
+        required: "N",
+      },
+      {
+        name: "title",
+        type: "String",
+        default: "-",
+        description: "语言配置，组件标题'选择时间'描述文本",
+        required: "N",
+      },
+      {
+        name: "year-label",
+        type: "String",
+        default: "-",
+        description: "语言配置，'年' 描述文本",
+        required: "N",
+      },
+      // DropdownMenuConfig
+      {
+        name: "confirm",
+        type: "String",
+        default: "-",
+        description: "语言配置，'确定' 按钮描述文本",
+        required: "N",
+      },
+      {
+        name: "reset",
+        type: "String",
+        default: "-",
+        description: "语言配置，'重置' 按钮描述文本",
+        required: "N",
+      },
+      // FormConfig
+      {
+        name: "colon-text",
+        type: "String",
+        default: "-",
+        description: "字段旁边的冒号，中文为'：'",
+        required: "N",
+      },
+      {
+        name: "error-message",
+        type: "Object",
+        default: "-",
+        description: "表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`。TS 类型：`FormErrorMessage`",
+        required: "N",
+      },
+      {
+        name: "required-mark",
+        type: "Boolean",
+        default: "true",
+        description: "是否显示必填符号（*），默认显示",
+        required: "N",
+      },
+      {
+        name: "required-mark-position",
+        type: "String",
+        default: "left",
+        description: "表单必填符号（*）显示位置。可选项：left/right",
+        required: "N",
+      },
+      // GuideConfig
+      {
+        name: "back",
+        type: "String",
+        default: "-",
+        description: "语言配置， '返回' 描述文本",
+        required: "N",
+      },
+      {
+        name: "finish",
+        type: "String",
+        default: "-",
+        description: "语言配置， '完成' 描述文本",
+        required: "N",
+      },
+      {
+        name: "next",
+        type: "String",
+        default: "-",
+        description: "语言配置， '下一步' 描述文本",
+        required: "N",
+      },
+      {
+        name: "skip",
+        type: "String",
+        default: "-",
+        description: "语言配置， '跳过' 描述文本",
+        required: "N",
+      },
+      // ImageConfig
+      {
+        name: "error-text",
+        type: "String",
+        default: "-",
+        description: "图片加载失败显示的文本，中文默认为'图片无法显示'",
+        required: "N",
+      },
+      {
+        name: "loading-text",
+        type: "String",
+        default: "-",
+        description: "图片加载中显示的文本，中文默认为'图片加载中'",
+        required: "N",
+      },
+      {
+        name: "replace-image-src",
+        type: "Function",
+        default: "-",
+        description: "统一替换图片 `src` 地址，参数为组件的全部属性，返回值为新的图片地址。TS 类型：`(params: ImageProps) => string`",
+        required: "N",
+      },
+      // InputConfig
+      {
+        name: "placeholder",
+        type: "String",
+        default: "-",
+        description: "语言配置，'请输入'占位符描述文本",
+        required: "N",
+      },
+      // PickerConfig
+      {
+        name: "cancel",
+        type: "String",
+        default: "-",
+        description: "语言配置，'取消' 按钮描述文本",
+        required: "N",
+      },
+      {
+        name: "confirm",
+        type: "String",
+        default: "-",
+        description: "语言配置，'确认' 按钮描述文本",
+        required: "N",
+      },
+      // PullDownRefreshConfig
+      {
+        name: "loading-texts",
+        type: "Array",
+        default: "-",
+        description: "提示文本描述，默认值：['下拉刷新', '松手刷新', '正在刷新', '刷新完成']。TS 类型：`string[]`",
+        required: "N",
+      },
+      // QRCodeConfig
+      {
+        name: "expired-text",
+        type: "String",
+        default: "-",
+        description: "语言配置，'二维码过期'描述文本",
+        required: "N",
+      },
+      {
+        name: "refresh-text",
+        type: "String",
+        default: "-",
+        description: "语言配置，'点击刷新'描述文本",
+        required: "N",
+      },
+      {
+        name: "scanned-text",
+        type: "String",
+        default: "-",
+        description: "语言配置，'已扫描'描述文本",
+        required: "N",
+      },
+      // RateConfig
+      {
+        name: "no-value-text",
+        type: "String",
+        default: "-",
+        description: "语言配置，'未评分'描述文本",
+        required: "N",
+      },
+      {
+        name: "value-text",
+        type: "String",
+        default: "-",
+        description: "语言配置，评分值描述文本。示例：'{value} 分'",
+        required: "N",
+      },
+      // TabBarConfig
+      {
+        name: "have-more-news-aria-label",
+        type: "String",
+        default: "-",
+        description: "语言配置，'有n+条新的消息'描述文本。示例：'有 {value}+ 条消息'",
+        required: "N",
+      },
+      {
+        name: "have-news-aria-label",
+        type: "String",
+        default: "-",
+        description: "语言配置，'有n条新的消息'描述文本。示例：'有 {value} 条消息'",
+        required: "N",
+      },
+      {
+        name: "more-news-aria-label",
+        type: "String",
+        default: "-",
+        description: "语言配置，'有很多消息'描述文本",
+        required: "N",
+      },
+      {
+        name: "news-aria-label",
+        type: "String",
+        default: "-",
+        description: "语言配置，'有新的消息'描述文本",
+        required: "N",
+      },
+      // UploadConfig
+      {
+        name: "progress",
+        type: "Object",
+        default: "-",
+        description: "语言配置，上传进度相关。示例：{ uploadText: '上传中', waitingText: '待上传', 'failText': '上传失败', successText: '上传成功' }。TS 类型：`UploadConfigProgress`",
+        required: "N",
+      },
+      // UploadConfigProgress
+      {
+        name: "fail-text",
+        type: "String",
+        default: "-",
+        description: "语言配置，'上传失败'文本描述",
+        required: "N",
+      },
+      {
+        name: "success-text",
+        type: "String",
+        default: "-",
+        description: "语言配置，'上传成功'文本描述",
+        required: "N",
+      },
+      {
+        name: "uploading-text",
+        type: "String",
+        default: "-",
+        description: "语言配置，'上传中'文本描述",
+        required: "N",
+      },
+      {
+        name: "waiting-text",
+        type: "String",
+        default: "-",
+        description: "语言配置，'待上传'文本描述",
+        required: "N",
+      },
+    ],
+  },
   // 高阶
   "t-chat": {
     // AI Chat 对话 - 对话列表
@@ -2577,7 +3110,7 @@ export const CompletionData: CompletionObject = {
       {
         name: "cancel-btn",
         type: "String",
-        default: "取消",
+        default: '取消',
         description: "取消按钮文字",
         required: "N",
       },
@@ -2586,13 +3119,6 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "-",
         description: "确定按钮文字",
-        required: "N",
-      },
-      {
-        name: "custom-locale",
-        type: "String",
-        default: "zh",
-        description: "组件国际化语言，目前支持: 简体中文(zh)、(tc)、英文(en)、日语(ja)、韩语(ko)、俄语(ru)等六种语言",
         required: "N",
       },
       {

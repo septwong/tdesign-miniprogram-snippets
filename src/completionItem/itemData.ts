@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-03-23 17:12:00
+ * @LastEditTime: 2026-03-23 18:23:59
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description:
  */
@@ -245,7 +245,7 @@ export const CompletionData: CompletionObject = {
         name: "cancel",
         type: "String",
         default: "-",
-        description: "语言配置，\"取消\"按钮描述文本",
+        description: '语言配置，"取消"按钮描述文本',
         required: "N",
       },
       {
@@ -338,7 +338,8 @@ export const CompletionData: CompletionObject = {
         name: "error-message",
         type: "Object",
         default: "-",
-        description: "表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`。TS 类型：`FormErrorMessage`",
+        description:
+          "表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`。TS 类型：`FormErrorMessage`",
         required: "N",
       },
       {
@@ -403,7 +404,8 @@ export const CompletionData: CompletionObject = {
         name: "replace-image-src",
         type: "Function",
         default: "-",
-        description: "统一替换图片 `src` 地址，参数为组件的全部属性，返回值为新的图片地址。TS 类型：`(params: ImageProps) => string`",
+        description:
+          "统一替换图片 `src` 地址，参数为组件的全部属性，返回值为新的图片地址。TS 类型：`(params: ImageProps) => string`",
         required: "N",
       },
       // InputConfig
@@ -508,7 +510,8 @@ export const CompletionData: CompletionObject = {
         name: "progress",
         type: "Object",
         default: "-",
-        description: "语言配置，上传进度相关。示例：{ uploadText: '上传中', waitingText: '待上传', 'failText': '上传失败', successText: '上传成功' }。TS 类型：`UploadConfigProgress`",
+        description:
+          "语言配置，上传进度相关。示例：{ uploadText: '上传中', waitingText: '待上传', 'failText': '上传失败', successText: '上传成功' }。TS 类型：`UploadConfigProgress`",
         required: "N",
       },
       // UploadConfigProgress
@@ -1010,13 +1013,6 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description: "样式，一般用于开启虚拟化组件节点场景",
-        required: "N",
-      },
-      {
-        name: "addable",
-        type: "Boolean",
-        default: "true",
-        description: "【讨论中】是否显示添加按钮",
         required: "N",
       },
       {
@@ -3110,7 +3106,7 @@ export const CompletionData: CompletionObject = {
       {
         name: "cancel-btn",
         type: "String",
-        default: '取消',
+        default: "取消",
         description: "取消按钮文字",
         required: "N",
       },
@@ -3239,6 +3235,196 @@ export const CompletionData: CompletionObject = {
         type: "Boolean",
         default: "false",
         description: "是否显示",
+        required: "N",
+      },
+    ],
+  },
+  "t-form": {
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "colon",
+        type: "Boolean",
+        default: "false",
+        description: "是否在表单标签字段右侧显示冒号",
+        required: "N",
+      },
+      {
+        name: "data",
+        type: "Object",
+        default: "{}",
+        description: "表单数据。TS 类型：`FormData`",
+        required: "N",
+      },
+      {
+        name: "error-message",
+        type: "Object",
+        default: "-",
+        description:
+          "表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`。TS 类型：`FormErrorMessage`",
+        required: "N",
+      },
+      {
+        name: "label-align",
+        type: "String",
+        default: "right",
+        description: "表单字段标签对齐方式：左对齐、右对齐、顶部对齐。可选项：left/right/top",
+        required: "N",
+      },
+      {
+        name: "label-width",
+        type: "String / Number",
+        default: "'81px'",
+        description: "可以整体设置label标签宽度，默认为81px",
+        required: "N",
+      },
+      {
+        name: "required-mark",
+        type: "Boolean",
+        default: "true",
+        description: "是否显示必填符号（*），默认显示",
+        required: "N",
+      },
+      {
+        name: "required-mark-position",
+        type: "String",
+        default: "left",
+        description: "表单必填符号（*）显示位置。可选项：left/right",
+        required: "N",
+      },
+      {
+        name: "reset-type",
+        type: "String",
+        default: "empty",
+        description:
+          "重置表单的方式，值为 empty 表示重置表单为空，值为 initial 表示重置表单数据为初始值。可选项：empty/initial",
+        required: "N",
+      },
+      {
+        name: "rules",
+        type: "Object",
+        default: "-",
+        description:
+          "表单字段校验规则。TS 类型：`FormRules<FormData>` `type FormRules<T extends Data = any> = { [field in keyof T]?: Array<FormRule> }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/form/type.ts)",
+        required: "N",
+      },
+      {
+        name: "scroll-to-first-error",
+        type: "String",
+        default: "-",
+        description:
+          "表单校验不通过时，是否自动滚动到第一个校验不通过的字段，平滑滚动或是瞬间直达。值为空则表示不滚动。可选项：''/smooth/auto",
+        required: "N",
+      },
+      {
+        name: "show-error-message",
+        type: "Boolean",
+        default: "true",
+        description:
+          "校验不通过时，是否显示错误提示信息，统一控制全部表单项。如果希望控制单个表单项，请给 FormItem 设置该属性",
+        required: "N",
+      },
+      {
+        name: "submit-with-warning-message",
+        type: "Boolean",
+        default: "false",
+        description: "【讨论中】当校验结果只有告警信息时，是否触发 `submit` 提交事件",
+        required: "N",
+      },
+    ],
+  },
+  "t-form-item": {
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "arrow",
+        type: "Boolean",
+        default: "false",
+        description: "是否显示右侧箭头",
+        required: "N",
+      },
+      {
+        name: "help",
+        type: "String",
+        default: "-",
+        description: "表单项说明内容",
+        required: "N",
+      },
+      {
+        name: "label",
+        type: "String",
+        default: "''",
+        description: "字段标签名称",
+        required: "N",
+      },
+      {
+        name: "label-align",
+        type: "String",
+        default: "-",
+        description:
+          "表单字段标签对齐方式：左对齐、右对齐、顶部对齐。默认使用 Form 的对齐方式，优先级高于 Form.labelAlign。可选项：left/right/top",
+        required: "N",
+      },
+      {
+        name: "label-width",
+        type: "String / Number",
+        default: "-",
+        description: "可以整体设置标签宽度，优先级高于 Form.labelWidth",
+        required: "N",
+      },
+      {
+        name: "name",
+        type: "String",
+        default: "-",
+        description: "表单字段名称",
+        required: "N",
+      },
+      {
+        name: "required-mark",
+        type: "Boolean",
+        default: "undefined",
+        description: "是否显示必填符号（*），优先级高于 Form.requiredMark",
+        required: "N",
+      },
+      {
+        name: "rules",
+        type: "Array",
+        default: "-",
+        description:
+          "表单字段校验规则。TS 类型：`Array<FormRule> `，[Form API Documents](./form?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/form-item/type.ts)",
+        required: "N",
+      },
+      {
+        name: "show-error-message",
+        type: "Boolean",
+        default: "undefined",
+        description: "校验不通过时，是否显示错误提示信息，优先级高于 `Form.showErrorMessage`",
         required: "N",
       },
     ],

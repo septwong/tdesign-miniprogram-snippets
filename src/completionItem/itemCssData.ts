@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-31 10:19:00
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-02-04 16:29:00
+ * @LastEditTime: 2026-03-23 18:07:28
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemCssData.ts
  * @Description:
  */
@@ -804,6 +804,40 @@ export const CompletionCssData: CompletionCssObject = {
       {
         name: "--td-cascader-title-padding",
         defaultValue: "@spacer-2",
+        description: "-",
+      },
+    ],
+  },
+  "t-form": {
+    attrs: [
+      {
+        name: "--td-form-bg-color",
+        defaultValue: "@bg-color-container",
+        description: "-",
+      },
+      {
+        name: "--td-form-item-border-color",
+        defaultValue: "@component-stroke",
+        description: "-",
+      },
+      {
+        name: "--td-form-item-border-left-space",
+        defaultValue: "@form-item-vertical-padding",
+        description: "-",
+      },
+      {
+        name: "--td-form-item-border-right-space",
+        defaultValue: "0",
+        description: "-",
+      },
+      {
+        name: "--td-form-item-horizontal-padding",
+        defaultValue: "32rpx",
+        description: "-",
+      },
+      {
+        name: "--td-form-item-vertical-padding",
+        defaultValue: "32rpx",
         description: "-",
       },
     ],

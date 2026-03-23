@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:18
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-01-16 23:04:16
+ * @LastEditTime: 2026-03-23 18:19:36
  * @FilePath: /tdesign-miniprogram-snippets/src/hover/hoverData.ts
  * @Description:
  */
@@ -50,6 +50,8 @@ export const hoverData = {
   "t-color-picker": "打开 [TDesign ColorPicker](https://tdesign.tencent.com/miniprogram/components/color-picker)",
   "t-date-time-picker":
     "打开 [TDesign DateTimePicker](https://tdesign.tencent.com/miniprogram/components/date-time-picker)",
+  "t-form": "打开 [TDesign Input](https://tdesign.tencent.com/miniprogram/components/form)",
+  "t-form-item": "打开 [TDesign Input](https://tdesign.tencent.com/miniprogram/components/form)",
   "t-input": "打开 [TDesign Input](https://tdesign.tencent.com/miniprogram/components/input)",
   "t-picker": "打开 [TDesign Picker](https://tdesign.tencent.com/miniprogram/components/picker)",
   "t-picker-item": "打开 [TDesign Picker](https://tdesign.tencent.com/miniprogram/components/picker)",

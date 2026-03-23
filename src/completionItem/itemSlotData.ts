@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-02-04 16:28:14
+ * @LastEditTime: 2026-03-23 18:06:17
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemSlotData.ts
  * @Description:
  */
@@ -47,6 +47,18 @@ export const CompletionSlotData: CompletionSlotObject = {
       {
         name: "title",
         description: "自定义 title 显示内容",
+      },
+    ],
+  },
+  "t-form": {
+    attrs: [
+      {
+        name: "help",
+        description: "自定义 `help` 显示内容",
+      },
+      {
+        name: "label",
+        description: "自定义 `label` 显示内容",
       },
     ],
   },

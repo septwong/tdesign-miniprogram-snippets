@@ -238,7 +238,7 @@
   "TDesign Form 表单": {
     "prefix": "t-form",
     "body": [
-      "\"t-form\": \"tdesign-miniprogram/form/form\"",
+      "\"t-form\": \"tdesign-miniprogram/form/form\",",
       "\"t-form-item\": \"tdesign-miniprogram/form-item/form-item\""
     ],
     "description": "TDesign DateTimePicker 组件"

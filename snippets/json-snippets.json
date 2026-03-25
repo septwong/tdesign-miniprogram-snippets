@@ -241,7 +241,7 @@
       "\"t-form\": \"tdesign-miniprogram/form/form\",",
       "\"t-form-item\": \"tdesign-miniprogram/form-item/form-item\""
     ],
-    "description": "TDesign DateTimePicker 组件"
+    "description": "TDesign Form 组件"
   },
   "TDesign Input 输入框": {
     "prefix": "t-input",

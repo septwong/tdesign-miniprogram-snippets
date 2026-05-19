@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-03-23 18:01:22
+ * @LastEditTime: 2026-05-19 19:14:47
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemEventData.ts
  * @Description:
  */
@@ -105,8 +105,9 @@ export const CompletionEventData: CompletionEventObject = {
     attrs: [
       {
         name: "click",
-        params: "`(detail: {detail:{event, node}, currentTarget, target})`",
-        description: "点击链接时触发",
+        params: "`(detail: TdMarkdownClickContext)`",
+        description:
+          "点击链接时触发。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/chat-markdown/type.ts)。<br/>`interface TdMarkdownClickContext {event: TouchEvent;node: TdMarkdownNode;}`<br/><br/>`interface TdMarkdownNode {   type: string;   raw?: string;   text?: string;   href?: string;   title?: string;   tokens?: TdMarkdownNode[];   [key: string]: unknown;}`<br/>",
       },
     ],
   },
@@ -210,6 +211,11 @@ export const CompletionEventData: CompletionEventObject = {
         name: "opensetting",
         params: "\\-",
         description: "原生按钮属性，在打开授权设置页后回调，open-type=openSetting时有效",
+      },
+      {
+        name: "phoneoneclicklogin",
+        params: "\\-",
+        description: "一键登录回调，open-type=phoneOneClickLogin 时有效",
       },
       {
         name: "tap",
@@ -432,6 +438,15 @@ export const CompletionEventData: CompletionEventObject = {
       },
     ],
   },
+  "t-segmented": {
+    attrs: [
+      {
+        name: "change",
+        params: "`(detail: { value: string | number, selectedOption: SegmentedItem })`",
+        description: "选项值发生变化时触发",
+      },
+    ],
+  },
   "t-swiper": {
     attrs: [
       {
@@ -459,6 +474,22 @@ export const CompletionEventData: CompletionEventObject = {
   },
   "t-swiper-nav": {
     attrs: [],
+  },
+  "t-table": {
+    attrs: [
+      {
+        name: "cell-click",
+        params: "`(context: BaseTableCellEventContext<T>)`",
+        description:
+          "单元格点击时触发。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/table/type.ts)。<br/>`interface BaseTableCellEventContext<T> { row: T; col: BaseTableCol; rowIndex: number; colIndex: number;}`<br/>",
+      },
+      {
+        name: "row-click",
+        params: "`(context: RowEventContext<T>)`",
+        description:
+          "行点击时触发，泛型 T 指表格数据类型。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/table/type.ts)。<br/>`interface RowEventContext<T> { row: T; index: number;}`<br/>",
+      },
+    ],
   },
   // 反馈
   "t-action-sheet": {

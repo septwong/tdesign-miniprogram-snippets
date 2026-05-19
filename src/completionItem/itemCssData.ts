@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-31 10:19:00
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-03-23 18:07:28
+ * @LastEditTime: 2026-05-19 19:18:58
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemCssData.ts
  * @Description:
  */
@@ -1071,6 +1071,45 @@ export const CompletionCssData: CompletionCssObject = {
       },
     ],
   },
+  "t-segmented": {
+    attrs: [
+      {
+        name: "--td-segmented-bg-color",
+        defaultValue: "@bg-color-component-disabled",
+        description: "-",
+      },
+      {
+        name: "--td-segmented-item-active-bg",
+        defaultValue: "@bg-color-container",
+        description: "-",
+      },
+      {
+        name: "--td-segmented-item-active-color",
+        defaultValue: "@brand-color",
+        description: "-",
+      },
+      {
+        name: "--td-segmented-item-color",
+        defaultValue: "@text-color-primary",
+        description: "-",
+      },
+      {
+        name: "--td-segmented-item-disabled-color",
+        defaultValue: "@text-color-disabled",
+        description: "-",
+      },
+      {
+        name: "--td-segmented-item-label-font",
+        defaultValue: "@font-body-medium",
+        description: "-",
+      },
+      {
+        name: "--td-segmented-transition",
+        defaultValue: "all @anim-duration-base @anim-time-fn-easing",
+        description: "-",
+      },
+    ],
+  },
   "t-swiper": {
     attrs: [
       {
@@ -1136,6 +1175,65 @@ export const CompletionCssData: CompletionCssObject = {
       {
         name: "--td-swiper-nav-fraction-height",
         defaultValue: "48rpx",
+        description: "-",
+      },
+    ],
+  },
+  "t-table": {
+    attrs: [
+      {
+        name: "--td-table-body-text-color",
+        defaultValue: "@text-color-primary",
+        description: "-",
+      },
+      {
+        name: "--td-table-border-color",
+        defaultValue: "@component-border",
+        description: "-",
+      },
+      {
+        name: "--td-table-fixed-cell-border-color",
+        defaultValue: "@component-border",
+        description: "-",
+      },
+      {
+        name: "--td-table-font-size",
+        defaultValue: "@font-body-medium",
+        description: "-",
+      },
+      {
+        name: "--td-table-header-bg-color",
+        defaultValue: "@bg-color-container",
+        description: "-",
+      },
+      {
+        name: "--td-table-header-text-color",
+        defaultValue: "@text-color-placeholder",
+        description: "-",
+      },
+      {
+        name: "--td-table-loading-bg-color",
+        defaultValue: "rgba(255, 255, 255, 0.55)",
+        description: "-",
+      },
+      {
+        name: "--td-table-row-height",
+        defaultValue: "82rpx",
+        description: "-",
+      },
+      {
+        name: "--td-table-stripe-bg-color",
+        defaultValue: "@bg-color-secondarycontainer",
+        description: "-",
+      },
+      {
+        name: "--td-table-td-padding",
+        defaultValue: "16rpx 24rpx",
+        description: "-",
+      },
+      {
+        name: "--td-table-th-padding",
+        defaultValue: "16rpx 24rpx",
         description: "-",
       },
     ],

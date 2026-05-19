@@ -1081,6 +1081,13 @@
     ],
     "description": "TDesign Result 组件"
   },
+  "TDesign Segmented 分段控制器": {
+    "prefix": "t-segmented",
+    "body": [
+      "<t-segmented options=\"{{options}}\" default-value=\"{{0}}\" />"
+    ],
+    "description": "TDesign segmented 组件"
+  },
   "TDesign Skeleton 骨架屏": {
     "prefix": "t-skeleton",
     "body": [
@@ -1195,6 +1202,21 @@
       "</t-swiper>"
     ],
     "description": "TDesign Swiper 组件"
+  },
+  "TDesign Table 表格": {
+    "prefix": "t-table",
+    "body": [
+      "<t-table",
+      "  row-key=\"id\"",
+      "  columns=\"{{columns}}\"",
+      "  data=\"{{data}}\"",
+      "  show-header=\"{{true}}\"",
+      "  cell-empty-content=\"-\"",
+      "  bind:row-click=\"handleRowClick\"",
+      "  bind:cell-click=\"handleCellClick\"",
+      "/>"
+    ],
+    "description": "TDesign Table 组件"
   },
   "TDesign Tag 标签": {
     "prefix": "t-tag",

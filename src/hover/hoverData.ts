@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:18
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-03-23 18:19:36
+ * @LastEditTime: 2026-05-19 19:14:34
  * @FilePath: /tdesign-miniprogram-snippets/src/hover/hoverData.ts
  * @Description:
  */
@@ -83,10 +83,12 @@ export const hoverData = {
   "t-progress": "打开 [TDesign Progress](https://tdesign.tencent.com/miniprogram/components/progress)",
   "t-qrcode": "打开 [TDesign QRCode](https://tdesign.tencent.com/miniprogram/components/qrcode)",
   "t-result": "打开 [TDesign Result](https://tdesign.tencent.com/miniprogram/components/result)",
+  "t-segmented": "打开 [TDesign Result](https://tdesign.tencent.com/miniprogram/components/segmented)",
   "t-skeleton": "打开 [TDesign Skeleton](https://tdesign.tencent.com/miniprogram/components/skeleton)",
   "t-sticky": "打开 [TDesign Sticky](https://tdesign.tencent.com/miniprogram/components/sticky)",
   "t-swiper": "打开 [TDesign Swiper](https://tdesign.tencent.com/miniprogram/components/swiper)",
   "t-swiper-nav": "打开 [TDesign Swiper](https://tdesign.tencent.com/miniprogram/components/swiper)",
+  "t-table": "打开 [TDesign Tag](https://tdesign.tencent.com/miniprogram/components/table)",
   "t-tag": "打开 [TDesign Tag](https://tdesign.tencent.com/miniprogram/components/tag)",
   "t-check-tag": "打开 [TDesign Tag](https://tdesign.tencent.com/miniprogram/components/tag)",
   "t-watermark": "打开 [TDesign Watermark](https://tdesign.tencent.com/miniprogram/components/watermark)",

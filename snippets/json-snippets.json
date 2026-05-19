@@ -438,6 +438,13 @@
     ],
     "description": "TDesign Result 组件"
   },
+  "TDesign Segmented 分段控制器": {
+    "prefix": "t-segmented",
+    "body": [
+      "\"t-segmented\": \"tdesign-miniprogram/segmented/segmented\""
+    ],
+    "description": "TDesign Segmented 组件"
+  },
   "TDesign Skeleton 骨架屏": {
     "prefix": "t-skeleton",
     "body": [
@@ -459,6 +466,13 @@
       "\"t-swiper-nav\": \"tdesign-miniprogram/swiper-nav/swiper-nav\""
     ],
     "description": "TDesign Swiper 组件"
+  },
+  "TDesign Table 表格": {
+    "prefix": "t-table",
+    "body": [
+      "\"t-table\": \"tdesign-miniprogram/table/table\","
+    ],
+    "description": "TDesign Table 组件"
   },
   "TDesign Tag 标签": {
     "prefix": "t-tag",

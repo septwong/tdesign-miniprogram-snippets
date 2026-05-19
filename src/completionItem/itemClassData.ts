@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:19:58
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-02-04 16:28:39
+ * @LastEditTime: 2026-05-19 19:06:34
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemClassData.ts
  * @Description:
  */
@@ -206,6 +206,22 @@ export const CompletionClassData: CompletionClassObject = {
   },
   "t-qrcode": {
     attrs: [],
+  },
+  "t-segmented": {
+    attrs: [
+      {
+        className: "t-class",
+        description: "根节点样式类",
+      },
+      {
+        className: "t-class-item",
+        description: "列表子项样式类",
+      },
+      {
+        className: "t-class-thumb",
+        description: "动画背景样式类",
+      },
+    ],
   },
   "t-swiper": {
     attrs: [

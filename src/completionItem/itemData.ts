@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-05 11:32:19
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-03-23 18:23:59
+ * @LastEditTime: 2026-05-19 19:13:35
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemData.ts
  * @Description:
  */
@@ -731,7 +731,7 @@ export const CompletionData: CompletionObject = {
         type: "Object",
         default: "-",
         description:
-          "聊天内容组件的属性。TS 类型：`ChatContentProps`，[ChatContent API Documents](./chat-content?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/pro-components/chat/chat-message/type.ts)",
+          "聊天内容组件的属性，支持通过 `thinking` 字段透传 ChatThinking 组件属性。TS 类型：`ChatMessageContentProps` `interface ChatMessageContentProps extends ChatContentProps { thinking?: ChatMessageThinking; }` `type ChatMessageThinking = Pick<ChatThinkingProps, 'animation' | 'collapsed' | 'layout' | 'maxHeight'>  ` `import { ChatContentProps } from '@ChatContent'`，[ChatThinking API Documents](./chat-thinking?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/pro-components/chat/chat-message/type.ts)",
         required: "N",
       },
       {
@@ -1232,7 +1232,7 @@ export const CompletionData: CompletionObject = {
         type: "String",
         default: "-",
         description:
-          '微信开放能力。<br />具体释义：<br />`contact` 打开客服会话，如果用户在会话中点击消息卡片后返回小程序，可以从 bindcontact 回调中获得具体信息，<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/customer-message/customer-message.html">具体说明</a> （*鸿蒙 OS 暂不支持*）；<br />`liveActivity` 通过前端获取<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/subscribe-message-2.html">新的一次性订阅消息下发机制</a>使用的 code；<br />`share` 触发用户转发，使用前建议先阅读<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html#使用指引">使用指引</a>；<br />`getPhoneNumber` 获取用户手机号，可以从 bindgetphonenumber 回调中获取到用户信息，<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/getPhoneNumber.html">具体说明</a> （*小程序插件中不能使用*）；<br />`getUserInfo` 获取用户信息，可以从 bindgetuserinfo 回调中获取到用户信息 （*小程序插件中不能使用*）；<br />`launchApp` 打开APP，可以通过 app-parameter 属性设定向 APP 传的参数<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html">具体说明</a>；<br />`openSetting` 打开授权设置页；<br />`feedback` 打开“意见反馈”页面，用户可提交反馈内容并上传<a href="https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/wx.getLogManager.html">日志</a>，开发者可以登录<a href="https://mp.weixin.qq.com/">小程序管理后台</a>后进入左侧菜单“客服反馈”页面获取到反馈内容；<br />`chooseAvatar` 获取用户头像，可以从 bindchooseavatar 回调中获取到头像信息；<br />`agreePrivacyAuthorization`用户同意隐私协议按钮。用户点击一次此按钮后，所有隐私接口可以正常调用。可通过`bindagreeprivacyauthorization`监听用户同意隐私协议事件。隐私合规开发指南详情可见《<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html">小程序隐私协议开发指南</a>》。<br />[小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/component/button.html)。可选项：contact/share/getPhoneNumber/getUserInfo/launchApp/openSetting/feedback/chooseAvatar/agreePrivacyAuthorization',
+          '微信开放能力。<br />具体释义：<br />`contact` 打开客服会话，如果用户在会话中点击消息卡片后返回小程序，可以从 bindcontact 回调中获得具体信息，<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/customer-message/customer-message.html">具体说明</a> （*鸿蒙 OS 暂不支持*）；<br />`liveActivity` 通过前端获取<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/subscribe-message-2.html">新的一次性订阅消息下发机制</a>使用的 code；<br />`share` 触发用户转发，使用前建议先阅读<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html#使用指引">使用指引</a>；<br />`getPhoneNumber` 手机号快速验证，向用户申请，并在用户同意后，快速填写和验证手机，<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/getPhoneNumber.html">具体说明</a> （*小程序插件中不能使用*）；<br />`getRealtimePhoneNumber` 手机号实时验证，向用户申请，并在用户同意后，快速填写和实时验证手机号。<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/getRealtimePhoneNumber.html">具体说明</a> （*小程序插件中不能使用*）；<br />`getUserInfo` 获取用户信息，可以从 bindgetuserinfo 回调中获取到用户信息 （*小程序插件中不能使用*）；<br />`launchApp` 打开APP，可以通过 app-parameter 属性设定向 APP 传的参数<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html">具体说明</a>；<br />`openSetting` 打开授权设置页；<br />`feedback` 打开“意见反馈”页面，用户可提交反馈内容并上传<a href="https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/wx.getLogManager.html">日志</a>，开发者可以登录<a href="https://mp.weixin.qq.com/">小程序管理后台</a>后进入左侧菜单“客服反馈”页面获取到反馈内容；<br />`chooseAvatar` 获取用户头像，可以从 bindchooseavatar 回调中获取到头像信息；<br />`agreePrivacyAuthorization`用户同意隐私协议按钮。用户点击一次此按钮后，所有隐私接口可以正常调用。可通过`bindagreeprivacyauthorization`监听用户同意隐私协议事件。隐私合规开发指南详情可见《<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html">小程序隐私协议开发指南</a>》。<br />`phoneOneClickLogin` 发起本机号码一键登录流程，<a href="https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/miniapp/component/auth/phoneOneClickLogin.html">具体说明</a> <br />[小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/component/button.html)。可选项：contact/liveActivity/share/getPhoneNumber/getRealtimePhoneNumber/getUserInfo/launchApp/openSetting/feedback/chooseAvatar/agreePrivacyAuthorization/phoneOneClickLogin',
         required: "N",
       },
       {
@@ -1374,9 +1374,9 @@ export const CompletionData: CompletionObject = {
     attrs: [
       {
         name: "style",
-        type: "String",
-        default: "right: 16px; bottom: 32px;",
-        description: "悬浮按钮的样式，常用于调整位置（即将废弃，建议使用 `style`）",
+        type: "Object",
+        default: "-",
+        description: "样式",
         required: "N",
       },
       {
@@ -1399,14 +1399,14 @@ export const CompletionData: CompletionObject = {
         type: "String / Boolean",
         default: "false",
         description:
-          "是否可拖拽。`true` / `'all'`可拖动<br>`'vertical'`可垂直拖动<br>`'horizontal'`可水平拖动<br>`false`禁止拖动。TS 类型：`boolean | FabDirectionEnum type FabDirectionEnum = 'all' | 'vertical' | 'horizontal'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/fab/type.ts)",
+          "是否可拖拽。`true` / `'all'`可拖动<br>`'vertical'`可垂直拖动<br>`'horizontal'`可水平拖动<br>`false`禁止拖动。TS 类型：`boolean | FabDirectionEnum ` `type FabDirectionEnum = 'all' | 'vertical' | 'horizontal'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/fab/type.ts)",
         required: "N",
       },
       {
         name: "icon",
-        type: "String",
+        type: "String / Object",
         default: "-",
-        description: "图标",
+        description: "图标名称。值为字符串表示图标名称，值为 `Object` 类型，表示透传至 `icon` 组件",
         required: "N",
       },
       {
@@ -1427,7 +1427,7 @@ export const CompletionData: CompletionObject = {
         name: "y-bounds",
         type: "Array",
         default: "-",
-        description: "设置垂直方向边界限制，示例：[48, 48] 或 ['96rpx', 80]。TS 类型：`Array<string | number>`",
+        description: "设置垂直方向边界限制，示例：[48, 48] 或 ['96px', 80]。TS 类型：`Array<string | number>`",
         required: "N",
       },
     ],
@@ -1833,6 +1833,13 @@ export const CompletionData: CompletionObject = {
         default: "[]",
         description:
           "已废弃。索引列表的列表数据。每个元素包含三个子元素，index(string)：索引值，例如1，2，3，...或A，B，C等；title(string): 索引标题，可不填将默认设为索引值；children(Array<{title: string}>): 子元素列表，title为子元素的展示文案。TS 类型：`ListItem[] ` `interface ListItem { title: string;  index: string;  children: { title: string; [key: string]: any} [] }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/indexes/type.ts)",
+        required: "N",
+      },
+      {
+        name: "show-full-index",
+        type: "Boolean",
+        default: "false",
+        description: "`1.13.2`。是否显示完整的索引内容，默认只显示首字符。TS 类型：`Boolean`",
         required: "N",
       },
       {
@@ -6506,6 +6513,60 @@ export const CompletionData: CompletionObject = {
       },
     ],
   },
+  "t-segmented": {
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "block",
+        type: "Boolean",
+        default: "false",
+        description: "是否撑满父元素宽度",
+        required: "N",
+      },
+      {
+        name: "disabled",
+        type: "Boolean",
+        default: "-",
+        description: "是否禁用",
+        required: "N",
+      },
+      {
+        name: "options",
+        type: "Object",
+        default: "[]",
+        description:
+          "数据化配置选项内容。TS 类型：`string[] | number[] | SegmentedItem[] ` `interface SegmentedItem { value: string | number; label?: string; icon?: string | object; disabled?: boolean }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/segmented/type.ts)",
+        required: "N",
+      },
+      {
+        name: "value",
+        type: "String / Number",
+        default: "-",
+        description: "当前选中的值",
+        required: "N",
+      },
+      {
+        name: "default-value",
+        type: "String / Number",
+        default: "undefined",
+        description: "当前选中的值。非受控属性",
+        required: "N",
+      },
+    ],
+  },
   "t-skeleton": {
     attrs: [
       {
@@ -6806,6 +6867,157 @@ export const CompletionData: CompletionObject = {
         default: "dots",
         description:
           "导航器类型，点状(dots)、点条状(dots-bar)、分式(fraction)等。TS 类型：`SwiperNavigationType` `type SwiperNavigationType = 'dots' | 'dots-bar' | 'fraction'`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/swiper-nav/type.ts)",
+        required: "N",
+      },
+    ],
+  },
+  "t-table": {
+    attrs: [
+      {
+        name: "style",
+        type: "Object",
+        default: "-",
+        description: "样式",
+        required: "N",
+      },
+      {
+        name: "custom-style",
+        type: "Object",
+        default: "-",
+        description: "样式，一般用于开启虚拟化组件节点场景",
+        required: "N",
+      },
+      {
+        name: "bordered",
+        type: "Boolean",
+        default: "false",
+        description: "是否显示表格边框",
+        required: "N",
+      },
+      {
+        name: "cell-empty-content",
+        type: "String",
+        default: "-",
+        description: "单元格数据为空时呈现的内容",
+        required: "N",
+      },
+      {
+        name: "columns",
+        type: "Array",
+        default: "[]",
+        description: "列配置，泛型 T 指表格数据类型。TS 类型：`Array<BaseTableCol<T>>`",
+        required: "N",
+      },
+      {
+        name: "data",
+        type: "Array",
+        default: "[]",
+        description: "数据源，泛型 T 指表格数据类型。TS 类型：`Array<T>`",
+        required: "N",
+      },
+      {
+        name: "empty",
+        type: "String",
+        default: "''",
+        description: "空表格呈现样式，支持全局配置 `GlobalConfigProvider`",
+        required: "N",
+      },
+      {
+        name: "fixed-rows",
+        type: "Array",
+        default: "-",
+        description:
+          "固定行（冻结行），示例：[M, N]，表示冻结表头 M 行和表尾 N 行。M 和 N 值为 0 时，表示不冻结行。TS 类型：`Array<number>`",
+        required: "N",
+      },
+      {
+        name: "footer-summary",
+        type: "String",
+        default: "-",
+        description: "表尾总结行",
+        required: "N",
+      },
+      {
+        name: "height",
+        type: "String / Number",
+        default: "-",
+        description:
+          "表格高度，超出后会出现滚动条。示例：100,  '30%',  '300'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight`",
+        required: "N",
+      },
+      {
+        name: "loading",
+        type: "Boolean",
+        default: "undefined",
+        description:
+          "加载中状态。值为 `true` 会显示默认加载中样式，可以通过 Function 和 插槽 自定义加载状态呈现内容和样式。值为 `false` 则会取消加载状态",
+        required: "N",
+      },
+      {
+        name: "loading-props",
+        type: "Object",
+        default: "-",
+        description:
+          "透传加载组件全部属性。TS 类型：`Partial<LoadingProps>`，[Loading API Documents](./loading?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/table/type.ts)",
+        required: "N",
+      },
+      {
+        name: "max-height",
+        type: "String / Number",
+        default: "-",
+        description: "表格最大高度，超出后会出现滚动条。示例：100, '30%', '300'。值为数字类型，会自动加上单位 px",
+        required: "N",
+      },
+      {
+        name: "row-key",
+        type: "String",
+        default: "'id'",
+        description:
+          "必需。唯一标识一行数据的字段名，来源于 `data` 中的字段。如果是字段嵌套多层，可以设置形如 `item.a.id` 的方法",
+        required: "Y",
+      },
+      {
+        name: "rowspan-and-colspan",
+        type: "Function",
+        default: "-",
+        description:
+          "用于自定义合并单元格，泛型 T 指表格数据类型。示例：`({ row, col, rowIndex, colIndex }) => { rowspan: 2, colspan: 3 }`。TS 类型：`TableRowspanAndColspanFunc<T>` `type TableRowspanAndColspanFunc<T> = (params: BaseTableCellParams<T>) => RowspanColspan` `interface RowspanColspan { colspan?: number; rowspan?: number }`。[详细类型定义](https://github.com/Tencent/tdesign-miniprogram/blob/develop/packages/components/table/type.ts)",
+        required: "N",
+      },
+      {
+        name: "show-header",
+        type: "Boolean",
+        default: "true",
+        description: "是否显示表头",
+        required: "N",
+      },
+      {
+        name: "stripe",
+        type: "Boolean",
+        default: "false",
+        description: "是否显示斑马纹",
+        required: "N",
+      },
+      {
+        name: "table-content-width",
+        type: "String",
+        default: "-",
+        description:
+          "表格内容的总宽度，注意不是表格可见宽度。主要应用于 `table-layout: auto` 模式下的固定列显示。`tableContentWidth` 内容宽度的值必须大于表格可见宽度",
+        required: "N",
+      },
+      {
+        name: "table-layout",
+        type: "String",
+        default: "fixed",
+        description: "表格布局方式。可选项：auto/fixed",
+        required: "N",
+      },
+      {
+        name: "vertical-align",
+        type: "String",
+        default: "middle",
+        description: "行内容上下方向对齐。可选项：top/middle/bottom",
         required: "N",
       },
     ],

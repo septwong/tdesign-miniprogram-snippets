@@ -2,7 +2,7 @@
  * @Author: Wong septwong@foxmail.com
  * @Date: 2024-12-27 14:17:21
  * @LastEditors: Wong septwong@foxmail.com
- * @LastEditTime: 2026-03-23 18:06:17
+ * @LastEditTime: 2026-05-19 19:16:21
  * @FilePath: /tdesign-miniprogram-snippets/src/completionItem/itemSlotData.ts
  * @Description:
  */
@@ -102,14 +102,6 @@ export const CompletionSlotData: CompletionSlotObject = {
       },
     ],
   },
-  "t-qrcode": {
-    attrs: [
-      {
-        name: "status-render",
-        description: "自定义状态渲染器",
-      },
-    ],
-  },
   "t-collapse-panel": {
     attrs: [
       {
@@ -135,6 +127,34 @@ export const CompletionSlotData: CompletionSlotObject = {
       {
         name: "header-right-content",
         description: "自定义 `header-right-content` 显示内容",
+      },
+    ],
+  },
+  "t-qrcode": {
+    attrs: [
+      {
+        name: "status-render",
+        description: "自定义状态渲染器",
+      },
+    ],
+  },
+  "t-table": {
+    attrs: [
+      {
+        name: "cell-empty-content",
+        description: "自定义 `cell-empty-content` 显示内容",
+      },
+      {
+        name: "empty",
+        description: "自定义 `empty` 显示内容",
+      },
+      {
+        name: "footer-summary",
+        description: "自定义 `footer-summary` 显示内容",
+      },
+      {
+        name: "loading",
+        description: "自定义 `loading` 显示内容",
       },
     ],
   },
